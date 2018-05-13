@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{7978707C-90B9-421E-8C49-911292175165}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>DaiLyDTO</RootNamespace>
-    <AssemblyName>DaiLyDTO</AssemblyName>
+    <RootNamespace>QLDaiLyDTO</RootNamespace>
+    <AssemblyName>QLDaiLyDTO</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <MyType>Windows</MyType>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
@@ -18,7 +18,7 @@
     <DefineDebug>true</DefineDebug>
     <DefineTrace>true</DefineTrace>
     <OutputPath>bin\Debug\</OutputPath>
-    <DocumentationFile>DaiLyDTO.xml</DocumentationFile>
+    <DocumentationFile>QLDaiLyDTO.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
@@ -27,7 +27,7 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DocumentationFile>DaiLyDTO.xml</DocumentationFile>
+    <DocumentationFile>QLDaiLyDTO.xml</DocumentationFile>
     <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
   </PropertyGroup>
   <PropertyGroup>

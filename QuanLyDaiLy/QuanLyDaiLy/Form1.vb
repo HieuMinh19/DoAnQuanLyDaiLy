@@ -1,3 +1,3 @@
-﻿Public Class frmMain
+﻿Public Class Form1
 
 End Class

@@ -1,0 +1,1 @@
+SQLCMD -S DESKTOP-O9B0C7T -E -i QuanLyDaiLy.sql
