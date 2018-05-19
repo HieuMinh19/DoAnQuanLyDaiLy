@@ -17,6 +17,7 @@ Public Class LoaiDlDAL
     End Sub
 
     Public Function selectALL(ByRef listDaiLy As List(Of LoaiDLDTO)) As Result
+
         Dim query As String = String.Empty
         query &= "SELECT [MaLoaiDL], [TenLoaiDL]"
         query &= "FROM [LoaiDL]"

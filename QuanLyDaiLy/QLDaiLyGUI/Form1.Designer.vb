@@ -73,7 +73,7 @@ Partial Class Form1
         'ThemDaiLyToolStripMenuItem
         '
         Me.ThemDaiLyToolStripMenuItem.Name = "ThemDaiLyToolStripMenuItem"
-        Me.ThemDaiLyToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
+        Me.ThemDaiLyToolStripMenuItem.Size = New System.Drawing.Size(165, 26)
         Me.ThemDaiLyToolStripMenuItem.Text = "Them Dai Ly"
         '
         'Form1
@@ -83,6 +83,7 @@ Partial Class Form1
         Me.ClientSize = New System.Drawing.Size(549, 381)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.MenuStrip2)
+        Me.IsMdiContainer = True
         Me.MainMenuStrip = Me.MenuStrip1
         Me.Name = "Form1"
         Me.Text = "Quan Ly Dai Ly"

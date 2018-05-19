@@ -4,6 +4,8 @@ Imports Utility
 
 Public Class frmThemDaiLy
     Private dlBus As DaiLyBUS
+    Private LoaiDLBus As LoaiDLBUS
+    Private QuanBus As QuanBUS
     'Private lhsBus As LoaiHocSinhBUS
 
     Private Sub btnThemDaiLy_Click(sender As Object, e As EventArgs) Handles btnThemDaiLy.Click
@@ -18,8 +20,8 @@ Public Class frmThemDaiLy
         daily.Email = txtEmail.Text
         daily.DienThoai = txtDienThoai.Text
         daily.NgTiepNhan = dtpNgTiepNhan.Value
-        daily.MaQuan = Convert.ToInt32(cbMaQuan.SelectedValue)
-        daily.MaLoaiDL = Convert.ToInt32(cbMaLoaiDL.SelectedValue)
+        daily.MaQuan = Convert.ToInt32(cbxMaQuan.SelectedValue)
+        daily.MaLoaiDL = Convert.ToInt32(cbxMaLoaiDL.SelectedValue)
 
         'hocsinh.LoaiHS = Convert.ToInt32(cbLoaiHS.SELECTedValue)
 
@@ -34,12 +36,11 @@ Public Class frmThemDaiLy
             'set MSSH auto
             Dim nextMaDL = "1"
             result = dlBus.buildMaDL(nextMaDL)
-            If (result.FlagResult = True) Then
-                MessageBox.Show("Lấy danh tự động mã Mã Đại Lý không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                Me.Close()
-                Return
-            End If
-            'txtMaSo.Text = nextMshs
+            'If (result.FlagResult = True) Then
+            '    MessageBox.Show("Lấy danh tự động mã Mã Đại Lý không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            '    Me.Close()
+            '    Return
+            'End If
             txtTenDL.Text = String.Empty
             txtDiaChi.Text = String.Empty
 
@@ -54,11 +55,15 @@ Public Class frmThemDaiLy
     Private Sub frmThemDaiLy_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         dlBus = New DaiLyBUS()
+        LoaiDLBus = New LoaiDLBUS()
+        QuanBus = New QuanBUS()
+
+        'lay ma dai ly
         Dim result As Result
-
-
-
+        Dim resultQuan As Result
         Dim nextMaDL As Integer
+
+
         result = dlBus.buildMaDL(nextMaDL)
         If (result.FlagResult = False) Then
             MessageBox.Show("Lấy danh tự động mã Đại Lý không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -68,6 +73,31 @@ Public Class frmThemDaiLy
         End If
         txtMaDL.Text = nextMaDL
 
+        'load combobox LoaiDL
+        Dim listLoaiDl = New List(Of LoaiDLDTO)
+        result = LoaiDLBus.selectAll(listLoaiDl)
+        If (result.FlagResult = False) Then
+            MessageBox.Show("Lấy danh loại đại lý không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            System.Console.WriteLine(result.SystemMessage)
+            Return
+        End If
+
+        cbxMaLoaiDL.DataSource = New BindingSource(listLoaiDl, String.Empty)
+        cbxMaLoaiDL.DisplayMember = "TenLoaiDL"
+        cbxMaLoaiDL.ValueMember = "MaLoaiDL"
+
+        'load combobox ma quan
+        Dim listQuan = New List(Of QuanDTO)
+        resultQuan = QuanBus.selectAll(listQuan)
+        If (result.FlagResult = False) Then
+            MessageBox.Show("Lấy danh loại Quận không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            System.Console.WriteLine(result.SystemMessage)
+            Return
+        End If
+
+        cbxMaQuan.DataSource = New BindingSource(listQuan, String.Empty)
+        cbxMaQuan.DisplayMember = "TenQuan"
+        cbxMaQuan.ValueMember = "MaQuan"
 
 
 

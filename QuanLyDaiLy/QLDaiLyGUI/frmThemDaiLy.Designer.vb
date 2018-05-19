@@ -36,8 +36,8 @@ Partial Class frmThemDaiLy
         Me.txtDienThoai = New System.Windows.Forms.TextBox()
         Me.txtEmail = New System.Windows.Forms.TextBox()
         Me.dtpNgTiepNhan = New System.Windows.Forms.DateTimePicker()
-        Me.cbMaQuan = New System.Windows.Forms.ComboBox()
-        Me.cbMaLoaiDL = New System.Windows.Forms.ComboBox()
+        Me.cbxMaQuan = New System.Windows.Forms.ComboBox()
+        Me.cbxMaLoaiDL = New System.Windows.Forms.ComboBox()
         Me.btnThemDaiLy = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
@@ -115,6 +115,7 @@ Partial Class frmThemDaiLy
         '
         'txtMaDL
         '
+        Me.txtMaDL.Enabled = False
         Me.txtMaDL.Location = New System.Drawing.Point(141, 48)
         Me.txtMaDL.Name = "txtMaDL"
         Me.txtMaDL.Size = New System.Drawing.Size(237, 22)
@@ -155,21 +156,21 @@ Partial Class frmThemDaiLy
         Me.dtpNgTiepNhan.Size = New System.Drawing.Size(237, 22)
         Me.dtpNgTiepNhan.TabIndex = 13
         '
-        'cbMaQuan
+        'cbxMaQuan
         '
-        Me.cbMaQuan.FormattingEnabled = True
-        Me.cbMaQuan.Location = New System.Drawing.Point(141, 234)
-        Me.cbMaQuan.Name = "cbMaQuan"
-        Me.cbMaQuan.Size = New System.Drawing.Size(237, 24)
-        Me.cbMaQuan.TabIndex = 14
+        Me.cbxMaQuan.FormattingEnabled = True
+        Me.cbxMaQuan.Location = New System.Drawing.Point(141, 234)
+        Me.cbxMaQuan.Name = "cbxMaQuan"
+        Me.cbxMaQuan.Size = New System.Drawing.Size(237, 24)
+        Me.cbxMaQuan.TabIndex = 14
         '
-        'cbMaLoaiDL
+        'cbxMaLoaiDL
         '
-        Me.cbMaLoaiDL.FormattingEnabled = True
-        Me.cbMaLoaiDL.Location = New System.Drawing.Point(525, 234)
-        Me.cbMaLoaiDL.Name = "cbMaLoaiDL"
-        Me.cbMaLoaiDL.Size = New System.Drawing.Size(237, 24)
-        Me.cbMaLoaiDL.TabIndex = 15
+        Me.cbxMaLoaiDL.FormattingEnabled = True
+        Me.cbxMaLoaiDL.Location = New System.Drawing.Point(525, 234)
+        Me.cbxMaLoaiDL.Name = "cbxMaLoaiDL"
+        Me.cbxMaLoaiDL.Size = New System.Drawing.Size(237, 24)
+        Me.cbxMaLoaiDL.TabIndex = 15
         '
         'btnThemDaiLy
         '
@@ -187,8 +188,8 @@ Partial Class frmThemDaiLy
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(846, 386)
         Me.Controls.Add(Me.btnThemDaiLy)
-        Me.Controls.Add(Me.cbMaLoaiDL)
-        Me.Controls.Add(Me.cbMaQuan)
+        Me.Controls.Add(Me.cbxMaLoaiDL)
+        Me.Controls.Add(Me.cbxMaQuan)
         Me.Controls.Add(Me.dtpNgTiepNhan)
         Me.Controls.Add(Me.txtEmail)
         Me.Controls.Add(Me.txtDienThoai)
@@ -224,7 +225,7 @@ Partial Class frmThemDaiLy
     Friend WithEvents txtDienThoai As TextBox
     Friend WithEvents txtEmail As TextBox
     Friend WithEvents dtpNgTiepNhan As DateTimePicker
-    Friend WithEvents cbMaQuan As ComboBox
-    Friend WithEvents cbMaLoaiDL As ComboBox
+    Friend WithEvents cbxMaQuan As ComboBox
+    Friend WithEvents cbxMaLoaiDL As ComboBox
     Friend WithEvents btnThemDaiLy As Button
 End Class
