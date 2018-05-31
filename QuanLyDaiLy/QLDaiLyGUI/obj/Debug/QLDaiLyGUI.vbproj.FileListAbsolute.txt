@@ -46,3 +46,4 @@ D:\HỌC KÌ 4_KÌ 2 NĂM 2\Nhập Mon công nghệ phần mêm\DoAnQuanLyDaiLy\
 D:\HỌC KÌ 4_KÌ 2 NĂM 2\Nhập Mon công nghệ phần mêm\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\bin\Debug\Utility.xml
 D:\HỌC KÌ 4_KÌ 2 NĂM 2\Nhập Mon công nghệ phần mêm\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\bin\Debug\QLDaiLyDAL.pdb
 D:\HỌC KÌ 4_KÌ 2 NĂM 2\Nhập Mon công nghệ phần mêm\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\bin\Debug\QLDaiLyDAL.xml
+D:\HỌC KÌ 4_KÌ 2 NĂM 2\Nhập Mon công nghệ phần mêm\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmThamSo.resources

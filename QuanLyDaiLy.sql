@@ -16,6 +16,7 @@ create table DAILY
 	MaLoaiDL int
 )
 go
+
 create table QUAN
 (
 	MaQuan int primary key,
@@ -30,8 +31,12 @@ create table LOAIDL
 go
 Create table THAMSO
 (
+	ID int,
 	SoDaiLyToiDa int,
 )
+drop table THAMSO
+insert THAMSO VALUES ('1','4')
+select * from THAMSO 
 go
 
 
@@ -59,4 +64,4 @@ go
 insert LoaiDL VALUES ('1','Loai 1')
 insert LoaiDL VALUES ('2','Loai 2')
 go
-select *from DAILY
+

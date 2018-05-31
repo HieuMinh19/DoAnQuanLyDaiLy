@@ -28,6 +28,7 @@ Partial Class Form1
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HồSơĐạiLýToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ThemDaiLyToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ThamSoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip2.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -65,7 +66,7 @@ Partial Class Form1
         '
         'HồSơĐạiLýToolStripMenuItem
         '
-        Me.HồSơĐạiLýToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ThemDaiLyToolStripMenuItem})
+        Me.HồSơĐạiLýToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ThemDaiLyToolStripMenuItem, Me.ThamSoToolStripMenuItem})
         Me.HồSơĐạiLýToolStripMenuItem.Name = "HồSơĐạiLýToolStripMenuItem"
         Me.HồSơĐạiLýToolStripMenuItem.Size = New System.Drawing.Size(106, 24)
         Me.HồSơĐạiLýToolStripMenuItem.Text = "Hồ Sơ Đại Lý"
@@ -73,8 +74,14 @@ Partial Class Form1
         'ThemDaiLyToolStripMenuItem
         '
         Me.ThemDaiLyToolStripMenuItem.Name = "ThemDaiLyToolStripMenuItem"
-        Me.ThemDaiLyToolStripMenuItem.Size = New System.Drawing.Size(165, 26)
+        Me.ThemDaiLyToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
         Me.ThemDaiLyToolStripMenuItem.Text = "Them Dai Ly"
+        '
+        'ThamSoToolStripMenuItem
+        '
+        Me.ThamSoToolStripMenuItem.Name = "ThamSoToolStripMenuItem"
+        Me.ThamSoToolStripMenuItem.Size = New System.Drawing.Size(181, 26)
+        Me.ThamSoToolStripMenuItem.Text = "Tham So"
         '
         'Form1
         '
@@ -100,4 +107,5 @@ Partial Class Form1
     Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents HồSơĐạiLýToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ThemDaiLyToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ThamSoToolStripMenuItem As ToolStripMenuItem
 End Class

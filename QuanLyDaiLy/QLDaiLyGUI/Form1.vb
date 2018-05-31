@@ -1,13 +1,11 @@
-﻿
-
-Imports System.Configuration
-
-
+﻿Imports System.Configuration
 
 Public Class Form1
+
+    Private ConnectionString As String
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Me.WindowState = FormWindowState.Maximized
-        'ConnectionString = ConfigurationManager.AppSettings("ConnectionString")
+        ConnectionString = ConfigurationManager.AppSettings("ConnectionString")
 
         MaximizeBox = False
     End Sub
@@ -24,5 +22,9 @@ Public Class Form1
 
     End Sub
 
-
+    Private Sub ThamSoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ThamSoToolStripMenuItem.Click
+        Dim frmthamso As frmThamSo = New frmThamSo()
+        frmthamso.MdiParent = Me
+        frmthamso.Show()
+    End Sub
 End Class
