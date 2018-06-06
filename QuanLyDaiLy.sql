@@ -12,6 +12,7 @@ create table DAILY
 	Email varchar(40),
 	DienThoai varchar(11),
 	NgTiepNhan smalldatetime,
+	NoCuaDaiLy int, 
 	MaQuan int,
 	MaLoaiDL int
 )
@@ -22,11 +23,72 @@ create table QUAN
 	MaQuan int primary key,
 	TenQuan varchar(20)
 )
+drop table QUAN
 go
 create table LOAIDL
 (
 	MaLoaiDL int primary key,
-	TenLoaiDL varchar(20)
+	TenLoaiDL varchar(20),
+	NoToiDa int,
+)
+drop table LOAIDL
+go
+create table PHIEUXUAT
+(
+	MaPhieuXuat int identity(1,1) primary key,
+	MaDaiLy int,
+	NgayLapPhieu smalldatetime,
+	TongGiaTri int
+)
+go
+create table CHITIETPHIEUXUAT
+(
+	MaChiTietPhieu int identity(1,1) primary key,
+	MaPhieuXuat int, 
+	MaMatHang int, 
+	MaDonViTinh int, 
+	SoLuongXuat int,
+	DonGia int, 
+	ThanhTien int
+)
+go 
+create table MATHANG
+(
+	MaMatHang int identity(1,1) primary key, 
+	TenMatHang varchar(40),
+	SoLuongTon int
+)
+go 
+create table DONVITINH
+(
+	MaDonViTinh  int identity(1,1) primary key, 
+	TenDonViTinh varchar(40)
+)
+go
+create table PHIEUTHUTIEN
+(
+	MaPhieuThu int identity(1,1) primary key,
+	MaDaiLy int, 
+	NgayThuTien smalldatetime,
+	SoTienThu int
+)
+go
+create table BAOCAODOANHSO
+(
+	MaBaoCaoDoanhSo int identity(1,1) primary key,
+	MaDaiLy int,
+	SoPhieuXuat int, 
+	TongGiaTri int,
+	TiLe float
+)
+go 
+create table BAOCAOCONGNO
+(
+	MaBaoCaoCongNo int identity(1,1) primary key,
+	MaDaiLy int,
+	NoDau int,
+	NoCuoi int,
+	PhatSinh int,
 )
 go
 Create table THAMSO
@@ -34,12 +96,10 @@ Create table THAMSO
 	ID int,
 	SoDaiLyToiDa int,
 )
-drop table THAMSO
-insert THAMSO VALUES ('1','4')
-select * from THAMSO 
+drop table LOAIDL
 go
-
-
+insert THAMSO VALUES ('1','4')
+go
 insert QUAN VALUES ('1','Quan 1')
 insert QUAN VALUES ('2','Quan 2')
 insert QUAN VALUES ('3','Quan 3')
@@ -52,16 +112,22 @@ insert QUAN VALUES ('9','Quan 9')
 insert QUAN VALUES ('10','Quan 10')
 insert QUAN VALUES ('11','Quan 11')
 insert QUAN VALUES ('12','Quan 12')
-insert QUAN VALUES ('13','Quận Thủ Đức')
-insert QUAN VALUES ('14','Quận Gò Vấp')
-insert QUAN VALUES ('15','Quận Bình Thạnh')
-insert QUAN VALUES ('16','Quận Tân Bình')
-insert QUAN VALUES ('17','Quận Tân Phú')
-insert QUAN VALUES ('18','Quận Phú Nhuận')
-insert QUAN VALUES ('19','Quận Bình Tân')
-insert QUAN VALUES ('20','Huyện Củ Chi')
+insert QUAN VALUES ('13','Quan Thu Duc')
+insert QUAN VALUES ('14','Quan Go Vap')
+insert QUAN VALUES ('15','Quan Binh Thuan')
+insert QUAN VALUES ('16','Quan Tan Binh')
+insert QUAN VALUES ('17','Quan Tan Phu')
+insert QUAN VALUES ('18','Quan Phu Nhuan')
+insert QUAN VALUES ('19','Quan Binh Tan')
+insert QUAN VALUES ('20','Huyen Cu Chi')
 go
-insert LoaiDL VALUES ('1','Loai 1')
-insert LoaiDL VALUES ('2','Loai 2')
+insert LOAIDL VALUES ('1','Loai 1', '100000')
+insert LOAIDL VALUES ('2','Loai 2', '200000')
 go
-
+	
+select * from THAMSO
+select * from LOAIDL
+DELETE FROM DAILY
+WHERE TenDL ='ten4';
+Select * from QUAN
+select *from DAILY

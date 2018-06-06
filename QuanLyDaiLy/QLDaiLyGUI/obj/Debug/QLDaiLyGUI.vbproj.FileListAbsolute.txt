@@ -47,3 +47,8 @@ D:\HỌC KÌ 4_KÌ 2 NĂM 2\Nhập Mon công nghệ phần mêm\DoAnQuanLyDaiLy\
 D:\HỌC KÌ 4_KÌ 2 NĂM 2\Nhập Mon công nghệ phần mêm\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\bin\Debug\QLDaiLyDAL.pdb
 D:\HỌC KÌ 4_KÌ 2 NĂM 2\Nhập Mon công nghệ phần mêm\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\bin\Debug\QLDaiLyDAL.xml
 D:\HỌC KÌ 4_KÌ 2 NĂM 2\Nhập Mon công nghệ phần mêm\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmThamSo.resources
+D:\HỌC KÌ 4_KÌ 2 NĂM 2\Nhập Mon công nghệ phần mêm\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmThemQuan.resources
+D:\HỌC KÌ 4_KÌ 2 NĂM 2\Nhập Mon công nghệ phần mêm\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmThemLoaiDL.resources
+D:\HỌC KÌ 4_KÌ 2 NĂM 2\Nhập Mon công nghệ phần mêm\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmQLDaiLy.resources
+D:\HỌC KÌ 4_KÌ 2 NĂM 2\Nhập Mon công nghệ phần mêm\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmQLQuan.resources
+D:\HỌC KÌ 4_KÌ 2 NĂM 2\Nhập Mon công nghệ phần mêm\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmQLLoaiDLvb.resources

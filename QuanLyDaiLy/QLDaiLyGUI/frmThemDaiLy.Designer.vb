@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class frmThemDaiLy
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class frmThemDaiLy
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -39,6 +39,8 @@ Partial Class frmThemDaiLy
         Me.cbxMaQuan = New System.Windows.Forms.ComboBox()
         Me.cbxMaLoaiDL = New System.Windows.Forms.ComboBox()
         Me.btnThemDaiLy = New System.Windows.Forms.Button()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.txtNoCuaDaiLy = New System.Windows.Forms.TextBox()
         Me.SuspendLayout()
         '
         'Label1
@@ -175,18 +177,36 @@ Partial Class frmThemDaiLy
         'btnThemDaiLy
         '
         Me.btnThemDaiLy.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnThemDaiLy.Location = New System.Drawing.Point(391, 306)
+        Me.btnThemDaiLy.Location = New System.Drawing.Point(391, 335)
         Me.btnThemDaiLy.Name = "btnThemDaiLy"
         Me.btnThemDaiLy.Size = New System.Drawing.Size(123, 39)
         Me.btnThemDaiLy.TabIndex = 16
         Me.btnThemDaiLy.Text = "Thêm Đại Lý"
         Me.btnThemDaiLy.UseVisualStyleBackColor = True
         '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(36, 297)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(99, 17)
+        Me.Label9.TabIndex = 17
+        Me.Label9.Text = "Nợ Của Đại Lý"
+        '
+        'txtNoCuaDaiLy
+        '
+        Me.txtNoCuaDaiLy.Location = New System.Drawing.Point(141, 292)
+        Me.txtNoCuaDaiLy.Name = "txtNoCuaDaiLy"
+        Me.txtNoCuaDaiLy.Size = New System.Drawing.Size(237, 22)
+        Me.txtNoCuaDaiLy.TabIndex = 18
+        '
         'frmThemDaiLy
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(846, 386)
+        Me.Controls.Add(Me.txtNoCuaDaiLy)
+        Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.btnThemDaiLy)
         Me.Controls.Add(Me.cbxMaLoaiDL)
         Me.Controls.Add(Me.cbxMaQuan)
@@ -228,4 +248,6 @@ Partial Class frmThemDaiLy
     Friend WithEvents cbxMaQuan As ComboBox
     Friend WithEvents cbxMaLoaiDL As ComboBox
     Friend WithEvents btnThemDaiLy As Button
+    Friend WithEvents Label9 As Label
+    Friend WithEvents txtNoCuaDaiLy As TextBox
 End Class

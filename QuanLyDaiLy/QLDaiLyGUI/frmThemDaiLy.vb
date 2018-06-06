@@ -20,9 +20,11 @@ Public Class frmThemDaiLy
         daily.Email = txtEmail.Text
         daily.DienThoai = txtDienThoai.Text
         daily.NgTiepNhan = dtpNgTiepNhan.Value
+        daily.NoCuaDaiLy = Convert.ToInt32(txtNoCuaDaiLy.Text)
+        'daily.NoCuaDaiLy = txtNoCuaDaiLy.Text
         daily.MaQuan = Convert.ToInt32(cbxMaQuan.SelectedValue)
         daily.MaLoaiDL = Convert.ToInt32(cbxMaLoaiDL.SelectedValue)
-
+        'daily.NoCuaDaiLy = Convert.ToInt32(txtNoCuaDaiLy)
         'hocsinh.LoaiHS = Convert.ToInt32(cbLoaiHS.SELECTedValue)
 
         '2. Business .....
@@ -43,8 +45,8 @@ Public Class frmThemDaiLy
             'End If
             txtTenDL.Text = String.Empty
             txtDiaChi.Text = String.Empty
-
-
+            txtEmail.Text = String.Empty
+            txtDienThoai.Text = String.Empty
 
         Else
             MessageBox.Show("Thêm Đại Lý không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -74,6 +76,7 @@ Public Class frmThemDaiLy
         txtMaDL.Text = nextMaDL
 
         'load combobox LoaiDL
+
         Dim listLoaiDl = New List(Of LoaiDLDTO)
         result = LoaiDLBus.selectAll(listLoaiDl)
         If (result.FlagResult = False) Then
@@ -84,12 +87,14 @@ Public Class frmThemDaiLy
 
         cbxMaLoaiDL.DataSource = New BindingSource(listLoaiDl, String.Empty)
         cbxMaLoaiDL.DisplayMember = "TenLoaiDL"
+        'cbxMaLoaiDL.ValueMember = "NoDaiLy"
         cbxMaLoaiDL.ValueMember = "MaLoaiDL"
+
 
         'load combobox ma quan
         Dim listQuan = New List(Of QuanDTO)
         resultQuan = QuanBus.selectAll(listQuan)
-        If (result.FlagResult = False) Then
+        If (resultQuan.FlagResult = False) Then
             MessageBox.Show("Lấy danh loại Quận không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
             Return
@@ -101,5 +106,20 @@ Public Class frmThemDaiLy
 
 
 
+
     End Sub
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 End Class

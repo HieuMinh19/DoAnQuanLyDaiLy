@@ -1,23 +1,27 @@
 ﻿Public Class DaiLyDTO
     Private iMaDL As Integer
     Private strTenDL As String
-    Private strDienThoai As String
-    Private iMaQuan As Integer
-    Private strEmail As String
-    Private iMaLoaiDL As Integer
     Private strDiaChi As String
+    Private strEmail As String
+    Private strDienThoai As String
     Private dateNgTiepNhan As DateTime
+    Private iNoCuaDaiLy As Integer
+    Private iMaQuan As Integer
+    Private iMaLoaiDL As Integer
+
     Public Sub New()
     End Sub
-    Public Sub New(iMaDL As Integer, strTenDL As String, strDienThoai As String, iMaQuan As Integer, strEmail As String, iMaLoaiDL As Integer, strDiaChi As String, dateNgTiepNhan As DateTime)
+
+    Public Sub New(iMaDL As Integer, strTenDL As String, strDiaChi As String, strEmail As String, strDienThoai As String, dateNgTiepNhan As Date, iNoCuaDaiLy As Integer, iMaQuan As Integer, iMaLoaiDL As Integer)
         Me.iMaDL = iMaDL
         Me.strTenDL = strTenDL
-        Me.strDienThoai = strDienThoai
-        Me.iMaQuan = iMaQuan
-        Me.strEmail = strEmail
-        Me.iMaLoaiDL = iMaLoaiDL
         Me.strDiaChi = strDiaChi
+        Me.strEmail = strEmail
+        Me.strDienThoai = strDienThoai
         Me.dateNgTiepNhan = dateNgTiepNhan
+        Me.iNoCuaDaiLy = iNoCuaDaiLy
+        Me.iMaQuan = iMaQuan
+        Me.iMaLoaiDL = iMaLoaiDL
     End Sub
 
     Public Property MaDL As Integer
@@ -89,6 +93,15 @@
         End Get
         Set(value As Date)
             dateNgTiepNhan = value
+        End Set
+    End Property
+
+    Public Property NoCuaDaiLy As Integer
+        Get
+            Return iNoCuaDaiLy
+        End Get
+        Set(value As Integer)
+            iNoCuaDaiLy = value
         End Set
     End Property
 End Class
