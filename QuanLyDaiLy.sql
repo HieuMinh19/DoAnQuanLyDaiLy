@@ -23,7 +23,7 @@ create table QUAN
 	MaQuan int primary key,
 	TenQuan varchar(20)
 )
-drop table QUAN
+
 go
 create table LOAIDL
 (
@@ -31,7 +31,7 @@ create table LOAIDL
 	TenLoaiDL varchar(20),
 	NoToiDa int,
 )
-drop table LOAIDL
+
 go
 create table PHIEUXUAT
 (
@@ -41,6 +41,7 @@ create table PHIEUXUAT
 	TongGiaTri int
 )
 go
+drop table CHITIETPHIEUXUAT
 create table CHITIETPHIEUXUAT
 (
 	MaChiTietPhieu int identity(1,1) primary key,
@@ -54,16 +55,18 @@ create table CHITIETPHIEUXUAT
 go 
 create table MATHANG
 (
-	MaMatHang int identity(1,1) primary key, 
+	MaMatHang int primary key, 
 	TenMatHang varchar(40),
 	SoLuongTon int
 )
+drop table MATHANG
 go 
 create table DONVITINH
 (
-	MaDonViTinh  int identity(1,1) primary key, 
+	MaDonViTinh  int  primary key,		
 	TenDonViTinh varchar(40)
 )
+
 go
 create table PHIEUTHUTIEN
 (
@@ -96,7 +99,7 @@ Create table THAMSO
 	ID int,
 	SoDaiLyToiDa int,
 )
-drop table LOAIDL
+
 go
 insert THAMSO VALUES ('1','4')
 go
@@ -123,11 +126,16 @@ insert QUAN VALUES ('20','Huyen Cu Chi')
 go
 insert LOAIDL VALUES ('1','Loai 1', '100000')
 insert LOAIDL VALUES ('2','Loai 2', '200000')
+
 go
-	
-select * from THAMSO
+insert DONVITINH VALUES ('1', 'VND')
+insert DONVITINH VALUES ('2','Dola')
+go
+select * from DAILY
 select * from LOAIDL
-DELETE FROM DAILY
-WHERE TenDL ='ten4';
-Select * from QUAN
-select *from DAILY
+select * from QUAN
+select * from MATHANG
+select * from DONVITINH
+select * from THAMSO
+select * from PHIEUXUAT
+select * from CHITIETPHIEUXUAT

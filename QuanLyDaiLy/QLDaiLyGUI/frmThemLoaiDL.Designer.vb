@@ -60,6 +60,7 @@ Partial Class frmThemLoaiDL
         '
         'txtMaLoaiDL
         '
+        Me.txtMaLoaiDL.Enabled = False
         Me.txtMaLoaiDL.Location = New System.Drawing.Point(236, 61)
         Me.txtMaLoaiDL.Name = "txtMaLoaiDL"
         Me.txtMaLoaiDL.Size = New System.Drawing.Size(221, 22)

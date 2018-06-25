@@ -1,6 +1,5 @@
 ﻿Imports System.Configuration
 Imports QLDaiLyBUS
-
 Imports QLDaiLyDTO
 Imports Utility
 
@@ -80,7 +79,7 @@ Public Class frmQLDaiLy
         clMa.DataPropertyName = "MaDL"
         dgvListDL.Columns.Add(clMa)
 
-        Dim clLoaiDL = New DataGridView()
+        ' Dim clLoaiDL = New DataGridView()
         'clLoaiHS.Name = "LoaiHS"
         'clLoaiHS.HeaderText = "Tên Loại"
         'clLoaiHS.DataPropertyName = "LoaiHS"
@@ -130,7 +129,7 @@ Public Class frmQLDaiLy
 
         Dim clMa = New DataGridViewTextBoxColumn()
         clMa.Name = "MaDL"
-        clMa.HeaderText = "Mã Học Sinh"
+        clMa.HeaderText = "Mã Đại Lý"
         clMa.DataPropertyName = "MaDL"
         dgvListDL.Columns.Add(clMa)
 
@@ -195,16 +194,6 @@ Public Class frmQLDaiLy
         dgvListDL.Columns.Add(clMaLoaiDL)
         '
     End Sub
-
-
-
-
-
-
-
-
-
-
 
 
     Private Sub cbmLoaiDaiLy_SELECTedIndexChanged(sender As Object, e As EventArgs) Handles cbmLoaiDaiLy.SelectedIndexChanged
@@ -345,5 +334,9 @@ Public Class frmQLDaiLy
             End Try
 
         End If
+    End Sub
+
+    Private Sub dgvListDL_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvListDL.CellContentClick
+
     End Sub
 End Class

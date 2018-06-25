@@ -80,16 +80,46 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmPhieuXuat.Designer.vb">
+      <DependentUpon>frmPhieuXuat.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmPhieuXuat.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQLChiTietPhieuXuat.Designer.vb">
+      <DependentUpon>frmQLChiTietPhieuXuat.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmQLChiTietPhieuXuat.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmQLDaiLy.Designer.vb">
       <DependentUpon>frmQLDaiLy.vb</DependentUpon>
     </Compile>
     <Compile Include="frmQLDaiLy.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmQLDonViTinh.Designer.vb">
+      <DependentUpon>frmQLDonViTinh.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmQLDonViTinh.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmQLLoaiDLvb.Designer.vb">
       <DependentUpon>frmQLLoaiDLvb.vb</DependentUpon>
     </Compile>
     <Compile Include="frmQLLoaiDLvb.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQLMatHang.Designer.vb">
+      <DependentUpon>frmQLMatHang.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmQLMatHang.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQLPhieuXuat.Designer.vb">
+      <DependentUpon>frmQLPhieuXuat.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmQLPhieuXuat.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmQLQuan.Designer.vb">
@@ -104,16 +134,34 @@
     <Compile Include="frmThamSo.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmThemChiTietPhieuXuat.Designer.vb">
+      <DependentUpon>frmThemChiTietPhieuXuat.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmThemChiTietPhieuXuat.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmThemDaiLy.Designer.vb">
       <DependentUpon>frmThemDaiLy.vb</DependentUpon>
     </Compile>
     <Compile Include="frmThemDaiLy.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmThemDonViTinh.Designer.vb">
+      <DependentUpon>frmThemDonViTinh.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmThemDonViTinh.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmThemLoaiDL.Designer.vb">
       <DependentUpon>frmThemLoaiDL.vb</DependentUpon>
     </Compile>
     <Compile Include="frmThemLoaiDL.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThemMatHang.Designer.vb">
+      <DependentUpon>frmThemMatHang.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmThemMatHang.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmThemQuan.Designer.vb">
@@ -142,11 +190,26 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmPhieuXuat.resx">
+      <DependentUpon>frmPhieuXuat.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQLChiTietPhieuXuat.resx">
+      <DependentUpon>frmQLChiTietPhieuXuat.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmQLDaiLy.resx">
       <DependentUpon>frmQLDaiLy.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmQLDonViTinh.resx">
+      <DependentUpon>frmQLDonViTinh.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmQLLoaiDLvb.resx">
       <DependentUpon>frmQLLoaiDLvb.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQLMatHang.resx">
+      <DependentUpon>frmQLMatHang.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQLPhieuXuat.resx">
+      <DependentUpon>frmQLPhieuXuat.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmQLQuan.resx">
       <DependentUpon>frmQLQuan.vb</DependentUpon>
@@ -154,11 +217,20 @@
     <EmbeddedResource Include="frmThamSo.resx">
       <DependentUpon>frmThamSo.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmThemChiTietPhieuXuat.resx">
+      <DependentUpon>frmThemChiTietPhieuXuat.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmThemDaiLy.resx">
       <DependentUpon>frmThemDaiLy.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmThemDonViTinh.resx">
+      <DependentUpon>frmThemDonViTinh.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmThemLoaiDL.resx">
       <DependentUpon>frmThemLoaiDL.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThemMatHang.resx">
+      <DependentUpon>frmThemMatHang.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThemQuan.resx">
       <DependentUpon>frmThemQuan.vb</DependentUpon>

@@ -167,4 +167,8 @@ Public Class frmQLQuan
         End If
 
     End Sub
+
+    Private Sub dgvDoanhSachQuan_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvDoanhSachQuan.CellContentClick
+
+    End Sub
 End Class

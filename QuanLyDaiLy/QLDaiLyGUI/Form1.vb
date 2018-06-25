@@ -58,4 +58,57 @@ Public Class Form1
         frmQLloaiDL.MdiParent = Me
         frmQLloaiDL.Show()
     End Sub
+
+    Private Sub QuanToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles QuanToolStripMenuItem.Click
+
+    End Sub
+
+    Private Sub ThêmMặtHàngToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ThêmMặtHàngToolStripMenuItem.Click
+        Dim frmthemmathang As frmThemMatHang = New frmThemMatHang()
+        frmthemmathang.MdiParent = Me
+        frmthemmathang.Show()
+
+    End Sub
+
+    Private Sub QuảnLíMặtHàngToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles QuảnLíMặtHàngToolStripMenuItem.Click
+        Dim frmQLmathang As frmQLMatHang = New frmQLMatHang()
+        frmQLmathang.MdiParent = Me
+        frmQLmathang.Show()
+    End Sub
+
+    Private Sub ThêmĐơnVịTínhToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ThêmĐơnVịTínhToolStripMenuItem.Click
+        Dim frmthemdonvitinh As frmThemDonViTinh = New frmThemDonViTinh()
+        frmthemdonvitinh.MdiParent = Me
+        frmthemdonvitinh.Show()
+    End Sub
+
+    Private Sub QuảnLíĐơnVịTínhToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles QuảnLíĐơnVịTínhToolStripMenuItem.Click
+        Dim frmQLdonvitinh As frmQLDonViTinh = New frmQLDonViTinh()
+        frmQLdonvitinh.MdiParent = Me
+        frmQLdonvitinh.Show()
+    End Sub
+
+    Private Sub ThêmPhiếuXuấtToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ThêmPhiếuXuấtToolStripMenuItem.Click
+        Dim frmthemphieuxuat As frmPhieuXuat = New frmPhieuXuat()
+        frmthemphieuxuat.MdiParent = Me
+        frmthemphieuxuat.Show()
+    End Sub
+
+    Private Sub QuảnLýPhiếuXuấtToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles QuảnLýPhiếuXuấtToolStripMenuItem.Click
+        Dim frmQLphieuxuat As frmQLPhieuXuat = New frmQLPhieuXuat()
+        frmQLphieuxuat.MdiParent = Me
+        frmQLphieuxuat.Show()
+    End Sub
+
+    Private Sub ThêmChiTiếtPhiếuXuấtToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ThêmChiTiếtPhiếuXuấtToolStripMenuItem.Click
+        Dim frmthemchitietphieuxuat As frmThemChiTietPhieuXuat = New frmThemChiTietPhieuXuat()
+        frmthemchitietphieuxuat.MdiParent = Me
+        frmthemchitietphieuxuat.Show()
+    End Sub
+
+    Private Sub QuảnLíChiTiếtPhiếuXuấtToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles QuảnLíChiTiếtPhiếuXuấtToolStripMenuItem.Click
+        Dim frmQLchitietphieuxuat As frmQLChiTietPhieuXuat = New frmQLChiTietPhieuXuat()
+        frmQLchitietphieuxuat.MdiParent = Me
+        frmQLchitietphieuxuat.Show()
+    End Sub
 End Class

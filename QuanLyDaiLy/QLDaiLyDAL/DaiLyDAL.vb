@@ -227,22 +227,6 @@ Public Class DaiLyDAL
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     Public Function selectALL(ByRef listDaiLy As List(Of DaiLyDTO)) As Result
 
         Dim query As String = String.Empty
@@ -316,56 +300,6 @@ Public Class DaiLyDAL
         End Using
         Return New Result(True) ' thanh cong
     End Function
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 End Class

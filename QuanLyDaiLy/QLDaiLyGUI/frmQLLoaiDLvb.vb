@@ -194,4 +194,8 @@ Public Class frmQLLoaiDLvb
 
         End If
     End Sub
+
+    Private Sub dgvDoanhSachLoaiDL_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvDoanhSachLoaiDL.CellContentClick
+
+    End Sub
 End Class

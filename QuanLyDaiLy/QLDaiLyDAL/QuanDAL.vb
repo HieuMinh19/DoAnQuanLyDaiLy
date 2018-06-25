@@ -92,7 +92,7 @@ Public Class QuanDAL
         Dim query As String = String.Empty
         query &= "SELECT [MaQuan], [TenQuan]"
         query &= "FROM [QUAN]"
-        'query &= "WHERE ( (SELECT [SoDaiLyToiDa] FROM [THAMSO]) > (SELECT count(*) FROM  [DAILY] where QUAN.MaQuan = DAILY.MaQuan) )"
+        query &= "WHERE ( (SELECT [SoDaiLyToiDa] FROM [THAMSO]) > (SELECT count(*) FROM  [DAILY] where QUAN.MaQuan = DAILY.MaQuan) )"
 
         Using conn As New SqlConnection(connectionString)
             Using comm As New SqlCommand()

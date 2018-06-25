@@ -31,7 +31,7 @@ Partial Class frmThemQuan
         '
         'btnThem
         '
-        Me.btnThem.Location = New System.Drawing.Point(144, 226)
+        Me.btnThem.Location = New System.Drawing.Point(203, 183)
         Me.btnThem.Name = "btnThem"
         Me.btnThem.Size = New System.Drawing.Size(75, 34)
         Me.btnThem.TabIndex = 0

@@ -52,3 +52,11 @@ D:\HỌC KÌ 4_KÌ 2 NĂM 2\Nhập Mon công nghệ phần mêm\DoAnQuanLyDaiLy\
 D:\HỌC KÌ 4_KÌ 2 NĂM 2\Nhập Mon công nghệ phần mêm\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmQLDaiLy.resources
 D:\HỌC KÌ 4_KÌ 2 NĂM 2\Nhập Mon công nghệ phần mêm\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmQLQuan.resources
 D:\HỌC KÌ 4_KÌ 2 NĂM 2\Nhập Mon công nghệ phần mêm\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmQLLoaiDLvb.resources
+D:\HỌC KÌ 4_KÌ 2 NĂM 2\Nhập Mon công nghệ phần mêm\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmThemMatHang.resources
+D:\HỌC KÌ 4_KÌ 2 NĂM 2\Nhập Mon công nghệ phần mêm\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmQLMatHang.resources
+D:\HỌC KÌ 4_KÌ 2 NĂM 2\Nhập Mon công nghệ phần mêm\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmThemDonViTinh.resources
+D:\HỌC KÌ 4_KÌ 2 NĂM 2\Nhập Mon công nghệ phần mêm\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmQLDonViTinh.resources
+D:\HỌC KÌ 4_KÌ 2 NĂM 2\Nhập Mon công nghệ phần mêm\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmPhieuXuat.resources
+D:\HỌC KÌ 4_KÌ 2 NĂM 2\Nhập Mon công nghệ phần mêm\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmQLPhieuXuat.resources
+D:\HỌC KÌ 4_KÌ 2 NĂM 2\Nhập Mon công nghệ phần mêm\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmThemChiTietPhieuXuat.resources
+D:\HỌC KÌ 4_KÌ 2 NĂM 2\Nhập Mon công nghệ phần mêm\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmQLChiTietPhieuXuat.resources

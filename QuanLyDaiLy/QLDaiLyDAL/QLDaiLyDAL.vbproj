@@ -63,9 +63,12 @@
     <Import Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChiTietPhieuXuatDAL.vb" />
     <Compile Include="Class1.vb" />
     <Compile Include="DaiLyDAL.vb" />
+    <Compile Include="DonViTinhDAL.vb" />
     <Compile Include="LoaiDLDAL.vb" />
+    <Compile Include="MatHangDAL.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -81,6 +84,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="PhieuXuatDAL.vb" />
     <Compile Include="QuanDAL.vb" />
     <Compile Include="ThamSoDAL.vb" />
   </ItemGroup>

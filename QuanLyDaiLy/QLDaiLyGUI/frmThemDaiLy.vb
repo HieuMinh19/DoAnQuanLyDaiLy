@@ -104,22 +104,6 @@ Public Class frmThemDaiLy
         cbxMaQuan.DisplayMember = "TenQuan"
         cbxMaQuan.ValueMember = "MaQuan"
 
-
-
-
     End Sub
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 End Class

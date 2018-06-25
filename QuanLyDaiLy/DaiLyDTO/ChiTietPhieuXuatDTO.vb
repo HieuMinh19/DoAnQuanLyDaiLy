@@ -1,9 +1,9 @@
 ﻿Public Class ChiTietPhieuXuatDTO
-    Private iMaChiTietPhieuXuat As Integer
+    Private iMaChiTietPhieu As Integer
     Private iMaPhieuXuat As Integer
     Private iMaMatHang As Integer
     Private iMaDonViTinh As Integer
-    Private iSoLuongTinh As Integer
+    Private iSoLuongXuat As Integer
     Private iDonGia As Integer
     Private iThanhTien As Integer
 
@@ -12,22 +12,22 @@
 
     End Sub
 
-    Public Sub New(iMaChiTietPhieuXuat As Integer, iMaPhieuXuat As Integer, iMaMatHang As Integer, iMaDonViTinh As Integer, iSoLuongTinh As Integer, iDonGia As Integer, iThanhTien As Integer)
-        Me.iMaChiTietPhieuXuat = iMaChiTietPhieuXuat
+    Public Sub New(iMaChiTietPhieu As Integer, iMaPhieuXuat As Integer, iMaMatHang As Integer, iMaDonViTinh As Integer, iSoLuongXuat As Integer, iDonGia As Integer, iThanhTien As Integer)
+        Me.iMaChiTietPhieu = iMaChiTietPhieu
         Me.iMaPhieuXuat = iMaPhieuXuat
         Me.iMaMatHang = iMaMatHang
         Me.iMaDonViTinh = iMaDonViTinh
-        Me.iSoLuongTinh = iSoLuongTinh
+        Me.iSoLuongXuat = iSoLuongXuat
         Me.iDonGia = iDonGia
         Me.iThanhTien = iThanhTien
     End Sub
 
-    Public Property MaChiTietPhieuXuat As Integer
+    Public Property MaChiTietPhieu As Integer
         Get
-            Return iMaChiTietPhieuXuat
+            Return iMaChiTietPhieu
         End Get
         Set(value As Integer)
-            iMaChiTietPhieuXuat = value
+            iMaChiTietPhieu = value
         End Set
     End Property
 
@@ -58,12 +58,12 @@
         End Set
     End Property
 
-    Public Property SoLuongTinh As Integer
+    Public Property SoLuongXuat As Integer
         Get
-            Return iSoLuongTinh
+            Return iSoLuongXuat
         End Get
         Set(value As Integer)
-            iSoLuongTinh = value
+            iSoLuongXuat = value
         End Set
     End Property
 
