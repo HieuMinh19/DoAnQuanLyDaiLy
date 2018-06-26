@@ -5,6 +5,7 @@
     Private iTongGiaTri As Integer
     Private douTiLe As Double
 
+
     Public Sub New()
 
     End Sub

@@ -17,7 +17,7 @@ create table DAILY
 	MaLoaiDL int
 )
 go
-
+drop table DAILY
 create table QUAN
 (
 	MaQuan int primary key,
@@ -41,7 +41,7 @@ create table PHIEUXUAT
 	TongGiaTri int
 )
 go
-drop table CHITIETPHIEUXUAT
+
 create table CHITIETPHIEUXUAT
 (
 	MaChiTietPhieu int identity(1,1) primary key,
@@ -59,7 +59,7 @@ create table MATHANG
 	TenMatHang varchar(40),
 	SoLuongTon int
 )
-drop table MATHANG
+
 go 
 create table DONVITINH
 (
@@ -84,6 +84,7 @@ create table BAOCAODOANHSO
 	TongGiaTri int,
 	TiLe float
 )
+
 go 
 create table BAOCAOCONGNO
 (
@@ -139,3 +140,5 @@ select * from DONVITINH
 select * from THAMSO
 select * from PHIEUXUAT
 select * from CHITIETPHIEUXUAT
+select * from PHIEUTHUTIEN
+select * from BAOCAODOANHSO 

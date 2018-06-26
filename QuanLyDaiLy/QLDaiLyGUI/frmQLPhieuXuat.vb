@@ -124,54 +124,6 @@ Public Class frmQLPhieuXuat
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     Private Sub btnCapNhat_Click(sender As Object, e As EventArgs) Handles btnCapNhat.Click
         ' Get the current cell location.
         Dim currentRowIndex As Integer = dgvlistPhieuXuat.CurrentCellAddress.Y 'current row selected

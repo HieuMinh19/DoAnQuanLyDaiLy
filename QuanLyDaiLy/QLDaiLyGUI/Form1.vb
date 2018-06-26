@@ -111,4 +111,40 @@ Public Class Form1
         frmQLchitietphieuxuat.MdiParent = Me
         frmQLchitietphieuxuat.Show()
     End Sub
+
+    Private Sub ThêmPhiếuThuTiềnToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ThêmPhiếuThuTiềnToolStripMenuItem.Click
+        Dim frmthemPhieuThuTien As frmThemPhieuThuTien = New frmThemPhieuThuTien()
+        frmthemPhieuThuTien.MdiParent = Me
+        frmthemPhieuThuTien.Show()
+    End Sub
+
+    Private Sub QuảnLýPhiếuThuTiềnToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles QuảnLýPhiếuThuTiềnToolStripMenuItem.Click
+        Dim frmQLPhieuThuTien As frmQLPhieuThuTien = New frmQLPhieuThuTien()
+        frmQLPhieuThuTien.MdiParent = Me
+        frmQLPhieuThuTien.Show()
+    End Sub
+
+    Private Sub BáoCáoDoanhSốToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BáoCáoDoanhSốToolStripMenuItem.Click
+        Dim frmthembcDoanhSo As frmThemBCDoanhSo = New frmThemBCDoanhSo()
+        frmthembcDoanhSo.MdiParent = Me
+        frmthembcDoanhSo.Show()
+    End Sub
+
+    Private Sub QuảnLýBáoCáoDoanhSốToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles QuảnLýBáoCáoDoanhSốToolStripMenuItem.Click
+        Dim frmQLbcDoanhSo As frmQLBCDoanhSo = New frmQLBCDoanhSo()
+        frmQLbcDoanhSo.MdiParent = Me
+        frmQLbcDoanhSo.Show()
+    End Sub
+
+    Private Sub BáoCáoCôngNợToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BáoCáoCôngNợToolStripMenuItem.Click
+        Dim frmThembcCongNo As frmThemBCCongNo = New frmThemBCCongNo()
+        frmThembcCongNo.MdiParent = Me
+        frmThembcCongNo.Show()
+    End Sub
+
+    Private Sub QuảnLýBáoCáoCôngNợToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles QuảnLýBáoCáoCôngNợToolStripMenuItem.Click
+        Dim frmQLbcCongNo As frmQLBCCongNo = New frmQLBCCongNo()
+        frmQLbcCongNo.MdiParent = Me
+        frmQLbcCongNo.Show()
+    End Sub
 End Class

@@ -71,7 +71,7 @@ Partial Class frmPhieuXuat
         '
         'btnThem
         '
-        Me.btnThem.Location = New System.Drawing.Point(321, 128)
+        Me.btnThem.Location = New System.Drawing.Point(321, 114)
         Me.btnThem.Name = "btnThem"
         Me.btnThem.Size = New System.Drawing.Size(126, 50)
         Me.btnThem.TabIndex = 4
@@ -112,7 +112,7 @@ Partial Class frmPhieuXuat
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(808, 206)
+        Me.ClientSize = New System.Drawing.Size(808, 179)
         Me.Controls.Add(Me.dtpNgayLapPhieu)
         Me.Controls.Add(Me.txtTongGiaTri)
         Me.Controls.Add(Me.cbMaDL)
