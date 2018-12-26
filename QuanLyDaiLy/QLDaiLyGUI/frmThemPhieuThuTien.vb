@@ -6,13 +6,39 @@ Imports Utility
 Public Class frmThemPhieuThuTien
     Private ptBus As PhieuThuTienBUS
     Private DaiLyBus As DaiLyBUS
+    Dim lNoCuaDaiLy As Integer
+
     Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbMaDL.SelectedIndexChanged
 
     End Sub
+    Private Sub loadNoCuaDaiLy(maDL As Integer)
 
+
+        Dim result As Result
+
+        result = ptBus.selectNoCuaDaiLy_ByMaDaiLy(maDL, lNoCuaDaiLy)
+        If (result.FlagResult = False) Then
+            MessageBox.Show("Lấy no dai ly thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            System.Console.WriteLine(result.SystemMessage)
+            Return
+        End If
+        txtNoCuaDaiLy.Text = lNoCuaDaiLy
+
+    End Sub
+
+    Private Sub cbMaDLT_SELECTedIndexChanged(sender As Object, e As EventArgs) Handles cbMaDL.SelectedIndexChanged
+        Try
+            Dim madaily = Convert.ToInt32(cbMaDL.SelectedValue)
+            loadNoCuaDaiLy(madaily)
+            btnThem.Enabled = True
+        Catch ex As Exception
+        End Try
+    End Sub
     Private Sub frmThemPhieuThuTien_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        cbMaDL.ValueMember = " "
         ptBus = New PhieuThuTienBUS()
         DaiLyBus = New DaiLyBUS()
+        btnThem.Enabled = False
         'QuanBUS = New QuanBUS()
         Dim result As Result
         Dim resultDaiLy As Result
@@ -21,7 +47,7 @@ Public Class frmThemPhieuThuTien
 
         result = ptBus.buildMaPhieuThuTien(nextMaPhieuThuTien)
         If (result.FlagResult = False) Then
-            MessageBox.Show("Lấy danh tự động mã phieu xuat không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Lấy danh tự động mã phiếu xuất không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
             Me.Close()
             Return
@@ -33,7 +59,7 @@ Public Class frmThemPhieuThuTien
         Dim listDaiLy = New List(Of DaiLyDTO)
         result = DaiLyBus.selectAll(listDaiLy)
         If (result.FlagResult = False) Then
-            MessageBox.Show("Lấy danh dai ly không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Lấy danh sách đại lý không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
             Return
         End If
@@ -42,20 +68,6 @@ Public Class frmThemPhieuThuTien
         cbMaDL.DisplayMember = "TenDl"
         'cbxMaLoaiDL.ValueMember = "NoDaiLy"
         cbMaDL.ValueMember = "MaDL"
-
-
-        'load combobox ma quan
-        'Dim listQuan = New List(Of QuanDTO)
-        'resultDaiLy = QuanBUS.selectAll(listQuan)
-        'If (resultQuan.FlagResult = False) Then
-        '    MessageBox.Show("Lấy danh loại Quận không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-        '    System.Console.WriteLine(result.SystemMessage)
-        '    Return
-        'End If
-
-        'cbxMaQuan.DataSource = New BindingSource(listQuan, String.Empty)
-        'cbxMaQuan.DisplayMember = "TenQuan"
-        'cbxMaQuan.ValueMember = "MaQuan"
 
     End Sub
 
@@ -74,31 +86,35 @@ Public Class frmThemPhieuThuTien
 
 
         '3. Insert to DB
-        Dim result As Result
-        result = ptBus.insert(phieuThu)
-        If (result.FlagResult = True) Then
-            MessageBox.Show("Thêm phieu xuat thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            'set MSSH auto
-            Dim nextMaPhieuThuTien = "1"
-            result = ptBus.buildMaPhieuThuTien(nextMaPhieuThuTien)
-            'If (result.FlagResult = True) Then
-            '    MessageBox.Show("Lấy danh tự động mã Mã Đại Lý không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            '    Me.Close()
-            '    Return
-            'End If
+        If (phieuThu.SoTienThu < lNoCuaDaiLy) Then
 
+            Dim result As Result
+            result = ptBus.insert(phieuThu)
+            If (result.FlagResult = True) Then
+                MessageBox.Show("Thêm phieu xuat thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                'set MaPhieuThuTien auto
+                Dim nextMaPhieuThuTien = "1"
+                result = ptBus.buildMaPhieuThuTien(nextMaPhieuThuTien)
 
-
-
-            'txtTenDL.Text = String.Empty
-            'txtDiaChi.Text = String.Empty
-            'txtEmail.Text = String.Empty
-            'txtDienThoai.Text = String.Empty
-
+            Else
+                MessageBox.Show("Thêm phiếu xuất không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                System.Console.WriteLine(result.SystemMessage)
+            End If
         Else
-            MessageBox.Show("Thêm phieu xuat không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            System.Console.WriteLine(result.SystemMessage)
+            MessageBox.Show("kiểm tra lại tiền thu", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
+
     End Sub
 
+    Private Sub cbMaDL_MouseClick(sender As Object, e As MouseEventArgs) Handles cbMaDL.MouseClick
+
+    End Sub
+
+    Private Sub txtMaPhieuThu_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtMaPhieuThu.KeyPress, txtSoTienThu.KeyPress, txtNoCuaDaiLy.KeyPress
+        If Asc(e.KeyChar) <> 8 Then
+            If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
+                e.Handled = True
+            End If
+        End If
+    End Sub
 End Class

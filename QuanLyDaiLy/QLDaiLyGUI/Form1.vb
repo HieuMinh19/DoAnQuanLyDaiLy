@@ -22,12 +22,6 @@ Public Class Form1
 
     End Sub
 
-    Private Sub ThamSoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ThamSoToolStripMenuItem.Click
-        Dim frmthamso As frmThamSo = New frmThamSo()
-        frmthamso.MdiParent = Me
-        frmthamso.Show()
-    End Sub
-
     Private Sub ThêmQuậnToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ThêmQuậnToolStripMenuItem.Click
         Dim frmthemquan As frmThemQuan = New frmThemQuan()
         frmthemquan.MdiParent = Me
@@ -124,11 +118,11 @@ Public Class Form1
         frmQLPhieuThuTien.Show()
     End Sub
 
-    Private Sub BáoCáoDoanhSốToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BáoCáoDoanhSốToolStripMenuItem.Click
-        Dim frmthembcDoanhSo As frmThemBCDoanhSo = New frmThemBCDoanhSo()
-        frmthembcDoanhSo.MdiParent = Me
-        frmthembcDoanhSo.Show()
-    End Sub
+    'Private Sub BáoCáoDoanhSốToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles BáoCáoDoanhSốToolStripMenuItem.Click
+    '    Dim frmthembcDoanhSo As frmThemBCDoanhSo = New frmThemBCDoanhSo()
+    '    frmthembcDoanhSo.MdiParent = Me
+    '    frmthembcDoanhSo.Show()
+    'End Sub
 
     Private Sub QuảnLýBáoCáoDoanhSốToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles QuảnLýBáoCáoDoanhSốToolStripMenuItem.Click
         Dim frmQLbcDoanhSo As frmQLBCDoanhSo = New frmQLBCDoanhSo()
@@ -146,5 +140,29 @@ Public Class Form1
         Dim frmQLbcCongNo As frmQLBCCongNo = New frmQLBCCongNo()
         frmQLbcCongNo.MdiParent = Me
         frmQLbcCongNo.Show()
+    End Sub
+
+    Private Sub MenuStrip2_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles MenuStrip2.ItemClicked
+
+    End Sub
+
+    Private Sub ThayĐổiQuyĐịnhToolStripMenuItem_Click(sender As Object, e As EventArgs)
+        Dim frmthamso As frmThamSo = New frmThamSo()
+        frmthamso.MdiParent = Me
+        frmthamso.Show()
+    End Sub
+
+    Private Sub TraCứuĐạiLýToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TraCứuĐạiLýToolStripMenuItem.Click
+        Dim frmtracuu As TraCuu = New TraCuu()
+        frmtracuu.MdiParent = Me
+        frmtracuu.Show()
+    End Sub
+
+    Private Sub MenuStrip1_ItemClicked(sender As Object, e As ToolStripItemClickedEventArgs) Handles MenuStrip1.ItemClicked
+
+    End Sub
+
+    Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
+        Me.Close()
     End Sub
 End Class

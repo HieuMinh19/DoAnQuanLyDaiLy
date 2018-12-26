@@ -302,6 +302,339 @@ Public Class DaiLyDAL
     End Function
 
 
+
+    Public Function selectmaquan_ByMaDaiLy(madl As Integer, ByRef maquan As Integer) As Result
+
+        Dim query As String = String.Empty
+        query &= "SELECT [NoCuaDaiLy]"
+        query &= "FROM [DAILY] "
+        query &= "WHERE [MaQuan] = @MaQuan "
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@MaQuan", madl)
+                End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = comm.ExecuteReader()
+                    If reader.HasRows = True Then
+                        'NoCuaDaiLy.Clear()
+                        While reader.Read()
+                            maquan = reader("MaQuan")
+                            'listPhieuThuTien.Add(New PhieuThuTienDTO(reader("MaPhieuThu"), reader("MaDaiLy"), reader("NgayThuTien"), reader("SoTienThu")))
+                        End While
+                    End If
+
+                Catch ex As Exception
+                    conn.Close()
+                    System.Console.WriteLine(ex.StackTrace)
+                    Return New Result(False, "Lấy tất cả dai li theo ma dai ly không thành công", ex.StackTrace)
+                End Try
+            End Using
+        End Using
+        Return New Result(True) ' thanh cong
+    End Function
+
+
+
+
+
+
+
+
+
+    '''tra cuuu''''''''''''
+
+
+
+    'search theo madl va maquan
+    Public Function search_maloaidl_maquan(maloaidl As Integer, maquan As Integer, ByRef listDaiLy As List(Of DaiLyDTO)) As Result
+
+        Dim query As String = String.Empty
+
+        query &= "SELECT * "
+        query &= "FROM [DAILY]"
+        query &= "WHERE  [MaLoaiDL] = @MaLoaiDL  and [MaQuan] = @MaQuan"
+        '[MaQuan] =@maquan) or ([MaLoaiDL] = @maloaidai) or
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@MaLoaiDL", maloaidl)
+                    .Parameters.AddWithValue("@MaQuan", maquan)
+                    '.Parameters.AddWithValue("@maloaidai", maloaidai)
+                End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = comm.ExecuteReader()
+                    If reader.HasRows = True Then
+
+                        listDaiLy.Clear()
+                        While reader.Read()
+                            listDaiLy.Add(New DaiLyDTO(reader("MaDL"), reader("TenDL"), reader("DiaChi"), reader("Email"), reader("DienThoai"), reader("NgTiepNhan"), reader("NoCuaDaiLy"), reader("MaQuan"), reader("MaLoaiDL")))
+                        End While
+                    End If
+
+                Catch ex As Exception
+                    conn.Close()
+                    System.Console.WriteLine(ex.StackTrace)
+                    Return New Result(False, "Lấy tất cả Đại lý không thành công", ex.StackTrace)
+                End Try
+            End Using
+        End Using
+        Return New Result(True) ' thanh cong
+    End Function
+    'search theo ten
+    Public Function selectALL_Search(ten As String, ByRef listDaiLy As List(Of DaiLyDTO)) As Result
+
+        Dim query As String = String.Empty
+
+        query &= "SELECT * "
+        query &= "FROM [DAILY]"
+        ' query &= "WHERE  ( ([MaQuan] =@maquan) or ([MaQuan] = @maquan and [MaLoaiDL] = @maloaidai) ) "
+        query &= "WHERE  [TenDL] Like '%" & ten & "%'" '  "
+        '[MaQuan] =@maquan) or ([MaLoaiDL] = @maloaidai) or
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("ten", ten)
+                    '.Parameters.AddWithValue("@maloaidai", maloaidai)
+                End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = comm.ExecuteReader()
+                    If reader.HasRows = True Then
+
+                        listDaiLy.Clear()
+                        While reader.Read()
+                            listDaiLy.Add(New DaiLyDTO(reader("MaDL"), reader("TenDL"), reader("DiaChi"), reader("Email"), reader("DienThoai"), reader("NgTiepNhan"), reader("NoCuaDaiLy"), reader("MaQuan"), reader("MaLoaiDL")))
+                        End While
+                    End If
+
+                Catch ex As Exception
+                    conn.Close()
+                    System.Console.WriteLine(ex.StackTrace)
+                    Return New Result(False, "Lấy tất cả Đại lý không thành công", ex.StackTrace)
+                End Try
+            End Using
+        End Using
+        Return New Result(True) ' thanh cong
+    End Function
+    'search ten va quna
+    Public Function selectALL_ten_quan(ten As String, quan As Integer, ByRef listDaiLy As List(Of DaiLyDTO)) As Result
+
+        Dim query As String = String.Empty
+
+        query &= "SELECT * "
+        query &= "FROM [DAILY]"
+        ' query &= "WHERE  ( ([MaQuan] =@maquan) or ([MaQuan] = @maquan and [MaLoaiDL] = @maloaidai) ) "
+        query &= "WHERE  [TenDL] Like '%" & ten & "%' and [MaQuan] = @MaQuan" '  "
+        '[MaQuan] =@maquan) or ([MaLoaiDL] = @maloaidai) or
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("ten", ten)
+                    .Parameters.AddWithValue("@MaQuan", quan)
+                End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = comm.ExecuteReader()
+                    If reader.HasRows = True Then
+
+                        listDaiLy.Clear()
+                        While reader.Read()
+                            listDaiLy.Add(New DaiLyDTO(reader("MaDL"), reader("TenDL"), reader("DiaChi"), reader("Email"), reader("DienThoai"), reader("NgTiepNhan"), reader("NoCuaDaiLy"), reader("MaQuan"), reader("MaLoaiDL")))
+                        End While
+                    End If
+
+                Catch ex As Exception
+                    conn.Close()
+                    System.Console.WriteLine(ex.StackTrace)
+                    Return New Result(False, "Lấy tất cả Đại lý không thành công", ex.StackTrace)
+                End Try
+            End Using
+        End Using
+        Return New Result(True) ' thanh cong
+    End Function
+    'search theo ma quan
+    Public Function search_maquan(maquan As Integer, ByRef listDaiLy As List(Of DaiLyDTO)) As Result
+
+        Dim query As String = String.Empty
+
+        query &= "SELECT * "
+        query &= "FROM [DAILY]"
+        query &= "WHERE  [MaQuan] = @MaQuan"
+        '[MaQuan] =@maquan) or ([MaLoaiDL] = @maloaidai) or
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@MaQuan", maquan)
+                    '.Parameters.AddWithValue("@maloaidai", maloaidai)
+                End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = comm.ExecuteReader()
+                    If reader.HasRows = True Then
+
+                        listDaiLy.Clear()
+                        While reader.Read()
+                            listDaiLy.Add(New DaiLyDTO(reader("MaDL"), reader("TenDL"), reader("DiaChi"), reader("Email"), reader("DienThoai"), reader("NgTiepNhan"), reader("NoCuaDaiLy"), reader("MaQuan"), reader("MaLoaiDL")))
+                        End While
+                    End If
+
+                Catch ex As Exception
+                    conn.Close()
+                    System.Console.WriteLine(ex.StackTrace)
+                    Return New Result(False, "Lấy tất cả Đại lý không thành công", ex.StackTrace)
+                End Try
+            End Using
+        End Using
+        Return New Result(True) ' thanh cong
+    End Function
+    'search ten va loaidl
+    Public Function selectALL_ten_loaidl(ten As String, loaidl As Integer, ByRef listDaiLy As List(Of DaiLyDTO)) As Result
+
+        Dim query As String = String.Empty
+
+        query &= "SELECT * "
+        query &= "FROM [DAILY]"
+        ' query &= "WHERE  ( ([MaQuan] =@maquan) or ([MaQuan] = @maquan and [MaLoaiDL] = @maloaidai) ) "
+        query &= "WHERE  [TenDL] Like '%" & ten & "%' and [MaLoaiDL] = @MaLoaiDL" '  "
+        '[MaQuan] =@maquan) or ([MaLoaiDL] = @maloaidai) or
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("ten", ten)
+                    .Parameters.AddWithValue("@MaLoaiDL", loaidl)
+                End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = comm.ExecuteReader()
+                    If reader.HasRows = True Then
+
+                        listDaiLy.Clear()
+                        While reader.Read()
+                            listDaiLy.Add(New DaiLyDTO(reader("MaDL"), reader("TenDL"), reader("DiaChi"), reader("Email"), reader("DienThoai"), reader("NgTiepNhan"), reader("NoCuaDaiLy"), reader("MaQuan"), reader("MaLoaiDL")))
+                        End While
+                    End If
+
+                Catch ex As Exception
+                    conn.Close()
+                    System.Console.WriteLine(ex.StackTrace)
+                    Return New Result(False, "Lấy tất cả Đại lý không thành công", ex.StackTrace)
+                End Try
+            End Using
+        End Using
+        Return New Result(True) ' thanh cong
+    End Function
+    'search theo maloaidl
+    Public Function search_loaimadl(loaimadl As Integer, ByRef listDaiLy As List(Of DaiLyDTO)) As Result
+
+        Dim query As String = String.Empty
+
+        query &= "SELECT * "
+        query &= "FROM [DAILY]"
+        query &= "WHERE  [MaLoaiDL] = @MaLoaiDL"
+        '[MaQuan] =@maquan) or ([MaLoaiDL] = @maloaidai) or
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@MaLoaiDL", loaimadl)
+                    '.Parameters.AddWithValue("@maloaidai", maloaidai)
+                End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = comm.ExecuteReader()
+                    If reader.HasRows = True Then
+
+                        listDaiLy.Clear()
+                        While reader.Read()
+                            listDaiLy.Add(New DaiLyDTO(reader("MaDL"), reader("TenDL"), reader("DiaChi"), reader("Email"), reader("DienThoai"), reader("NgTiepNhan"), reader("NoCuaDaiLy"), reader("MaQuan"), reader("MaLoaiDL")))
+                        End While
+                    End If
+
+                Catch ex As Exception
+                    conn.Close()
+                    System.Console.WriteLine(ex.StackTrace)
+                    Return New Result(False, "Lấy tất cả Đại lý không thành công", ex.StackTrace)
+                End Try
+            End Using
+        End Using
+        Return New Result(True) ' thanh cong
+    End Function
+    'search theo ten quan va loai
+    Public Function selectALL_ten_loaidl_quan(ten As String, quan As Integer, loaidl As Integer, ByRef listDaiLy As List(Of DaiLyDTO)) As Result
+
+        Dim query As String = String.Empty
+
+        query &= "SELECT * "
+        query &= "FROM [DAILY]"
+        ' query &= "WHERE  ( ([MaQuan] =@maquan) or ([MaQuan] = @maquan and [MaLoaiDL] = @maloaidai) ) "
+        query &= "WHERE  [TenDL] Like '%" & ten & "%' and [MaLoaiDL] = @MaLoaiDL and [Quan] = @MaQuan" '  "
+        '[MaQuan] =@maquan) or ([MaLoaiDL] = @maloaidai) or
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("ten", ten)
+                    .Parameters.AddWithValue("@MaLoaiDL", loaidl)
+                    .Parameters.AddWithValue("@MaQuan", quan)
+                End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = comm.ExecuteReader()
+                    If reader.HasRows = True Then
+
+                        listDaiLy.Clear()
+                        While reader.Read()
+                            listDaiLy.Add(New DaiLyDTO(reader("MaDL"), reader("TenDL"), reader("DiaChi"), reader("Email"), reader("DienThoai"), reader("NgTiepNhan"), reader("NoCuaDaiLy"), reader("MaQuan"), reader("MaLoaiDL")))
+                        End While
+                    End If
+
+                Catch ex As Exception
+                    conn.Close()
+                    System.Console.WriteLine(ex.StackTrace)
+                    Return New Result(False, "Lấy tất cả Đại lý không thành công", ex.StackTrace)
+                End Try
+            End Using
+        End Using
+        Return New Result(True) ' thanh cong
+    End Function
+
+
+
+
 End Class
 
 

@@ -26,7 +26,8 @@ Public Class BaoCaoCongNoBUS
     Public Function selectAll(ByRef listMaDaiLy As List(Of BaoCaoCongNo)) As Result
         '1. verify data here!!
 
-        '2. insert to DB
+        '2. insert t
+
         Return bccongnoDal.selectALL(listMaDaiLy)
     End Function
 

@@ -15,7 +15,7 @@ Public Class frmThemBCCongNo
         Dim nextMaBCCongNo As Integer
         result = BCCongNoBus.buildMaBaoCaoCongNo(nextMaBCCongNo)
         If (result.FlagResult = False) Then
-            MessageBox.Show("Lấy danh tự động mã phieu xuat không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Lấy danh tự động mã phiếu xuất không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
             Me.Close()
             Return
@@ -27,7 +27,7 @@ Public Class frmThemBCCongNo
         Dim listDaiLy = New List(Of DaiLyDTO)
         result = DaiLyBus.selectAll(listDaiLy)
         If (result.FlagResult = False) Then
-            MessageBox.Show("Lấy danh dai ly không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Lấy danh sách đại lý không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
             Return
         End If
@@ -58,7 +58,7 @@ Public Class frmThemBCCongNo
         Dim result As Result
         result = BCCongNoBus.insert(BCCongNo)
         If (result.FlagResult = True) Then
-            MessageBox.Show("Thêm phieu xuat thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Thêm phiếu xuất thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
             'set MSSH auto
             Dim nextMaBCCongNo = "1"
             result = BCCongNoBus.buildMaBaoCaoCongNo(nextMaBCCongNo)
@@ -77,8 +77,16 @@ Public Class frmThemBCCongNo
             'txtDienThoai.Text = String.Empty
 
         Else
-            MessageBox.Show("Thêm phieu xuat không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Thêm phiếu xuất không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
+        End If
+    End Sub
+
+    Private Sub txtMaBaoCaoCongNo_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtMaBaoCaoCongNo.KeyPress
+        If Asc(e.KeyChar) <> 8 Then
+            If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
+                e.Handled = True
+            End If
         End If
     End Sub
 End Class

@@ -35,5 +35,18 @@ Public Class LoaiDLBUS
         '2. insert to DB
         Return loaidlDAL.update(loaidl)
     End Function
+    Public Function countsoluongloaidaily(ByRef soluong As Integer) As Result
+        '1. verify data here!!
+
+        '2. insert to DB
+        Return loaidlDAL.countsoluongloaidaily(soluong)
+    End Function
+    Public Function selectSoloaidaily_thamso(ByRef soloaidaily As Integer) As Result
+        '1. verify data here!!
+
+        '2. insert to DB
+        Return loaidlDAL.selectSoloaidaily_thamso(soloaidaily)
+    End Function
+
 End Class
 

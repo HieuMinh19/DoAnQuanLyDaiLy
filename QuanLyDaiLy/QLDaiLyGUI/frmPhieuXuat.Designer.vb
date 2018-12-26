@@ -31,12 +31,13 @@ Partial Class frmPhieuXuat
         Me.cbMaDL = New System.Windows.Forms.ComboBox()
         Me.txtTongGiaTri = New System.Windows.Forms.TextBox()
         Me.dtpNgayLapPhieu = New System.Windows.Forms.DateTimePicker()
+        Me.Label5 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(12, 29)
+        Me.Label1.Location = New System.Drawing.Point(12, 57)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(100, 17)
         Me.Label1.TabIndex = 0
@@ -45,7 +46,7 @@ Partial Class frmPhieuXuat
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(12, 83)
+        Me.Label2.Location = New System.Drawing.Point(12, 125)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(71, 17)
         Me.Label2.TabIndex = 1
@@ -54,7 +55,7 @@ Partial Class frmPhieuXuat
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(398, 31)
+        Me.Label3.Location = New System.Drawing.Point(398, 62)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(109, 17)
         Me.Label3.TabIndex = 2
@@ -63,7 +64,7 @@ Partial Class frmPhieuXuat
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(398, 83)
+        Me.Label4.Location = New System.Drawing.Point(398, 125)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(88, 17)
         Me.Label4.TabIndex = 3
@@ -71,7 +72,7 @@ Partial Class frmPhieuXuat
         '
         'btnThem
         '
-        Me.btnThem.Location = New System.Drawing.Point(321, 114)
+        Me.btnThem.Location = New System.Drawing.Point(320, 165)
         Me.btnThem.Name = "btnThem"
         Me.btnThem.Size = New System.Drawing.Size(126, 50)
         Me.btnThem.TabIndex = 4
@@ -81,7 +82,7 @@ Partial Class frmPhieuXuat
         'txtMaPhieuXuat
         '
         Me.txtMaPhieuXuat.Enabled = False
-        Me.txtMaPhieuXuat.Location = New System.Drawing.Point(136, 26)
+        Me.txtMaPhieuXuat.Location = New System.Drawing.Point(136, 57)
         Me.txtMaPhieuXuat.Name = "txtMaPhieuXuat"
         Me.txtMaPhieuXuat.Size = New System.Drawing.Size(244, 22)
         Me.txtMaPhieuXuat.TabIndex = 5
@@ -89,30 +90,41 @@ Partial Class frmPhieuXuat
         'cbMaDL
         '
         Me.cbMaDL.FormattingEnabled = True
-        Me.cbMaDL.Location = New System.Drawing.Point(136, 74)
+        Me.cbMaDL.Location = New System.Drawing.Point(136, 118)
         Me.cbMaDL.Name = "cbMaDL"
         Me.cbMaDL.Size = New System.Drawing.Size(244, 24)
         Me.cbMaDL.TabIndex = 6
         '
         'txtTongGiaTri
         '
-        Me.txtTongGiaTri.Location = New System.Drawing.Point(529, 74)
+        Me.txtTongGiaTri.Location = New System.Drawing.Point(529, 122)
         Me.txtTongGiaTri.Name = "txtTongGiaTri"
         Me.txtTongGiaTri.Size = New System.Drawing.Size(244, 22)
         Me.txtTongGiaTri.TabIndex = 7
         '
         'dtpNgayLapPhieu
         '
-        Me.dtpNgayLapPhieu.Location = New System.Drawing.Point(529, 24)
+        Me.dtpNgayLapPhieu.Location = New System.Drawing.Point(529, 62)
         Me.dtpNgayLapPhieu.Name = "dtpNgayLapPhieu"
         Me.dtpNgayLapPhieu.Size = New System.Drawing.Size(244, 22)
         Me.dtpNgayLapPhieu.TabIndex = 8
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(273, 9)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(234, 32)
+        Me.Label5.TabIndex = 9
+        Me.Label5.Text = "Thêm Phiếu Xuất"
         '
         'frmPhieuXuat
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(808, 179)
+        Me.ClientSize = New System.Drawing.Size(808, 275)
+        Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.dtpNgayLapPhieu)
         Me.Controls.Add(Me.txtTongGiaTri)
         Me.Controls.Add(Me.cbMaDL)
@@ -138,4 +150,5 @@ Partial Class frmPhieuXuat
     Friend WithEvents cbMaDL As ComboBox
     Friend WithEvents txtTongGiaTri As TextBox
     Friend WithEvents dtpNgayLapPhieu As DateTimePicker
+    Friend WithEvents Label5 As Label
 End Class

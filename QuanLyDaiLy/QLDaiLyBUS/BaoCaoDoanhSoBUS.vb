@@ -1,54 +1,21 @@
-﻿Imports QLDaiLyBUS
-Imports QLDaiLyDAL
+﻿Imports QLDaiLyDAL
 Imports QLDaiLyDTO
 Imports Utility
+
 Public Class BaoCaoDoanhSoBUS
-    Private bcdoanhsoDal As BaoCaoDoanhSoDAL
+    Private BaoCaoDoanhSoDAL As BaoCaoDoanhSoDAL
+
     Public Sub New()
-        bcdoanhsoDal = New BaoCaoDoanhSoDAL()
+        BaoCaoDoanhSoDAL = New BaoCaoDoanhSoDAL()
     End Sub
     Public Sub New(connectionString As String)
-        bcdoanhsoDal = New BaoCaoDoanhSoDAL(connectionString)
+        BaoCaoDoanhSoDAL = New BaoCaoDoanhSoDAL(connectionString)
     End Sub
 
-
-    Public Function insert(bc As BaoCaoDoanhSoDTO) As Result
-        '1. verify data here!!
-        Return bcdoanhsoDal.insert(bc)
-
-        'Return New Result(False )
+    Public Function GetDoanhSoByMonth(ByRef ListBaoCaoDoanhSo As List(Of BaoCaoDoanhSoDTO), thang As Integer) As Result
+        Return BaoCaoDoanhSoDAL.GetDoanhSoByMonth(ListBaoCaoDoanhSo, thang)
     End Function
-
-
-    Public Function buildMaBaoCaoDoanhSo(ByRef nextMaBCDoanhSo As Integer) As Result
-        Return bcdoanhsoDal.buildMaBaoCaoDoanhSo(nextMaBCDoanhSo)
+    Public Function GetAllMonthHaveData(ByRef listThang As List(Of Integer)) As Result
+        Return BaoCaoDoanhSoDAL.GetAllMonthHaveData(listThang)
     End Function
-    Public Function selectAll(ByRef listMaDaiLy As List(Of BaoCaoDoanhSoDTO)) As Result
-        '1. verify data here!!
-
-        '2. insert to DB
-        Return bcdoanhsoDal.selectALL(listMaDaiLy)
-    End Function
-
-    Public Function selectALL_ByMaDaiLy(madaili As Integer, ByRef listDL As List(Of BaoCaoDoanhSoDTO)) As Result
-        '1. verify data here!!
-
-        '2. insert to DB
-        Return bcdoanhsoDal.selectALL_ByMaDaiLy(madaili, listDL)
-    End Function
-
-
-    Public Function delete(px As Integer) As Result
-        '1. verify data here!!
-
-        '2. insert to DB
-        Return bcdoanhsoDal.delete(px)
-    End Function
-    Public Function update(bc As BaoCaoDoanhSoDTO) As Result
-        '1. verify data here!!
-
-        '2. insert to DB
-        Return bcdoanhsoDal.update(bc)
-    End Function
-
 End Class

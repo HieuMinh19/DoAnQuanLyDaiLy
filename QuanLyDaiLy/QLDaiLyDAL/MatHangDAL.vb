@@ -183,4 +183,72 @@ Public Class MatHangDAL
         End Using
         Return New Result(True) ' thanh cong
     End Function
+    Public Function countsomathang(ByRef soluongmathang As Integer) As Result
+
+        Dim query As String = String.Empty
+        query &= "SELECT COUNT ([MaMatHang])"
+        query &= "As [SoLuong] "
+        query &= "FROM [MATHANG] "
+
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                End With
+                Try
+                    conn.Open()
+                    Dim sqlReader As SqlDataReader = comm.ExecuteReader()
+                    While sqlReader.Read()
+                        soluongmathang = sqlReader("SoLuong")
+                    End While
+                Catch ex As Exception
+                    Console.WriteLine(ex.StackTrace)
+                    conn.Close()
+                    ' them that bai!!!
+                    Return New Result(False, "lay so luong loai dai ly", ex.StackTrace)
+                End Try
+            End Using
+        End Using
+        Return New Result(True) ' thanh cong
+    End Function
+    Public Function selectSomathang_thamso(ByRef somathangtoida As Integer) As Result
+
+        Dim query As String = String.Empty
+        query &= "SELECT [SoMatHang]"
+        query &= "FROM [THAMSO] "
+        ' query &= "WHERE [MaDL] = @MaDaiLy "
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    '.Parameters.AddWithValue("@MaDaiLy", madl)
+                End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = comm.ExecuteReader()
+                    If reader.HasRows = True Then
+                        'NoCuaDaiLy.Clear()
+                        While reader.Read()
+                            somathangtoida = reader("SoMatHang")
+                            'listPhieuThuTien.Add(New PhieuThuTienDTO(reader("MaPhieuThu"), reader("MaDaiLy"), reader("NgayThuTien"), reader("SoTienThu")))
+                        End While
+                    End If
+
+                Catch ex As Exception
+                    conn.Close()
+                    System.Console.WriteLine(ex.StackTrace)
+                    Return New Result(False, "Lấy tất cả dai li theo ma dai ly không thành công", ex.StackTrace)
+                End Try
+            End Using
+        End Using
+        Return New Result(True) ' thanh cong
+    End Function
+
 End Class

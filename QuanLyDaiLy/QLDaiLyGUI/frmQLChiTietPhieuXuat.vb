@@ -22,7 +22,7 @@ Public Class frmQLChiTietPhieuXuat
         Dim result As Result
         result = pxuatBus.selectAll(listPhieuXuat)
         If (result.FlagResult = False) Then
-            MessageBox.Show("Lấy danh sách phieu xuat không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Lấy danh sách phiếu xuất không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
             Return
         End If
@@ -40,16 +40,12 @@ Public Class frmQLChiTietPhieuXuat
         Dim listMatHang = New List(Of MatHangDTO)
         resultMatHang = mathangBus.selectAll(listMatHang)
         If (result.FlagResult = False) Then
-            MessageBox.Show("Lấy danh lmat hang không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Lấy danh sách mặt hàng không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(resultMatHang.SystemMessage)
             Return
         End If
 
 
-
-        'cbmMaQuanTren.DataSource = New BindingSource(listQuan, String.Empty)
-        'cbmMaQuanTren.DisplayMember = "TenQuan"
-        'cbmMaQuanTren.ValueMember = "MaQuan"
 
 
         cbMaMatHang.DataSource = New BindingSource(listMatHang, String.Empty)
@@ -104,11 +100,7 @@ Public Class frmQLChiTietPhieuXuat
         clMaChiTietPhieu.DataPropertyName = "MaChiTietPhieu"
         dgvdanhsachchitietpx.Columns.Add(clMaChiTietPhieu)
 
-        ' Dim clLoaiHS = New DataGridView()
-        'clLoaiHS.Name = "LoaiHS"
-        'clLoaiHS.HeaderText = "Tên Loại"
-        'clLoaiHS.DataPropertyName = "LoaiHS"
-        'dgvListHS.Columns.Add(clLoaiHS)
+
 
         Dim clMaPhieuXuat = New DataGridViewTextBoxColumn()
         clMaPhieuXuat.Name = "MaPhieuXuat"
@@ -185,7 +177,7 @@ Public Class frmQLChiTietPhieuXuat
                                 dgvdanhsachchitietpx.Rows(currentRowIndex).Selected = True
                             End If
 
-                            MessageBox.Show("Xóa chi tiet phieu xuat thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            MessageBox.Show("Xóa chi tiết phiếu xuất thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         Else
                             MessageBox.Show("Xóa chi tiet phieu xuat không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                             System.Console.WriteLine(result.SystemMessage)
@@ -222,16 +214,6 @@ Public Class frmQLChiTietPhieuXuat
                 ctphieuxuat.DonGia = txtDonGia.Text
                 ctphieuxuat.ThanhTien = txtThanhTien.Text
 
-                'hocsinh.DiaChi = txtDiaChi.Text
-                'hocsinh.NgaySinh = dtpNgaySinh.Value
-                'hocsinh.LoaiHS = Convert.ToInt32(cbLoaiHSCapNhat.SELECTedValue)
-                '2. Business .....
-                'If (dlBus.isValidName(hocsinh) = False) Then
-                '    MessageBox.Show("Họ tên Học sinh không đúng.")
-                '    txtHoTen.Focus()
-                '    Return
-                'End If
-                '3. Insert to DB
                 Dim result As Result
                 result = ctphieuxuatBus.update(ctphieuxuat)
                 If (result.FlagResult = True) Then
@@ -240,9 +222,9 @@ Public Class frmQLChiTietPhieuXuat
                     ' Hightlight the row has been updated on table
                     dgvdanhsachchitietpx.Rows(currentRowIndex).Selected = True
 
-                    MessageBox.Show("Cập nhật chi tiet phieu xuat thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MessageBox.Show("Cập nhật chi tiết phiếu xuất thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Else
-                    MessageBox.Show("Cập nhật chi tiet phieu xuat không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    MessageBox.Show("Cập nhật chi tiết phiếu xuất không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     System.Console.WriteLine(result.SystemMessage)
                 End If
             Catch ex As Exception

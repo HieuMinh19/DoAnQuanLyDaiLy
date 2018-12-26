@@ -17,7 +17,7 @@ Public Class frmQLMatHang
         Dim listMatHang = New List(Of MatHangDTO)
         result = mathangBus.selectAll(listMatHang)
         If (result.FlagResult = False) Then
-            MessageBox.Show("Lấy danh Mat hang không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Lấy danh sách mặt hàng không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
             Return
         End If
@@ -54,24 +54,13 @@ Public Class frmQLMatHang
         End If
 
     End Sub
-
-
-
-
-
-
-
-
-
-
-
     Private Sub loadlistMatHang()
         ' Load LoaiHocSinh list
         Dim listMatHang = New List(Of MatHangDTO)
         Dim result As Result
         result = mathangBus.selectAll(listMatHang)
         If (result.FlagResult = False) Then
-            MessageBox.Show("Lấy danh sách mat hang không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Lấy danh sách mặt hàng không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
             Return
         End If
@@ -99,11 +88,6 @@ Public Class frmQLMatHang
         clSoLuongTon.HeaderText = "Số Lượng Tồn"
         clSoLuongTon.DataPropertyName = "SoLuongTon"
         dgvDanhSachMatHang.Columns.Add(clSoLuongTon)
-
-
-
-
-
     End Sub
 
     Private Sub dgvDanhSachMatHang_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvDanhSachMatHang.CellContentClick
@@ -116,7 +100,7 @@ Public Class frmQLMatHang
 
         'Verify that indexing OK
         If (-1 < currentRowIndex And currentRowIndex < dgvDanhSachMatHang.RowCount) Then
-            Select Case MsgBox("Bạn có thực sự muốn xóa mat hang có mã: " + txtMaMatHang.Text, MsgBoxStyle.YesNo, "Information")
+            Select Case MsgBox("Bạn có thực sự muốn xóa mặt hàng có mã: " + txtMaMatHang.Text, MsgBoxStyle.YesNo, "Information")
                 Case MsgBoxResult.Yes
                     Try
 
@@ -144,9 +128,9 @@ Public Class frmQLMatHang
                                     Console.WriteLine(ex.StackTrace)
                                 End Try
                             End If
-                            MessageBox.Show("Xóa mat hang thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            MessageBox.Show("Xóa mặt hàng thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         Else
-                            MessageBox.Show("Xóa mat hang không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                            MessageBox.Show("Xóa mặt hàng không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                             System.Console.WriteLine(result.SystemMessage)
                         End If
                     Catch ex As Exception
@@ -197,9 +181,9 @@ Public Class frmQLMatHang
                     Catch ex As Exception
                         Console.WriteLine(ex.StackTrace)
                     End Try
-                    MessageBox.Show("Cập nhật mat hang thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MessageBox.Show("Cập nhật mặt hàng thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Else
-                    MessageBox.Show("Cập nhật mat hang không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    MessageBox.Show("Cập nhật mặt hàng không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     System.Console.WriteLine(result.SystemMessage)
                 End If
             Catch ex As Exception

@@ -6,6 +6,9 @@ Public Class frmThemMatHang
 
     Private MatHangBus As MatHangBUS
     Private Sub frmThemMatHang_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+
+
         MatHangBus = New MatHangBUS()
         ' LoaiDLBUS = New LoaiDLBUS()
         ' quanBus = New QuanBUS()
@@ -34,20 +37,40 @@ Public Class frmThemMatHang
         mathang.TenMatHang = txtTenMatHang.Text
         mathang.SoLuongTon = txtSoLuongTon.Text
 
-        '3. Insert to DB
-        Dim result As Result
-        result = MatHangBus.insert(mathang)
-        If (result.FlagResult = True) Then
-            MessageBox.Show("Thêm mat hang thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            'set MSSH auto
-            Dim nextMaMatHang = "1"
-            result = MatHangBus.builMaMatHang(nextMaMatHang)
 
-            txtTenMatHang.Text = String.Empty
-            txtSoLuongTon.Text = String.Empty
+        Dim countsomathang As Integer
+        ' Dim resultsodonvitinh As Result
+        Dim somathangotida As Integer
+
+        MatHangBus.countsomathang(countsomathang)
+        MatHangBus.selectSomathang_thamso(somathangotida)
+        '3. Insert to DB
+        If (countsomathang < somathangotida) Then
+
+            Dim result As Result
+            result = MatHangBus.insert(mathang)
+            If (result.FlagResult = True) Then
+                MessageBox.Show("Thêm mặt hàng thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                'set MSSH auto
+                Dim nextMaMatHang = "1"
+                result = MatHangBus.builMaMatHang(nextMaMatHang)
+
+                txtTenMatHang.Text = String.Empty
+                txtSoLuongTon.Text = String.Empty
+            Else
+                MessageBox.Show("Thêm mặt hàng không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                System.Console.WriteLine(result.SystemMessage)
+            End If
         Else
-            MessageBox.Show("Thêm mat hang không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            System.Console.WriteLine(result.SystemMessage)
+            MessageBox.Show("số mặt hàng phải bé hơn số mặt hàng tối đa", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
+    End Sub
+
+    Private Sub txtMaMatHang_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtMaMatHang.KeyPress, txtSoLuongTon.KeyPress
+        If Asc(e.KeyChar) <> 8 Then
+            If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
+                e.Handled = True
+            End If
         End If
     End Sub
 End Class

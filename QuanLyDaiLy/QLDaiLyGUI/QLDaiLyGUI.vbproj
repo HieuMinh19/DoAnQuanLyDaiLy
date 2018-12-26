@@ -158,12 +158,6 @@
     <Compile Include="frmThemBCCongNo.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmThemBCDoanhSo.Designer.vb">
-      <DependentUpon>frmThemBCDoanhSo.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmThemBCDoanhSo.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="frmThemChiTietPhieuXuat.Designer.vb">
       <DependentUpon>frmThemChiTietPhieuXuat.vb</DependentUpon>
     </Compile>
@@ -221,6 +215,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="TraCuu.Designer.vb">
+      <DependentUpon>TraCuu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TraCuu.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
@@ -265,9 +265,6 @@
     <EmbeddedResource Include="frmThemBCCongNo.resx">
       <DependentUpon>frmThemBCCongNo.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmThemBCDoanhSo.resx">
-      <DependentUpon>frmThemBCDoanhSo.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmThemChiTietPhieuXuat.resx">
       <DependentUpon>frmThemChiTietPhieuXuat.vb</DependentUpon>
     </EmbeddedResource>
@@ -291,9 +288,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TraCuu.resx">
+      <DependentUpon>TraCuu.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -306,7 +306,9 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\DaiLyDTO\QLDaiLyDTO.vbproj">
@@ -321,6 +323,10 @@
       <Project>{5a5a0a0e-e01f-4f51-ab84-7db17db70d4f}</Project>
       <Name>Utility</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\36512441_631482657209441_1715362805051293696_n.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

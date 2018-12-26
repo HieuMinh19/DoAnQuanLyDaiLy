@@ -5,11 +5,7 @@ Imports Utility
 
 
 Public Class frmQLQuan
-
     Private lqBus As QuanBUS
-
-
-
     Private Sub frmQLQuan_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         lqBus = New QuanBUS()
         ' Load LoaiHocSinh list
@@ -23,7 +19,7 @@ Public Class frmQLQuan
         Dim result As Result
         result = lqBus.selectAll(listQuan)
         If (result.FlagResult = False) Then
-            MessageBox.Show("Lấy danh sách quan không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Lấy danh sách quận không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
             Return
         End If
@@ -55,7 +51,7 @@ Public Class frmQLQuan
 
         'Verify that indexing OK
         If (-1 < currentRowIndex And currentRowIndex < dgvDoanhSachQuan.RowCount) Then
-            Select Case MsgBox("Bạn có thực sự muốn xóa loại học sinh có mã: " + txtMaQuan.Text, MsgBoxStyle.YesNo, "Information")
+            Select Case MsgBox("Bạn có thực sự muốn xóa quận có mã: " + txtMaQuan.Text, MsgBoxStyle.YesNo, "Information")
                 Case MsgBoxResult.Yes
                     Try
 
@@ -81,9 +77,9 @@ Public Class frmQLQuan
                                     Console.WriteLine(ex.StackTrace)
                                 End Try
                             End If
-                            MessageBox.Show("Xóa Loại học sinh thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            MessageBox.Show("Xóa Loại quận thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         Else
-                            MessageBox.Show("Xóa Loại học sinh không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                            MessageBox.Show("Xóa Loại quận không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                             System.Console.WriteLine(result.SystemMessage)
                         End If
                     Catch ex As Exception
@@ -134,9 +130,9 @@ Public Class frmQLQuan
                     Catch ex As Exception
                         Console.WriteLine(ex.StackTrace)
                     End Try
-                    MessageBox.Show("Cập nhật Loại học sinh thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MessageBox.Show("Cập nhật loại quận thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Else
-                    MessageBox.Show("Cập nhật loại học sinh không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    MessageBox.Show("Cập nhật loại quận không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     System.Console.WriteLine(result.SystemMessage)
                 End If
             Catch ex As Exception
@@ -170,5 +166,13 @@ Public Class frmQLQuan
 
     Private Sub dgvDoanhSachQuan_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvDoanhSachQuan.CellContentClick
 
+    End Sub
+
+    Private Sub txtMaQuan_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtMaQuan.KeyPress
+        If Asc(e.KeyChar) <> 8 Then
+            If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
+                e.Handled = True
+            End If
+        End If
     End Sub
 End Class

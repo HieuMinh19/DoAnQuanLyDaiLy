@@ -1,27 +1,39 @@
 ﻿Public Class BaoCaoDoanhSoDTO
-    Private iMaBaoCaoDoanhSo As Integer
+    Private iStt As Integer
+    Private iMaPhieuDoanhSo As Integer
     Private iMaDaiLy As Integer
+    Private dateThang As DateTime
     Private iSoPhieuXuat As Integer
-    Private iTongGiaTri As Integer
-    Private douTiLe As Double
+    Private iTongTriGia As Integer
+    Private dTyLe As Double
+
+    Private strTenDaiLy As String
 
 
     Public Sub New()
-
     End Sub
-    Public Sub New(iMaBaoCaoDoanhSo As Integer, iMaDaiLy As Integer, iSoPhieuXuat As Integer, iTongGiaTri As Integer, douTiLe As Double)
-        Me.iMaBaoCaoDoanhSo = iMaBaoCaoDoanhSo
+    Public Sub New(iMaPhieuDoanhSo As Integer, iMaDaiLy As Integer, dateThang As DateTime, iSoPhieuXuat As Integer, iTongTriGia As Integer, dTyLe As Double)
+        Me.iMaPhieuDoanhSo = iMaPhieuDoanhSo
         Me.iMaDaiLy = iMaDaiLy
+        Me.dateThang = dateThang
         Me.iSoPhieuXuat = iSoPhieuXuat
-        Me.iTongGiaTri = iTongGiaTri
-        Me.douTiLe = douTiLe
+        Me.iTongTriGia = iTongTriGia
+        Me.dTyLe = dTyLe
     End Sub
-    Public Property MaBaoCaoDoanhSo As Integer
+    Public Sub New(iStt As Integer, strTenDaiLy As String, iSoPhieuXuat As Integer, iTongTriGia As Integer, dTyLe As Double)
+        Me.iStt = iStt
+        Me.strTenDaiLy = strTenDaiLy
+        Me.iSoPhieuXuat = iSoPhieuXuat
+        Me.iTongTriGia = iTongTriGia
+        Me.iTongTriGia = iTongTriGia
+        Me.dTyLe = dTyLe
+    End Sub
+    Public Property MaPhieuDoanhSo As Integer
         Get
-            Return iMaBaoCaoDoanhSo
+            Return iMaPhieuDoanhSo
         End Get
         Set(value As Integer)
-            iMaBaoCaoDoanhSo = value
+            iMaPhieuDoanhSo = value
         End Set
     End Property
 
@@ -34,6 +46,15 @@
         End Set
     End Property
 
+    Public Property Thang As Date
+        Get
+            Return dateThang
+        End Get
+        Set(value As Date)
+            dateThang = value
+        End Set
+    End Property
+
     Public Property SoPhieuXuat As Integer
         Get
             Return iSoPhieuXuat
@@ -43,21 +64,39 @@
         End Set
     End Property
 
-    Public Property TongGiaTri As Integer
+    Public Property TongTriGia As Integer
         Get
-            Return iTongGiaTri
+            Return iTongTriGia
         End Get
         Set(value As Integer)
-            iTongGiaTri = value
+            iTongTriGia = value
         End Set
     End Property
 
-    Public Property TiLe As Double
+    Public Property TyLe As Double
         Get
-            Return douTiLe
+            Return dTyLe
         End Get
         Set(value As Double)
-            douTiLe = value
+            dTyLe = value
+        End Set
+    End Property
+
+    Public Property TenDaiLy As String
+        Get
+            Return strTenDaiLy
+        End Get
+        Set(value As String)
+            strTenDaiLy = value
+        End Set
+    End Property
+
+    Public Property Stt As Integer
+        Get
+            Return iStt
+        End Get
+        Set(value As Integer)
+            iStt = value
         End Set
     End Property
 End Class

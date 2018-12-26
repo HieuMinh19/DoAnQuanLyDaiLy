@@ -29,7 +29,7 @@ Public Class frmPhieuXuat
         Dim listDaiLy = New List(Of DaiLyDTO)
         result = DaiLyBus.selectAll(listDaiLy)
         If (result.FlagResult = False) Then
-            MessageBox.Show("Lấy danh dai ly không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Lấy danh sách đại lý không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
             Return
         End If
@@ -91,7 +91,7 @@ Public Class frmPhieuXuat
             'txtDienThoai.Text = String.Empty
 
         Else
-            MessageBox.Show("Thêm phieu xuat không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Thêm phiếu xuất không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
         End If
     End Sub

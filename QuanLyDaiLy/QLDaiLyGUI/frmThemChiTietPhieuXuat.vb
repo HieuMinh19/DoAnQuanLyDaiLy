@@ -8,6 +8,8 @@ Public Class frmThemChiTietPhieuXuat
     Private phieuxuat As PhieuXuatBUS
     Private mathang As MatHangBUS
     Private donvitinh As DonViTinhBUS
+    Dim sotien As Integer
+
     Private Sub frmThemChiTietPhieuXuat_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ctPhieuXuatBus = New ChiTietPhieuXuatBUS()
         phieuxuat = New PhieuXuatBUS()
@@ -34,7 +36,7 @@ Public Class frmThemChiTietPhieuXuat
         Dim listPhieuXuat = New List(Of PhieuXuatDTO)
         resultPhieuXuat = phieuxuat.selectAll(listPhieuXuat)
         If (resultPhieuXuat.FlagResult = False) Then
-            MessageBox.Show("Lấy danh phieu xuat không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Lấy danh sách phiếu xuất không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(resultPhieuXuat.SystemMessage)
             Return
         End If
@@ -49,7 +51,7 @@ Public Class frmThemChiTietPhieuXuat
         Dim listMatHang = New List(Of MatHangDTO)
         resultMatHang = mathang.selectAll(listMatHang)
         If (resultMatHang.FlagResult = False) Then
-            MessageBox.Show("Lấy danh mat hang không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Lấy danh sách mặt hàng không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(resultMatHang.SystemMessage)
             Return
         End If
@@ -61,7 +63,7 @@ Public Class frmThemChiTietPhieuXuat
         Dim listDonViTinh = New List(Of DonViTinhDTO)
         resultDonViTinh = donvitinh.selectAll(listDonViTinh)
         If (resultDonViTinh.FlagResult = False) Then
-            MessageBox.Show("Lấy danh don vi tinh không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Lấy danh sách đơn vị tính không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(resultDonViTinh.SystemMessage)
             Return
         End If
@@ -87,7 +89,16 @@ Public Class frmThemChiTietPhieuXuat
         chitietpx.SoLuongXuat = txtSoLuongXuat.Text
         ' a =
         chitietpx.DonGia = txtDonGia.Text
-        chitietpx.ThanhTien = txtThanhTien.Text
+
+        sotien = chitietpx.SoLuongXuat * chitietpx.DonGia
+        txtThanhTien.Text = sotien
+        chitietpx.ThanhTien = sotien
+        Me.Refresh()
+        ' chitietpx.ThanhTien = txtThanhTien.Text
+        'sotien = chitietpx.ThanhTien
+        'me.Re
+        ' Me.Controls .C
+        '     chitietpx.ThanhTien
         'daily.NoCuaDaiLy = Convert.ToInt32(txtNoCuaDaiLy)
         'hocsinh.LoaiHS = Convert.ToInt32(cbLoaiHS.SELECTedValue)
 
@@ -98,23 +109,38 @@ Public Class frmThemChiTietPhieuXuat
         Dim result As Result
         result = ctPhieuXuatBus.insert(chitietpx)
         If (result.FlagResult = True) Then
-            MessageBox.Show("Thêm chi tiet phieu xuat thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            MessageBox.Show("Thêm chi tiết phiếu xuất thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
             'set MSSH auto
             Dim nextMaChiTiet = "1"
             result = ctPhieuXuatBus.buildMaChiTiet(nextMaChiTiet)
-            'If (result.FlagResult = True) Then
-            '    MessageBox.Show("Lấy danh tự động mã Mã Đại Lý không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            '    Me.Close()
-            '    Return
-            'End If
-            'txtTenDL.Text = String.Empty
-            'txtDiaChi.Text = String.Empty
-            'txtEmail.Text = String.Empty
-            'txtDienThoai.Text = String.Empty
+
 
         Else
-            MessageBox.Show("Thêm chi tiet phieu xuat không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Thêm chi tiết phiếu xuất không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
+        End If
+    End Sub
+
+    Private Sub txtThanhTien_Click(sender As Object, e As EventArgs) Handles txtThanhTien.Click
+        '  txtThanhTien.Text = sotien
+    End Sub
+
+    Private Sub txtThanhTien_LocationChanged(sender As Object, e As EventArgs) Handles txtThanhTien.LocationChanged
+        '  txtThanhTien.Text = sotien
+    End Sub
+
+    Private Sub txtDonGia_TextChanged(sender As Object, e As EventArgs) Handles txtDonGia.TextChanged
+        '  sotien = chitietpx.SoLuongXuat * chitietpx.DonGia
+        ' txtThanhTien.Text = sotien
+        ' '  chitietpx.ThanhTien = sotien
+        'Me.Refresh()
+    End Sub
+
+    Private Sub txtMaChiTietPhieuXuat_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtMaChiTietPhieuXuat.KeyPress, txtSoLuongXuat.KeyPress, txtDonGia.KeyPress, cbMaPhieuXuat.KeyPress, cbMaMatHang.KeyPress, cbMaDonViTinh.KeyPress
+        If Asc(e.KeyChar) <> 8 Then
+            If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
+                e.Handled = True
+            End If
         End If
     End Sub
 End Class

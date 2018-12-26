@@ -210,8 +210,6 @@ Public Class BaoCaoCongNoDAL
         Return New Result(True)  ' thanh cong
     End Function
 
-
-
     Public Function selectALL(ByRef listBCCongNo As List(Of BaoCaoCongNo)) As Result
 
         Dim query As String = String.Empty
@@ -285,4 +283,16 @@ Public Class BaoCaoCongNoDAL
         End Using
         Return New Result(True) ' thanh cong
     End Function
+
+
+
+
+
+
+
+
+
+
+
+
 End Class

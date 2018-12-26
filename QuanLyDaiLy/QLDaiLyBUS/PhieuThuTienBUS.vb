@@ -36,7 +36,12 @@ Public Class PhieuThuTienBUS
         '2. insert to DB
         Return ptDal.selectALL_ByMaDaiLy(madaili, listDL)
     End Function
+    Public Function selectNoCuaDaiLy_ByMaDaiLy(madaili As Integer, ByRef NoCuaDaiLy As Integer) As Result
+        '1. verify data here!!
 
+        '2. insert to DB
+        Return ptDal.selectNoDaiLy_ByMaDaiLy(madaili, NoCuaDaiLy)
+    End Function
 
     Public Function delete(px As Integer) As Result
         '1. verify data here!!

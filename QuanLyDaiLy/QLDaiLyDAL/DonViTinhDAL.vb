@@ -56,6 +56,11 @@ Public Class DonViTinhDAL
         Dim query As String = String.Empty
         query &= "INSERT INTO [DONVITINH] ([MaDonViTinh], [TenDonViTinh])"
         query &= "VALUES (@MaDonViTinh,@TenDonViTinh)"
+        'query &= "WHERE (    (SELECT [SoDonViTinh]  FROM [THAMSO] )  >  ( SELECT count(*) FROM  [DONVITINH] )  )  "
+        'query &= "SELECT [SoDonViTinh]"
+        'query &= "FROM [THAMSO]"
+        'query &= "WHERE (( SELECT count(*) FROM  [DONVITINH] ) < [SoDonViTinh] )"
+
 
         Dim nextID = 0
         Dim result As Result
@@ -179,4 +184,74 @@ Public Class DonViTinhDAL
         End Using
         Return New Result(True) ' thanh cong
     End Function
+
+
+    Public Function soluongdonvitinh(ByRef soluong As Integer) As Result
+
+        Dim query As String = String.Empty
+        query &= "SELECT COUNT ([MaDonViTinh])"
+        query &= "As [SoLuong] "
+        query &= "FROM [DONVITINH] "
+
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                End With
+                Try
+                    conn.Open()
+                    Dim sqlReader As SqlDataReader = comm.ExecuteReader()
+                    While sqlReader.Read()
+                        soluong = sqlReader("SoLuong")
+                    End While
+                Catch ex As Exception
+                    Console.WriteLine(ex.StackTrace)
+                    conn.Close()
+                    ' them that bai!!!
+                    Return New Result(False, "lay so luong loai dai ly", ex.StackTrace)
+                End Try
+            End Using
+        End Using
+        Return New Result(True) ' thanh cong
+    End Function
+    Public Function selectSoDonVitinh_thamso(ByRef sodonvitinh As Integer) As Result
+
+        Dim query As String = String.Empty
+        query &= "SELECT [SoDonViTinh]"
+        query &= "FROM [THAMSO] "
+        ' query &= "WHERE [MaDL] = @MaDaiLy "
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    '.Parameters.AddWithValue("@MaDaiLy", madl)
+                End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = comm.ExecuteReader()
+                    If reader.HasRows = True Then
+                        'NoCuaDaiLy.Clear()
+                        While reader.Read()
+                            sodonvitinh = reader("SoDonViTinh")
+                            'listPhieuThuTien.Add(New PhieuThuTienDTO(reader("MaPhieuThu"), reader("MaDaiLy"), reader("NgayThuTien"), reader("SoTienThu")))
+                        End While
+                    End If
+
+                Catch ex As Exception
+                    conn.Close()
+                    System.Console.WriteLine(ex.StackTrace)
+                    Return New Result(False, "Lấy tất cả dai li theo ma dai ly không thành công", ex.StackTrace)
+                End Try
+            End Using
+        End Using
+        Return New Result(True) ' thanh cong
+    End Function
+
 End Class

@@ -44,7 +44,7 @@ Public Class QuanDAL
                     conn.Close()
                     ' them that bai!!!
                     nextMaQuan = 1
-                    Return New Result(False, "Lấy ID kế tiếp của Loại năm học không thành công", ex.StackTrace)
+                    Return New Result(False, "Lấy ID kế tiếp của Loại quận không thành công", ex.StackTrace)
                 End Try
             End Using
         End Using
@@ -80,7 +80,7 @@ Public Class QuanDAL
                 Catch ex As Exception
                     conn.Close()
                     ' them that bai!!!
-                    Return New Result(False, "Thêm Quan không thành công", ex.StackTrace)
+                    Return New Result(False, "Thêm Quận không thành công", ex.StackTrace)
                 End Try
             End Using
         End Using
@@ -92,7 +92,7 @@ Public Class QuanDAL
         Dim query As String = String.Empty
         query &= "SELECT [MaQuan], [TenQuan]"
         query &= "FROM [QUAN]"
-        query &= "WHERE ( (SELECT [SoDaiLyToiDa] FROM [THAMSO]) > (SELECT count(*) FROM  [DAILY] where QUAN.MaQuan = DAILY.MaQuan) )"
+
 
         Using conn As New SqlConnection(connectionString)
             Using comm As New SqlCommand()
@@ -179,4 +179,39 @@ Public Class QuanDAL
         End Using
         Return New Result(True) ' thanh cong
     End Function
+
+
+    Public Function selectALL_no(ByRef listQuan As List(Of QuanDTO)) As Result
+        Dim query As String = String.Empty
+        query &= "SELECT DISTINCT [QUAN].[MaQuan], [TenQuan]"
+        query &= "FROM [QUAN], [DAILY]"
+        query &= "WHERE [QUAN].[MaQuan] = [DAILY].[MaQuan] "
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = comm.ExecuteReader()
+                    If reader.HasRows = True Then
+                        listQuan.Clear()
+                        While reader.Read()
+                            listQuan.Add(New QuanDTO(reader("MaQuan"), reader("TenQuan")))
+                        End While
+                    End If
+                Catch ex As Exception
+                    conn.Close()
+                    System.Console.WriteLine(ex.StackTrace)
+                    Return New Result(False, "Lấy tất cả Quận không thành công", ex.StackTrace)
+                End Try
+            End Using
+        End Using
+        Return New Result(True) ' thanh cong
+    End Function
+
 End Class

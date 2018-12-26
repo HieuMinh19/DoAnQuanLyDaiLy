@@ -11,66 +11,66 @@ Public Class frmQLBCCongNo
         dlBus = New DaiLyBUS()
 
         ' Load DaiLy list
-        Dim listDaiLy = New List(Of DaiLyDTO)
-        Dim result As Result
-        result = dlBus.selectAll(listDaiLy)
-        If (result.FlagResult = False) Then
-            MessageBox.Show("Lấy danh sách Đại Lý không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            System.Console.WriteLine(result.SystemMessage)
-            Return
-        End If
+        'Dim listDaiLy = New List(Of DaiLyDTO)
+        'Dim result As Result
+        'result = dlBus.selectAll(listDaiLy)
+        'If (result.FlagResult = False) Then
+        '    MessageBox.Show("Lấy danh sách Đại Lý không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        '    System.Console.WriteLine(result.SystemMessage)
+        '    Return
+        'End If
 
-        cbMaDLT.DataSource = New BindingSource(listDaiLy, String.Empty)
-        cbMaDLT.DisplayMember = "TenDl"
-        cbMaDLT.ValueMember = "MaDL"
+        'cbMaDLT.DataSource = New BindingSource(listDaiLy, String.Empty)
+        'cbMaDLT.DisplayMember = "TenDl"
+        'cbMaDLT.ValueMember = "MaDL"
 
-        cbMaDLD.DataSource = New BindingSource(listDaiLy, String.Empty)
-        cbMaDLD.DisplayMember = "TenDl"
-        cbMaDLD.ValueMember = "MaDL"
+        'cbMaDLD.DataSource = New BindingSource(listDaiLy, String.Empty)
+        'cbMaDLD.DisplayMember = "TenDl"
+        'cbMaDLD.ValueMember = "MaDL"
     End Sub
 
-    Private Sub btnXoa_Click(sender As Object, e As EventArgs) Handles btnXoa.Click
-        ' Get the current cell location.
-        '
-        bcCongNoBus = New BaoCaoCongNoBUS()
-        '
-        Dim currentRowIndex As Integer = dgvBaoCaoCongNo.CurrentCellAddress.Y 'current row selected
-        'Verify that indexing OK
-        If (-1 < currentRowIndex And currentRowIndex < dgvBaoCaoCongNo.RowCount) Then
-            Select Case MsgBox("Bạn có thực sự muốn xóa phieu xuat có mã số: " + txtMaBaoCaoCongNo.Text, MsgBoxStyle.YesNo, "Information")
-                Case MsgBoxResult.Yes ' + txtMaDaiLy.Text
-                    Try
-                        '1. Delete from DB
-                        Dim result As Result
-                        'result = dlBus.delete(txtMaDaiLy.Text)
-                        result = bcCongNoBus.delete((txtMaBaoCaoCongNo.Text))
-                        'CInt(Int(txtMaDaiLy.Text))
-                        If (result.FlagResult = True) Then
-                            'Convert.ToInt32(Convert.ToDecimal(txtPrice.Text))
-                            ' Re-Load LoaiHocSinh list
-                            loadListBaoCaoCongNo(cbMaDLT.SelectedValue)
+    'Private Sub btnXoa_Click(sender As Object, e As EventArgs)
+    '    ' Get the current cell location.
+    '    '
+    '    bcCongNoBus = New BaoCaoCongNoBUS()
+    '    '
+    '    Dim currentRowIndex As Integer = dgvBaoCaoCongNo.CurrentCellAddress.Y 'current row selected
+    '    'Verify that indexing OK
+    '    If (-1 < currentRowIndex And currentRowIndex < dgvBaoCaoCongNo.RowCount) Then
+    '        Select Case MsgBox("Bạn có thực sự muốn xóa phieu xuat có mã số: " + txtMaBaoCaoCongNo.Text, MsgBoxStyle.YesNo, "Information")
+    '            Case MsgBoxResult.Yes ' + txtMaDaiLy.Text
+    '                Try
+    '                    '1. Delete from DB
+    '                    Dim result As Result
+    '                    'result = dlBus.delete(txtMaDaiLy.Text)
+    '                    result = bcCongNoBus.delete((txtMaBaoCaoCongNo.Text))
+    '                    'CInt(Int(txtMaDaiLy.Text))
+    '                    If (result.FlagResult = True) Then
+    '                        'Convert.ToInt32(Convert.ToDecimal(txtPrice.Text))
+    '                        ' Re-Load LoaiHocSinh list
+    '                        loadListBaoCaoCongNo(cbMaDLT.SelectedValue)
 
-                            ' Hightlight the next row on table
-                            If (currentRowIndex >= dgvBaoCaoCongNo.Rows.Count) Then
-                                currentRowIndex = currentRowIndex - 1
-                            End If
-                            If (currentRowIndex >= 0) Then
-                                dgvBaoCaoCongNo.Rows(currentRowIndex).Selected = True
-                            End If
+    '                        ' Hightlight the next row on table
+    '                        If (currentRowIndex >= dgvBaoCaoCongNo.Rows.Count) Then
+    '                            currentRowIndex = currentRowIndex - 1
+    '                        End If
+    '                        If (currentRowIndex >= 0) Then
+    '                            dgvBaoCaoCongNo.Rows(currentRowIndex).Selected = True
+    '                        End If
 
-                            MessageBox.Show("Xóa phieu xuat thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                        Else
-                            MessageBox.Show("Xóa phieu xuat không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-                            System.Console.WriteLine(result.SystemMessage)
-                        End If
-                    Catch ex As Exception
-                        Console.WriteLine(ex.StackTrace)
-                    End Try
-                Case MsgBoxResult.No
-                    Return
-            End Select
-        End If
-    End Sub
+    '                        MessageBox.Show("Xóa phieu xuat thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+    '                    Else
+    '                        MessageBox.Show("Xóa phieu xuat không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+    '                        System.Console.WriteLine(result.SystemMessage)
+    '                    End If
+    '                Catch ex As Exception
+    '                    Console.WriteLine(ex.StackTrace)
+    '                End Try
+    '            Case MsgBoxResult.No
+    '                Return
+    '        End Select
+    '    End If
+    'End Sub
 
     Private Sub btnCapNhat_Click(sender As Object, e As EventArgs) Handles btnCapNhat.Click
         ' Get the current cell location.
@@ -82,11 +82,11 @@ Public Class frmQLBCCongNo
                 baocao = New BaoCaoCongNo()
 
                 '1. Mapping data from GUI control
-                baocao.MaBaoCaoCongNo = txtMaBaoCaoCongNo.Text
-                baocao.MaDaiLy = Convert.ToInt32(cbMaDLD.SelectedValue)
-                baocao.PhatSinh = txtPhatSinh.Text
-                baocao.NoCuoi = txtNoCuoi.Text
-                baocao.NoDau = txtNoDau.Text
+                'baocao.MaBaoCaoCongNo = txtMaBaoCaoCongNo.Text
+                'baocao.MaDaiLy = Convert.ToInt32(cbMaDLD.SelectedValue)
+                'baocao.PhatSinh = txtPhatSinh.Text
+                'baocao.NoCuoi = txtNoCuoi.Text
+                'baocao.NoDau = txtNoDau.Text
                 '3. Insert to DB
                 Dim result As Result
                 result = bcCongNoBus.update(baocao)
@@ -129,12 +129,12 @@ Public Class frmQLBCCongNo
             Try
                 Dim px = CType(dgvBaoCaoCongNo.Rows(currentRowIndex).DataBoundItem, BaoCaoCongNo)
 
-                txtMaBaoCaoCongNo.Text = px.MaBaoCaoCongNo
-                cbMaDLD.SelectedIndex = cbMaDLT.SelectedIndex
+                'txtMaBaoCaoCongNo.Text = px.MaBaoCaoCongNo
+                'cbMaDLD.SelectedIndex = cbMaDLT.SelectedIndex
 
-                txtPhatSinh.Text = px.PhatSinh
-                txtNoDau.Text = px.NoDau
-                txtNoCuoi.Text = px.NoCuoi
+                'txtPhatSinh.Text = px.PhatSinh
+                'txtNoDau.Text = px.NoDau
+                'txtNoCuoi.Text = px.NoCuoi
             Catch ex As Exception
                 Console.WriteLine(ex.StackTrace)
             End Try

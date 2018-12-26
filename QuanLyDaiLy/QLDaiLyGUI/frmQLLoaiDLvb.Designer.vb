@@ -32,6 +32,7 @@ Partial Class frmQLLoaiDLvb
         Me.cbmTenLoaiDL = New System.Windows.Forms.ComboBox()
         Me.btnCapNhat = New System.Windows.Forms.Button()
         Me.btnXoa = New System.Windows.Forms.Button()
+        Me.Label4 = New System.Windows.Forms.Label()
         CType(Me.dgvDoanhSachLoaiDL, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -120,11 +121,22 @@ Partial Class frmQLLoaiDLvb
         Me.btnXoa.Text = "Xóa"
         Me.btnXoa.UseVisualStyleBackColor = True
         '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Location = New System.Drawing.Point(312, 18)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(257, 32)
+        Me.Label4.TabIndex = 11
+        Me.Label4.Text = "Quản Lí Loại Đại Lí"
+        '
         'frmQLLoaiDLvb
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(868, 417)
+        Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.btnXoa)
         Me.Controls.Add(Me.btnCapNhat)
         Me.Controls.Add(Me.cbmTenLoaiDL)
@@ -153,4 +165,5 @@ Partial Class frmQLLoaiDLvb
     Friend WithEvents cbmTenLoaiDL As ComboBox
     Friend WithEvents btnCapNhat As Button
     Friend WithEvents btnXoa As Button
+    Friend WithEvents Label4 As Label
 End Class

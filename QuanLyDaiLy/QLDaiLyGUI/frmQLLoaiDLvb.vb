@@ -17,7 +17,7 @@ Public Class frmQLLoaiDLvb
         Dim listLoaiDl = New List(Of LoaiDLDTO)
         result = ldlBus.selectAll(listLoaiDl)
         If (result.FlagResult = False) Then
-            MessageBox.Show("Lấy danh loại đại lý không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Lấy danh sách loại đại lý không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
             Return
         End If
@@ -102,7 +102,7 @@ Public Class frmQLLoaiDLvb
 
         'Verify that indexing OK
         If (-1 < currentRowIndex And currentRowIndex < dgvDoanhSachLoaiDL.RowCount) Then
-            Select Case MsgBox("Bạn có thực sự muốn xóa loại học sinh có mã: " + txtMaLoaiDL.Text, MsgBoxStyle.YesNo, "Information")
+            Select Case MsgBox("Bạn có thực sự muốn xóa Loại Đại Lý có mã: " + txtMaLoaiDL.Text, MsgBoxStyle.YesNo, "Information")
                 Case MsgBoxResult.Yes
                     Try
 
@@ -183,9 +183,9 @@ Public Class frmQLLoaiDLvb
                     Catch ex As Exception
                         Console.WriteLine(ex.StackTrace)
                     End Try
-                    MessageBox.Show("Cập nhật Loại học sinh thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MessageBox.Show("Cập nhật Loại Đại Lý thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Else
-                    MessageBox.Show("Cập nhật loại học sinh không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    MessageBox.Show("Cập nhật Loại Đại Lý không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     System.Console.WriteLine(result.SystemMessage)
                 End If
             Catch ex As Exception

@@ -39,6 +39,17 @@ Public Class MatHangBUS
         '2. insert to DB
         Return mathangDAL.update(mathang)
     End Function
+    Public Function countsomathang(ByRef sdf As Integer) As Result
+        '1. verify data here!!
 
+        '2. insert to DB
+        Return mathangDAL.countsomathang(sdf)
+    End Function
+    Public Function selectSomathang_thamso(ByRef somathangtoida As Integer) As Result
+        '1. verify data here!!
+
+        '2. insert to DB
+        Return mathangDAL.selectSomathang_thamso(somathangtoida)
+    End Function
 
 End Class

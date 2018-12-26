@@ -52,6 +52,13 @@ Public Class PhieuXuatBUS
         Return pxDal.update(px)
     End Function
 
+    ''them
+    Public Function getthang(ByRef listthang As List(Of PhieuXuatDTO)) As Result
+        '1. verify data here!!
+
+        '2. insert to DB
+        Return pxDal.getthang(listthang)
+    End Function
 
 
 

@@ -107,6 +107,8 @@ Public Class PhieuXuatDAL
         Return New Result(True) ' thanh cong
     End Function
 
+
+
     Public Function insert(px As PhieuXuatDTO) As Result
 
         Dim query As String = String.Empty
@@ -177,7 +179,6 @@ Public Class PhieuXuatDAL
         Return New Result(True) ' thanh cong
     End Function
 
-
     Public Function delete(maPhieuXuat As Integer) As Result
 
         Dim query As String = String.Empty
@@ -206,8 +207,6 @@ Public Class PhieuXuatDAL
         End Using
         Return New Result(True)  ' thanh cong
     End Function
-
-
 
     Public Function selectALL(ByRef listPhieuXuat As List(Of PhieuXuatDTO)) As Result
 
@@ -244,9 +243,6 @@ Public Class PhieuXuatDAL
         Return New Result(True) ' thanh cong
     End Function
 
-
-
-
     Public Function selectALL_ByMaDaiLy(madl As Integer, ByRef listPhieuXuat As List(Of PhieuXuatDTO)) As Result
 
         Dim query As String = String.Empty
@@ -282,6 +278,45 @@ Public Class PhieuXuatDAL
         End Using
         Return New Result(True) ' thanh cong
     End Function
+
+    ''
+
+    Public Function getthang(ByRef listthang As List(Of PhieuXuatDTO)) As Result
+
+        Dim query As String = String.Empty
+        query &= "SELECT DISTINCT MONTH(NgayLapPhieu) AS Ngay "
+        query &= "FROM [PHIEUXUAT]"
+
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = comm.ExecuteReader()
+                    If reader.HasRows = True Then
+                        listthang.Clear()
+                        While reader.Read()
+                            listthang.Add(New PhieuXuatDTO(reader("Ngay")))
+                        End While
+                    End If
+
+                Catch ex As Exception
+                    conn.Close()
+                    System.Console.WriteLine(ex.StackTrace)
+                    Return New Result(False, "Lấy tất cả phieu xuat không thành công", ex.StackTrace)
+                End Try
+            End Using
+        End Using
+        Return New Result(True) ' thanh cong
+    End Function
+
+
 
 
 End Class

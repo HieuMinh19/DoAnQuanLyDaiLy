@@ -35,7 +35,7 @@ Public Class frmQLPhieuThuTien
 
         result = ptBus.selectALL_ByMaDaiLy(maDL, listPhieuThuTien)
         If (result.FlagResult = False) Then
-            MessageBox.Show("Lấy danh sách phieu  xuat thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Lấy danh sách phiếu xuất thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
             Return
         End If
@@ -124,7 +124,7 @@ Public Class frmQLPhieuThuTien
         Dim currentRowIndex As Integer = dgvDanhSachPhieuThuTien.CurrentCellAddress.Y 'current row selected
         'Verify that indexing OK
         If (-1 < currentRowIndex And currentRowIndex < dgvDanhSachPhieuThuTien.RowCount) Then
-            Select Case MsgBox("Bạn có thực sự muốn xóa phieu xuat có mã số: " + txtMaPhieuThu.Text, MsgBoxStyle.YesNo, "Information")
+            Select Case MsgBox("Bạn có thực sự muốn xóa phiếu xuất có mã số: " + txtMaPhieuThu.Text, MsgBoxStyle.YesNo, "Information")
                 Case MsgBoxResult.Yes ' + txtMaDaiLy.Text
                     Try
                         '1. Delete from DB
@@ -145,7 +145,7 @@ Public Class frmQLPhieuThuTien
                                 dgvDanhSachPhieuThuTien.Rows(currentRowIndex).Selected = True
                             End If
 
-                            MessageBox.Show("Xóa phieu xuat thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            MessageBox.Show("Xóa phiếu xuất thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         Else
                             MessageBox.Show("Xóa phieu xuat không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                             System.Console.WriteLine(result.SystemMessage)
@@ -182,9 +182,9 @@ Public Class frmQLPhieuThuTien
                     ' Hightlight the row has been updated on table
                     dgvDanhSachPhieuThuTien.Rows(currentRowIndex).Selected = True
 
-                    MessageBox.Show("Cập nhật phieu xuat thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MessageBox.Show("Cập nhật phiếu xuất thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Else
-                    MessageBox.Show("Cập nhật phieu xuat không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    MessageBox.Show("Cập nhật phiếu xuất không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     System.Console.WriteLine(result.SystemMessage)
                 End If
             Catch ex As Exception

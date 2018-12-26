@@ -21,7 +21,7 @@ Public Class frmThemLoaiDL
 
         result = loaiDLBus.builMaLoaiDL(nextMaLoaiDL)
         If (result.FlagResult = False) Then
-            MessageBox.Show("Lấy danh tự động Ma Quan không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Lấy danh tự động mã quận không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
             Me.Close()
             Return
@@ -38,20 +38,40 @@ Public Class frmThemLoaiDL
         loaidl.TenLoaiDL = txtTenLoaiDL.Text
         loaidl.NoToiDa = txtNoToiDa.Text
 
-        '3. Insert to DB
-        Dim result As Result
-        result = loaiDLBus.insert(loaidl)
-        If (result.FlagResult = True) Then
-            MessageBox.Show("Thêm loai dl thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            'set MSSH auto
-            Dim nextMaQuan = "1"
-            result = loaiDLBus.builMaLoaiDL(nextMaQuan)
+        Dim countsolaoidailu As Integer
+        ' Dim resultsodonvitinh As Result
+        Dim soloaidailytoida As Integer
 
-            txtTenLoaiDL.Text = String.Empty
-            txtNoToiDa.Text = String.Empty
+        loaiDLBus.countsoluongloaidaily(countsolaoidailu)
+        loaiDLBus.selectSoloaidaily_thamso(soloaidailytoida)
+        '3. Insert to DB
+        If (countsolaoidailu < soloaidailytoida) Then
+
+            Dim result As Result
+            result = loaiDLBus.insert(loaidl)
+            If (result.FlagResult = True) Then
+                MessageBox.Show("Thêm loai dl thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                'set MSSH auto
+                Dim nextMaQuan = "1"
+                result = loaiDLBus.builMaLoaiDL(nextMaQuan)
+
+                txtTenLoaiDL.Text = String.Empty
+                txtNoToiDa.Text = String.Empty
+            Else
+                MessageBox.Show("Thêm loai dl không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                System.Console.WriteLine(result.SystemMessage)
+            End If
         Else
-            MessageBox.Show("Thêm loai dl không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            System.Console.WriteLine(result.SystemMessage)
+            MessageBox.Show("số loại đại lý phải bé hơn số loại đại lý tối đa", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        End If
+    End Sub
+
+    'khong cho phep nhap ki tu vao texbox
+    Private Sub txtMaLoaiDL_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtMaLoaiDL.KeyPress, txtNoToiDa.KeyPress
+        If Asc(e.KeyChar) <> 8 Then
+            If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
+                e.Handled = True
+            End If
         End If
     End Sub
 End Class

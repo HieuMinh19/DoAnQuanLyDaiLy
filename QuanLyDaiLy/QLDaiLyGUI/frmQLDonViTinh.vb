@@ -20,7 +20,7 @@ Public Class frmQLDonViTinh
         Dim result As Result
         result = ldonvitinhBus.selectAll(listDonViTinh)
         If (result.FlagResult = False) Then
-            MessageBox.Show("Lấy danh sách don vi tinh không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Lấy danh sách đơn vị tính không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
             Return
         End If
@@ -51,7 +51,7 @@ Public Class frmQLDonViTinh
 
         'Verify that indexing OK
         If (-1 < currentRowIndex And currentRowIndex < dgvDanhSachDonViTinh.RowCount) Then
-            Select Case MsgBox("Bạn có thực sự muốn xóa loại học sinh có mã: " + txtMaDonViTinh.Text, MsgBoxStyle.YesNo, "Information")
+            Select Case MsgBox("Bạn có thực sự muốn xóa đơn vị tính có mã: " + txtMaDonViTinh.Text, MsgBoxStyle.YesNo, "Information")
                 Case MsgBoxResult.Yes
                     Try
 
@@ -77,9 +77,9 @@ Public Class frmQLDonViTinh
                                     Console.WriteLine(ex.StackTrace)
                                 End Try
                             End If
-                            MessageBox.Show("Xóa don vi tinh thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            MessageBox.Show("Xóa đơn vị tính thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         Else
-                            MessageBox.Show("Xóa don vi tinh không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                            MessageBox.Show("Xóa đơn vị tính không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                             System.Console.WriteLine(result.SystemMessage)
                         End If
                     Catch ex As Exception
@@ -130,9 +130,9 @@ Public Class frmQLDonViTinh
                     Catch ex As Exception
                         Console.WriteLine(ex.StackTrace)
                     End Try
-                    MessageBox.Show("Cập nhật don vi tinh thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MessageBox.Show("Cập nhật đơn vị tính thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Else
-                    MessageBox.Show("Cập nhật don vi tinh không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    MessageBox.Show("Cập nhật đơn vị tính không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     System.Console.WriteLine(result.SystemMessage)
                 End If
             Catch ex As Exception

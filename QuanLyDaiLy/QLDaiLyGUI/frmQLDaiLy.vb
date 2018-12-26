@@ -46,9 +46,9 @@ Public Class frmQLDaiLy
 
 
 
-        cbmMaQuanTren.DataSource = New BindingSource(listQuan, String.Empty)
-        cbmMaQuanTren.DisplayMember = "TenQuan"
-        cbmMaQuanTren.ValueMember = "MaQuan"
+        'cbmMaQuanTren.DataSource = New BindingSource(listQuan, String.Empty)
+        'cbmMaQuanTren.DisplayMember = "TenQuan"
+        'cbmMaQuanTren.ValueMember = "MaQuan"
 
 
         cbmMaQuan.DataSource = New BindingSource(listQuan, String.Empty)
@@ -60,7 +60,7 @@ Public Class frmQLDaiLy
         Dim result As Result
         result = dlBus.selectAll(listDaiLy)
         If (result.FlagResult = False) Then
-            MessageBox.Show("Lấy danh sách học sinh không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Lấy danh sách loại đai lý không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
             Return
         End If
@@ -114,7 +114,7 @@ Public Class frmQLDaiLy
 
         result = dlBus.selectALL_ByMaLoaiDL(maLoai, listDaiLy)
         If (result.FlagResult = False) Then
-            MessageBox.Show("Lấy danh sách học sfdsfsdfng thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("Lấy danh sách đai lý thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
             Return
         End If
@@ -206,14 +206,9 @@ Public Class frmQLDaiLy
     End Sub
 
     Private Sub dgvListDL_SELECTionChanged(sender As Object, e As EventArgs) Handles dgvListDL.SelectionChanged
-        ' Get the current cell location.
+
         Dim currentRowIndex As Integer = dgvListDL.CurrentCellAddress.Y 'current row selected
-        'Dim x As Integer = dgvListHS.CurrentCellAddress.X 'curent column selected
 
-        ' Write coordinates to console for debugging
-        'Console.WriteLine(y.ToString + " " + x.ToString)
-
-        'Verify that indexing OK
         If (-1 < currentRowIndex And currentRowIndex < dgvListDL.RowCount) Then
             Try
                 Dim dl = CType(dgvListDL.Rows(currentRowIndex).DataBoundItem, DaiLyDTO)
@@ -269,9 +264,9 @@ Public Class frmQLDaiLy
                                 dgvListDL.Rows(currentRowIndex).Selected = True
                             End If
 
-                            MessageBox.Show("Xóa dai ly thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            MessageBox.Show("Xóa đại lý thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
                         Else
-                            MessageBox.Show("Xóa dai ly không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                            MessageBox.Show("Xóa đại lý không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                             System.Console.WriteLine(result.SystemMessage)
                         End If
                     Catch ex As Exception
@@ -324,9 +319,9 @@ Public Class frmQLDaiLy
                     ' Hightlight the row has been updated on table
                     dgvListDL.Rows(currentRowIndex).Selected = True
 
-                    MessageBox.Show("Cập nhật dai ly thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                    MessageBox.Show("Cập nhật đại lý thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 Else
-                    MessageBox.Show("Cập nhật dai ly không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                    MessageBox.Show("Cập nhật đại lý không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                     System.Console.WriteLine(result.SystemMessage)
                 End If
             Catch ex As Exception

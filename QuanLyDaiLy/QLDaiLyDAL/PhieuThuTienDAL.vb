@@ -112,6 +112,14 @@ Public Class PhieuThuTienDAL
         Dim query As String = String.Empty
         query &= "INSERT INTO [PHIEUTHUTIEN] ([MaDaiLy],[NgayThuTien],[SoTienThu])"
         query &= "VALUES (@MaDaiLy,@NgayThuTien,@SoTienThu)"
+
+
+
+
+
+        'query &= "WHERE (PHIEUTHUTIEN.MaDaiLy = DAILY.MaDL) and (PHIEUTHUTIEN.SoTienThu < DAILY.NoCuaDaiLy)"
+
+
         'get MSDG
         Dim nextMaPhieuThuTien = "1"
         buildMaPhieuThuTien(nextMaPhieuThuTien)
@@ -282,4 +290,55 @@ Public Class PhieuThuTienDAL
         End Using
         Return New Result(True) ' thanh cong
     End Function
+
+
+
+
+    Public Function selectNoDaiLy_ByMaDaiLy(madl As Integer, ByRef NoCuaDaiLy As Integer) As Result
+
+        Dim query As String = String.Empty
+        query &= "SELECT [NoCuaDaiLy]"
+        query &= "FROM [DAILY] "
+        query &= "WHERE [MaDL] = @MaDaiLy "
+
+        Using conn As New SqlConnection(connectionString)
+            Using comm As New SqlCommand()
+                With comm
+                    .Connection = conn
+                    .CommandType = CommandType.Text
+                    .CommandText = query
+                    .Parameters.AddWithValue("@MaDaiLy", madl)
+                End With
+                Try
+                    conn.Open()
+                    Dim reader As SqlDataReader
+                    reader = comm.ExecuteReader()
+                    If reader.HasRows = True Then
+                        'NoCuaDaiLy.Clear()
+                        While reader.Read()
+                            NoCuaDaiLy = reader("NoCuaDaiLy")
+                            'listPhieuThuTien.Add(New PhieuThuTienDTO(reader("MaPhieuThu"), reader("MaDaiLy"), reader("NgayThuTien"), reader("SoTienThu")))
+                        End While
+                    End If
+
+                Catch ex As Exception
+                    conn.Close()
+                    System.Console.WriteLine(ex.StackTrace)
+                    Return New Result(False, "Lấy tất cả dai li theo ma dai ly không thành công", ex.StackTrace)
+                End Try
+            End Using
+        End Using
+        Return New Result(True) ' thanh cong
+    End Function
+
+
+
+
+
+
+
+
+
+
+
 End Class
