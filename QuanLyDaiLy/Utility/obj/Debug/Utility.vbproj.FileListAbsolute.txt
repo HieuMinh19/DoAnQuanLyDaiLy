@@ -36,3 +36,12 @@ D:\Document\cong nghe PM\doanmoi\DoAnQuanLyDaiLy\DoAnQuanLyDaiLy\QuanLyDaiLy\Uti
 D:\Document\cong nghe PM\doanmoi\DoAnQuanLyDaiLy\DoAnQuanLyDaiLy\QuanLyDaiLy\Utility\obj\Debug\Utility.dll
 D:\Document\cong nghe PM\doanmoi\DoAnQuanLyDaiLy\DoAnQuanLyDaiLy\QuanLyDaiLy\Utility\obj\Debug\Utility.xml
 D:\Document\cong nghe PM\doanmoi\DoAnQuanLyDaiLy\DoAnQuanLyDaiLy\QuanLyDaiLy\Utility\obj\Debug\Utility.pdb
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\Utility\bin\Debug\Utility.dll
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\Utility\bin\Debug\Utility.pdb
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\Utility\bin\Debug\Utility.xml
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\Utility\obj\Debug\Utility.vbprojResolveAssemblyReference.cache
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\Utility\obj\Debug\Utility.Resources.resources
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\Utility\obj\Debug\Utility.vbproj.GenerateResource.Cache
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\Utility\obj\Debug\Utility.dll
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\Utility\obj\Debug\Utility.xml
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\Utility\obj\Debug\Utility.pdb

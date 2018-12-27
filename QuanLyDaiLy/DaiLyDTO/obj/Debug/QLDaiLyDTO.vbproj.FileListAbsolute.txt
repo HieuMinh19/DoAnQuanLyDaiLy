@@ -47,3 +47,15 @@ D:\Document\cong nghe PM\doanmoi\DoAnQuanLyDaiLy\DoAnQuanLyDaiLy\QuanLyDaiLy\Dai
 D:\Document\cong nghe PM\doanmoi\DoAnQuanLyDaiLy\DoAnQuanLyDaiLy\QuanLyDaiLy\DaiLyDTO\obj\Debug\QLDaiLyDTO.dll
 D:\Document\cong nghe PM\doanmoi\DoAnQuanLyDaiLy\DoAnQuanLyDaiLy\QuanLyDaiLy\DaiLyDTO\obj\Debug\QLDaiLyDTO.xml
 D:\Document\cong nghe PM\doanmoi\DoAnQuanLyDaiLy\DoAnQuanLyDaiLy\QuanLyDaiLy\DaiLyDTO\obj\Debug\QLDaiLyDTO.pdb
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\DaiLyDTO\bin\Debug\QLDaiLyDTO.dll
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\DaiLyDTO\bin\Debug\QLDaiLyDTO.pdb
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\DaiLyDTO\bin\Debug\QLDaiLyDTO.xml
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\DaiLyDTO\bin\Debug\Utility.dll
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\DaiLyDTO\bin\Debug\Utility.pdb
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\DaiLyDTO\bin\Debug\Utility.xml
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\DaiLyDTO\obj\Debug\QLDaiLyDTO.vbprojResolveAssemblyReference.cache
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\DaiLyDTO\obj\Debug\QLDaiLyDTO.Resources.resources
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\DaiLyDTO\obj\Debug\QLDaiLyDTO.vbproj.GenerateResource.Cache
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\DaiLyDTO\obj\Debug\QLDaiLyDTO.dll
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\DaiLyDTO\obj\Debug\QLDaiLyDTO.xml
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\DaiLyDTO\obj\Debug\QLDaiLyDTO.pdb

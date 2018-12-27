@@ -68,7 +68,7 @@
     <Compile Include="DaiLyDTO.vb" />
     <Compile Include="DonViTinhDTO.vb" />
     <Compile Include="LoaiDLDTO.vb" />
-    <Compile Include="MatHangDTO.vb" />
+    <Compile Include="LoaiXeDTO.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>

@@ -71,7 +71,7 @@
     <Compile Include="DaiLyDAL.vb" />
     <Compile Include="DonViTinhDAL.vb" />
     <Compile Include="LoaiDLDAL.vb" />
-    <Compile Include="MatHangDAL.vb" />
+    <Compile Include="LoaiXeDAL.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>

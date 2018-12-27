@@ -1,1 +1,1 @@
-SQLCMD -S DESKTOP-97J7D09 -E -i QuanLyDaiLy.sql
+SQLCMD -S DESKTOP-Q75A6S2 -E -i QuanLyDaiLy.sql

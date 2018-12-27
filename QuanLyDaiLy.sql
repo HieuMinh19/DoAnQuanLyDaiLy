@@ -53,11 +53,9 @@ go
 create table CHITIETPHIEUXUAT
 (
 	MaChiTietPhieu int identity(1,1) primary key,
-	MaPhieuXuat int, 
-	MaMatHang int, 
-	MaDonViTinh int, 
+	MaPhieuXuat int,
+	MaXe int, 
 	SoLuongXuat int,
-	DonGia int, 
 	ThanhTien int
 )
 go 
@@ -65,16 +63,12 @@ create table LOAIXE
 (
 	MaXe int primary key, 
 	TenXe varchar(40),
-	SoLuongTon int
+	SoLuongTon int,
+	DonGia int
 )
 
 go 
-create table DONGIA
-(
-	MaDonGia int primary key,
-	MaXe  int,		
-	SoTien varchar(40),
-)
+
 
 go
 create table PHIEUTHUTIEN
@@ -110,7 +104,7 @@ Create table THAMSO
 	Id int,
 	SoDaiLyToiDa int,
 	SoLoaiDaiLy int,
-	SoMatHang int, 
+	SoLoaiXe int, 
 	SoDonViTinh int
 )
 drop table THAMSO
@@ -142,8 +136,12 @@ insert LOAIDL VALUES ('1','Loai 1', '100000')
 insert LOAIDL VALUES ('2','Loai 2', '200000')
 
 go
-insert THAMSO VALUES('1','3','4','3','4');
+insert THAMSO VALUES('1','3','4','10','4');
+go
+
+insert LOAIXE VALUES('1','honda','15');
 go
 
 insert into DAILY VALUES(2,'dai ly 3', '123 so 7', 'DL3@gmail.com','01584389','2018-05-10',1000,2,1,1)
 
+go

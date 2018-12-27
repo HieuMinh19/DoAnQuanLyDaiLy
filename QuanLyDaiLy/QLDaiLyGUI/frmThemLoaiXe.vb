@@ -2,67 +2,67 @@
 Imports QLDaiLyDTO
 Imports Utility
 
-Public Class frmThemMatHang
+Public Class frmThemLoaiXe
 
-    Private MatHangBus As MatHangBUS
-    Private Sub frmThemMatHang_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+    Private LoaiXeBus As LoaiXeBUS
+    Private Sub frmThemLoaiXe_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
 
 
-        MatHangBus = New MatHangBUS()
+        LoaiXeBus = New LoaiXeBUS()
         ' LoaiDLBUS = New LoaiDLBUS()
         ' quanBus = New QuanBUS()
 
         'lay ma dai ly
         Dim result As Result
         ' Dim resultQuan As Result
-        Dim nextMaMatHang As Integer
+        Dim nextMaXe As Integer
 
 
-        result = MatHangBus.builMaMatHang(nextMaMatHang)
+        result = LoaiXeBus.buildMaLoaiXe(nextMaXe)
         If (result.FlagResult = False) Then
             MessageBox.Show("Lấy danh tự động  không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
             Me.Close()
             Return
         End If
-        txtMaMatHang.Text = nextMaMatHang
+        txtMaMatHang.Text = nextMaXe
     End Sub
 
     Private Sub btnThem_Click(sender As Object, e As EventArgs) Handles btnThem.Click
-        Dim mathang As MatHangDTO
-        mathang = New MatHangDTO()
+        Dim loaixe As LoaiXeDTO
+        loaixe = New LoaiXeDTO()
 
-        mathang.MaMatHang = txtMaMatHang.Text
-        mathang.TenMatHang = txtTenMatHang.Text
-        mathang.SoLuongTon = txtSoLuongTon.Text
+        loaixe.MaXe = txtMaMatHang.Text
+        loaixe.TenXe = txtTenMatHang.Text
+        loaixe.SoLuongTon = txtSoLuongTon.Text
+        loaixe.IDonGia1 = Convert.ToInt32(txtDonGia.Text)
 
-
-        Dim countsomathang As Integer
+        Dim countsoloaixe As Integer
         ' Dim resultsodonvitinh As Result
-        Dim somathangotida As Integer
+        Dim soloaixetoida As Integer
 
-        MatHangBus.countsomathang(countsomathang)
-        MatHangBus.selectSomathang_thamso(somathangotida)
+        LoaiXeBus.countsoloaixe(countsoloaixe)
+        LoaiXeBus.selectSoloaixe_thamso(soloaixetoida)
         '3. Insert to DB
-        If (countsomathang < somathangotida) Then
+        If (1) Then
 
             Dim result As Result
-            result = MatHangBus.insert(mathang)
+            result = LoaiXeBus.insert(loaixe)
             If (result.FlagResult = True) Then
-                MessageBox.Show("Thêm mặt hàng thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                MessageBox.Show("Thêm loại xe thành công.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information)
                 'set MSSH auto
-                Dim nextMaMatHang = "1"
-                result = MatHangBus.builMaMatHang(nextMaMatHang)
+                Dim nextMaLoaiXe = "1"
+                result = LoaiXeBus.buildMaLoaiXe(nextMaLoaiXe)
 
                 txtTenMatHang.Text = String.Empty
                 txtSoLuongTon.Text = String.Empty
             Else
-                MessageBox.Show("Thêm mặt hàng không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+                MessageBox.Show("Thêm loaixe không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
                 System.Console.WriteLine(result.SystemMessage)
             End If
         Else
-            MessageBox.Show("số mặt hàng phải bé hơn số mặt hàng tối đa", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            MessageBox.Show("số loaixe phải bé hơn số loaixe tối đa", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
         End If
     End Sub
 
@@ -73,4 +73,6 @@ Public Class frmThemMatHang
             End If
         End If
     End Sub
+
+
 End Class
