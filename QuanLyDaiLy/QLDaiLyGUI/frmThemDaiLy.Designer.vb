@@ -42,6 +42,8 @@ Partial Class frmThemDaiLy
         Me.Label9 = New System.Windows.Forms.Label()
         Me.txtNoCuaDaiLy = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
+        Me.cbxChuDaiLy = New System.Windows.Forms.ComboBox()
+        Me.Label11 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label1
@@ -194,7 +196,7 @@ Partial Class frmThemDaiLy
         'btnThemDaiLy
         '
         Me.btnThemDaiLy.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnThemDaiLy.Location = New System.Drawing.Point(293, 272)
+        Me.btnThemDaiLy.Location = New System.Drawing.Point(242, 271)
         Me.btnThemDaiLy.Margin = New System.Windows.Forms.Padding(2)
         Me.btnThemDaiLy.Name = "btnThemDaiLy"
         Me.btnThemDaiLy.Size = New System.Drawing.Size(92, 32)
@@ -231,11 +233,32 @@ Partial Class frmThemDaiLy
         Me.Label10.TabIndex = 19
         Me.Label10.Text = "Thêm Đại Lí"
         '
+        'cbxChuDaiLy
+        '
+        Me.cbxChuDaiLy.FormattingEnabled = True
+        Me.cbxChuDaiLy.Location = New System.Drawing.Point(394, 233)
+        Me.cbxChuDaiLy.Margin = New System.Windows.Forms.Padding(2)
+        Me.cbxChuDaiLy.Name = "cbxChuDaiLy"
+        Me.cbxChuDaiLy.Size = New System.Drawing.Size(179, 21)
+        Me.cbxChuDaiLy.TabIndex = 20
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(302, 236)
+        Me.Label11.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(54, 13)
+        Me.Label11.TabIndex = 21
+        Me.Label11.Text = "Chủ đại lý"
+        '
         'frmThemDaiLy
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(634, 314)
+        Me.Controls.Add(Me.Label11)
+        Me.Controls.Add(Me.cbxChuDaiLy)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.txtNoCuaDaiLy)
         Me.Controls.Add(Me.Label9)
@@ -284,4 +307,6 @@ Partial Class frmThemDaiLy
     Friend WithEvents Label9 As Label
     Friend WithEvents txtNoCuaDaiLy As TextBox
     Friend WithEvents Label10 As Label
+    Friend WithEvents cbxChuDaiLy As ComboBox
+    Friend WithEvents Label11 As Label
 End Class

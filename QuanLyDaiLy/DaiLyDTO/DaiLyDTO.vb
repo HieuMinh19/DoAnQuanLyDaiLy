@@ -8,11 +8,12 @@
     Private iNoCuaDaiLy As Integer
     Private iMaQuan As Integer
     Private iMaLoaiDL As Integer
+    Private iMaNguoiDaiDien As Integer
 
     Public Sub New()
     End Sub
 
-    Public Sub New(iMaDL As Integer, strTenDL As String, strDiaChi As String, strEmail As String, strDienThoai As String, dateNgTiepNhan As Date, iNoCuaDaiLy As Integer, iMaQuan As Integer, iMaLoaiDL As Integer)
+    Public Sub New(iMaNguoiDaiDien As Integer, iMaDL As Integer, strTenDL As String, strDiaChi As String, strEmail As String, strDienThoai As String, dateNgTiepNhan As Date, iNoCuaDaiLy As Integer, iMaQuan As Integer, iMaLoaiDL As Integer)
         Me.iMaDL = iMaDL
         Me.strTenDL = strTenDL
         Me.strDiaChi = strDiaChi
@@ -22,6 +23,7 @@
         Me.iNoCuaDaiLy = iNoCuaDaiLy
         Me.iMaQuan = iMaQuan
         Me.iMaLoaiDL = iMaLoaiDL
+        Me.iMaNguoiDaiDien = iMaNguoiDaiDien
     End Sub
 
     Public Property MaDL As Integer
@@ -102,6 +104,15 @@
         End Get
         Set(value As Integer)
             iNoCuaDaiLy = value
+        End Set
+    End Property
+
+    Public Property MaNguoiDaiDien As Integer
+        Get
+            Return iMaNguoiDaiDien
+        End Get
+        Set(value As Integer)
+            iMaNguoiDaiDien = value
         End Set
     End Property
 End Class

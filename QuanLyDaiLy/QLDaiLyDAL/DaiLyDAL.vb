@@ -112,8 +112,8 @@ Public Class DaiLyDAL
     Public Function insert(dl As DaiLyDTO) As Result
 
         Dim query As String = String.Empty
-        query &= "INSERT INTO [DAILY] ([TenDL],[DiaChi],[Email],[DienThoai],[NgTiepNhan],[NoCuaDaiLy],[MaQuan],[MaLoaiDL])"
-        query &= "VALUES (@TenDL,@DiaChi,@Email,@DienThoai,@NgTiepNhan,@NoCuaDaiLy,@MaQuan,@MaLoaiDL)"
+        query &= "INSERT INTO [DAILY] ([TenDL],[DiaChi],[Email],[DienThoai],[NgTiepNhan],[NoCuaDaiLy],[MaQuan],[MaLoaiDL])[MaNguoiDaiDien],"
+        query &= "VALUES (@TenDL,@DiaChi,@Email,@DienThoai,@NgTiepNhan,@NoCuaDaiLy,@MaQuan,@MaLoaiDL,@MaNguoiDaiDien)"
         'get MSDG
         Dim nextMaDL = "1"
         buildMaDL(nextMaDL)
@@ -134,6 +134,7 @@ Public Class DaiLyDAL
                     .Parameters.AddWithValue("@NoCuaDaiLy", dl.NoCuaDaiLy)
                     .Parameters.AddWithValue("@MaQuan", dl.MaQuan)
                     .Parameters.AddWithValue("@MaLoaiDL", dl.MaLoaiDL)
+                    .Parameters.AddWithValue("@MaNguoiDaiDien", dl.MaNguoiDaiDien)
 
                 End With
                 Try
@@ -161,8 +162,10 @@ Public Class DaiLyDAL
         query &= " ,[NoCuaDaiLy] = @NoCuaDaiLy "
         query &= " ,[MaQuan] = @MaQuan "
         query &= " ,[MaLoaiDL] = @MaLoaiDL "
+        query &= ",[MaNguoiDaiDien] = @MaNguoiDaiDien"
         query &= " WHERE "
         query &= " [MaDL] = @MaDL "
+
 
         Using conn As New SqlConnection(connectionString)
             Using comm As New SqlCommand()
@@ -180,6 +183,7 @@ Public Class DaiLyDAL
                     .Parameters.AddWithValue("@MaQuan", dl.MaQuan)
                     .Parameters.AddWithValue("@MaLoaiDL", dl.MaLoaiDL)
                     .Parameters.AddWithValue("@MaDL", dl.MaDL)
+                    .Parameters.AddWithValue("@MaNguoiDaiDien", dl.MaNguoiDaiDien)
                 End With
                 Try
                     conn.Open()
@@ -230,7 +234,7 @@ Public Class DaiLyDAL
     Public Function selectALL(ByRef listDaiLy As List(Of DaiLyDTO)) As Result
 
         Dim query As String = String.Empty
-        query &= "SELECT [MaDL], [TenDL], [DiaChi], [Email],[DienThoai],[NgTiepNhan],[NoCuaDaiLy],[MaQuan],[MaLoaiDL]"
+        query &= "SELECT [MaDL], [TenDL], [DiaChi], [Email],[DienThoai],[NgTiepNhan],[NoCuaDaiLy],[MaQuan],[MaLoaiDL], [MaNguoiDaiDien]"
         query &= "FROM [DAILY]"
 
 
@@ -248,7 +252,7 @@ Public Class DaiLyDAL
                     If reader.HasRows = True Then
                         listDaiLy.Clear()
                         While reader.Read()
-                            listDaiLy.Add(New DaiLyDTO(reader("MaDL"), reader("TenDL"), reader("DiaChi"), reader("Email"), reader("DienThoai"), reader("NgTiepNhan"), reader("NoCuaDaiLy"), reader("MaQuan"), reader("MaLoaiDL")))
+                            listDaiLy.Add(New DaiLyDTO(reader("MaDL"), reader("TenDL"), reader("DiaChi"), reader("Email"), reader("DienThoai"), reader("NgTiepNhan"), reader("NoCuaDaiLy"), reader("MaQuan"), reader("MaLoaiDL"), reader("MaNguoiDaiDien")))
                         End While
                     End If
 
@@ -261,9 +265,6 @@ Public Class DaiLyDAL
         End Using
         Return New Result(True) ' thanh cong
     End Function
-
-
-
 
     Public Function selectALL_ByMaLoaiDL(maLoaidl As Integer, ByRef listDaiLy As List(Of DaiLyDTO)) As Result
 
@@ -287,7 +288,7 @@ Public Class DaiLyDAL
                     If reader.HasRows = True Then
                         listDaiLy.Clear()
                         While reader.Read()
-                            listDaiLy.Add(New DaiLyDTO(reader("MaDL"), reader("TenDL"), reader("DiaChi"), reader("Email"), reader("DienThoai"), reader("NgTiepNhan"), reader("NoCuaDaiLy"), reader("MaQuan"), reader("MaLoaiDL")))
+                            listDaiLy.Add(New DaiLyDTO(reader("MaDL"), reader("TenDL"), reader("DiaChi"), reader("Email"), reader("DienThoai"), reader("NgTiepNhan"), reader("NoCuaDaiLy"), reader("MaQuan"), reader("MaLoaiDL"), reader("MaNguoiDaiDien")))
                         End While
                     End If
 
@@ -379,7 +380,7 @@ Public Class DaiLyDAL
 
                         listDaiLy.Clear()
                         While reader.Read()
-                            listDaiLy.Add(New DaiLyDTO(reader("MaDL"), reader("TenDL"), reader("DiaChi"), reader("Email"), reader("DienThoai"), reader("NgTiepNhan"), reader("NoCuaDaiLy"), reader("MaQuan"), reader("MaLoaiDL")))
+                            listDaiLy.Add(New DaiLyDTO(reader("MaDL"), reader("TenDL"), reader("DiaChi"), reader("Email"), reader("DienThoai"), reader("NgTiepNhan"), reader("NoCuaDaiLy"), reader("MaQuan"), reader("MaLoaiDL"), reader("MaNguoiDaiDien")))
                         End While
                     End If
 
@@ -419,7 +420,7 @@ Public Class DaiLyDAL
 
                         listDaiLy.Clear()
                         While reader.Read()
-                            listDaiLy.Add(New DaiLyDTO(reader("MaDL"), reader("TenDL"), reader("DiaChi"), reader("Email"), reader("DienThoai"), reader("NgTiepNhan"), reader("NoCuaDaiLy"), reader("MaQuan"), reader("MaLoaiDL")))
+                            listDaiLy.Add(New DaiLyDTO(reader("MaDL"), reader("TenDL"), reader("DiaChi"), reader("Email"), reader("DienThoai"), reader("NgTiepNhan"), reader("NoCuaDaiLy"), reader("MaQuan"), reader("MaLoaiDL"), reader("MaNguoiDaiDien")))
                         End While
                     End If
 
@@ -459,7 +460,7 @@ Public Class DaiLyDAL
 
                         listDaiLy.Clear()
                         While reader.Read()
-                            listDaiLy.Add(New DaiLyDTO(reader("MaDL"), reader("TenDL"), reader("DiaChi"), reader("Email"), reader("DienThoai"), reader("NgTiepNhan"), reader("NoCuaDaiLy"), reader("MaQuan"), reader("MaLoaiDL")))
+                            listDaiLy.Add(New DaiLyDTO(reader("MaDL"), reader("TenDL"), reader("DiaChi"), reader("Email"), reader("DienThoai"), reader("NgTiepNhan"), reader("NoCuaDaiLy"), reader("MaQuan"), reader("MaLoaiDL"), reader("MaNguoiDaiDien")))
                         End While
                     End If
 
@@ -498,7 +499,7 @@ Public Class DaiLyDAL
 
                         listDaiLy.Clear()
                         While reader.Read()
-                            listDaiLy.Add(New DaiLyDTO(reader("MaDL"), reader("TenDL"), reader("DiaChi"), reader("Email"), reader("DienThoai"), reader("NgTiepNhan"), reader("NoCuaDaiLy"), reader("MaQuan"), reader("MaLoaiDL")))
+                            listDaiLy.Add(New DaiLyDTO(reader("MaDL"), reader("TenDL"), reader("DiaChi"), reader("Email"), reader("DienThoai"), reader("NgTiepNhan"), reader("NoCuaDaiLy"), reader("MaQuan"), reader("MaLoaiDL"), reader("MaNguoiDaiDien")))
                         End While
                     End If
 
@@ -538,7 +539,7 @@ Public Class DaiLyDAL
 
                         listDaiLy.Clear()
                         While reader.Read()
-                            listDaiLy.Add(New DaiLyDTO(reader("MaDL"), reader("TenDL"), reader("DiaChi"), reader("Email"), reader("DienThoai"), reader("NgTiepNhan"), reader("NoCuaDaiLy"), reader("MaQuan"), reader("MaLoaiDL")))
+                            listDaiLy.Add(New DaiLyDTO(reader("MaDL"), reader("TenDL"), reader("DiaChi"), reader("Email"), reader("DienThoai"), reader("NgTiepNhan"), reader("NoCuaDaiLy"), reader("MaQuan"), reader("MaLoaiDL"), reader("MaNguoiDaiDien")))
                         End While
                     End If
 
@@ -577,7 +578,7 @@ Public Class DaiLyDAL
 
                         listDaiLy.Clear()
                         While reader.Read()
-                            listDaiLy.Add(New DaiLyDTO(reader("MaDL"), reader("TenDL"), reader("DiaChi"), reader("Email"), reader("DienThoai"), reader("NgTiepNhan"), reader("NoCuaDaiLy"), reader("MaQuan"), reader("MaLoaiDL")))
+                            listDaiLy.Add(New DaiLyDTO(reader("MaDL"), reader("TenDL"), reader("DiaChi"), reader("Email"), reader("DienThoai"), reader("NgTiepNhan"), reader("NoCuaDaiLy"), reader("MaQuan"), reader("MaLoaiDL"), reader("MaNguoiDaiDien")))
                         End While
                     End If
 
@@ -618,7 +619,7 @@ Public Class DaiLyDAL
 
                         listDaiLy.Clear()
                         While reader.Read()
-                            listDaiLy.Add(New DaiLyDTO(reader("MaDL"), reader("TenDL"), reader("DiaChi"), reader("Email"), reader("DienThoai"), reader("NgTiepNhan"), reader("NoCuaDaiLy"), reader("MaQuan"), reader("MaLoaiDL")))
+                            listDaiLy.Add(New DaiLyDTO(reader("MaDL"), reader("TenDL"), reader("DiaChi"), reader("Email"), reader("DienThoai"), reader("NgTiepNhan"), reader("NoCuaDaiLy"), reader("MaQuan"), reader("MaLoaiDL"), reader("MaNguoiDaiDien")))
                         End While
                     End If
 

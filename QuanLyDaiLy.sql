@@ -141,6 +141,8 @@ go
 insert LOAIDL VALUES ('1','Loai 1', '100000')
 insert LOAIDL VALUES ('2','Loai 2', '200000')
 
+insert into NGUOIDAIDIEN values('1','0123456789', '301673604', 'tp Ho Chi minh')
+
 go
 insert THAMSO VALUES('1','3','4','3','4');
 go
