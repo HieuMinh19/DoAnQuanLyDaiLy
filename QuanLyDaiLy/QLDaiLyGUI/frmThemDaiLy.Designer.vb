@@ -29,7 +29,6 @@ Partial Class frmThemDaiLy
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.Label8 = New System.Windows.Forms.Label()
         Me.txtMaDL = New System.Windows.Forms.TextBox()
         Me.txtTenDL = New System.Windows.Forms.TextBox()
         Me.txtDiaChi = New System.Windows.Forms.TextBox()
@@ -37,13 +36,14 @@ Partial Class frmThemDaiLy
         Me.txtEmail = New System.Windows.Forms.TextBox()
         Me.dtpNgTiepNhan = New System.Windows.Forms.DateTimePicker()
         Me.cbxMaQuan = New System.Windows.Forms.ComboBox()
-        Me.cbxMaLoaiDL = New System.Windows.Forms.ComboBox()
         Me.btnThemDaiLy = New System.Windows.Forms.Button()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.txtNoCuaDaiLy = New System.Windows.Forms.TextBox()
         Me.Label10 = New System.Windows.Forms.Label()
         Me.cbxChuDaiLy = New System.Windows.Forms.ComboBox()
         Me.Label11 = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.cbxMaLoaiDL = New System.Windows.Forms.ComboBox()
         Me.SuspendLayout()
         '
         'Label1
@@ -116,16 +116,6 @@ Partial Class frmThemDaiLy
         Me.Label7.TabIndex = 6
         Me.Label7.Text = "Ngày Tiếp Nhận"
         '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(302, 197)
-        Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(78, 13)
-        Me.Label8.TabIndex = 7
-        Me.Label8.Text = "Mã Loại Đại Lý"
-        '
         'txtMaDL
         '
         Me.txtMaDL.Enabled = False
@@ -184,15 +174,6 @@ Partial Class frmThemDaiLy
         Me.cbxMaQuan.Size = New System.Drawing.Size(179, 21)
         Me.cbxMaQuan.TabIndex = 14
         '
-        'cbxMaLoaiDL
-        '
-        Me.cbxMaLoaiDL.FormattingEnabled = True
-        Me.cbxMaLoaiDL.Location = New System.Drawing.Point(394, 190)
-        Me.cbxMaLoaiDL.Margin = New System.Windows.Forms.Padding(2)
-        Me.cbxMaLoaiDL.Name = "cbxMaLoaiDL"
-        Me.cbxMaLoaiDL.Size = New System.Drawing.Size(179, 21)
-        Me.cbxMaLoaiDL.TabIndex = 15
-        '
         'btnThemDaiLy
         '
         Me.btnThemDaiLy.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -236,7 +217,7 @@ Partial Class frmThemDaiLy
         'cbxChuDaiLy
         '
         Me.cbxChuDaiLy.FormattingEnabled = True
-        Me.cbxChuDaiLy.Location = New System.Drawing.Point(394, 233)
+        Me.cbxChuDaiLy.Location = New System.Drawing.Point(394, 189)
         Me.cbxChuDaiLy.Margin = New System.Windows.Forms.Padding(2)
         Me.cbxChuDaiLy.Name = "cbxChuDaiLy"
         Me.cbxChuDaiLy.Size = New System.Drawing.Size(179, 21)
@@ -245,25 +226,45 @@ Partial Class frmThemDaiLy
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(302, 236)
+        Me.Label11.Location = New System.Drawing.Point(307, 198)
         Me.Label11.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label11.Name = "Label11"
         Me.Label11.Size = New System.Drawing.Size(54, 13)
         Me.Label11.TabIndex = 21
         Me.Label11.Text = "Chủ đại lý"
         '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(310, 240)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(51, 13)
+        Me.Label8.TabIndex = 23
+        Me.Label8.Text = "loại đại lý"
+        '
+        'cbxMaLoaiDL
+        '
+        Me.cbxMaLoaiDL.FormattingEnabled = True
+        Me.cbxMaLoaiDL.Location = New System.Drawing.Point(394, 233)
+        Me.cbxMaLoaiDL.Margin = New System.Windows.Forms.Padding(2)
+        Me.cbxMaLoaiDL.Name = "cbxMaLoaiDL"
+        Me.cbxMaLoaiDL.Size = New System.Drawing.Size(179, 21)
+        Me.cbxMaLoaiDL.TabIndex = 22
+        '
         'frmThemDaiLy
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(634, 314)
+        Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.cbxMaLoaiDL)
         Me.Controls.Add(Me.Label11)
         Me.Controls.Add(Me.cbxChuDaiLy)
         Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.txtNoCuaDaiLy)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.btnThemDaiLy)
-        Me.Controls.Add(Me.cbxMaLoaiDL)
         Me.Controls.Add(Me.cbxMaQuan)
         Me.Controls.Add(Me.dtpNgTiepNhan)
         Me.Controls.Add(Me.txtEmail)
@@ -271,7 +272,6 @@ Partial Class frmThemDaiLy
         Me.Controls.Add(Me.txtDiaChi)
         Me.Controls.Add(Me.txtTenDL)
         Me.Controls.Add(Me.txtMaDL)
-        Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
@@ -294,7 +294,6 @@ Partial Class frmThemDaiLy
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Label7 As Label
-    Friend WithEvents Label8 As Label
     Friend WithEvents txtMaDL As TextBox
     Friend WithEvents txtTenDL As TextBox
     Friend WithEvents txtDiaChi As TextBox
@@ -302,11 +301,12 @@ Partial Class frmThemDaiLy
     Friend WithEvents txtEmail As TextBox
     Friend WithEvents dtpNgTiepNhan As DateTimePicker
     Friend WithEvents cbxMaQuan As ComboBox
-    Friend WithEvents cbxMaLoaiDL As ComboBox
     Friend WithEvents btnThemDaiLy As Button
     Friend WithEvents Label9 As Label
     Friend WithEvents txtNoCuaDaiLy As TextBox
     Friend WithEvents Label10 As Label
     Friend WithEvents cbxChuDaiLy As ComboBox
     Friend WithEvents Label11 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents cbxMaLoaiDL As ComboBox
 End Class

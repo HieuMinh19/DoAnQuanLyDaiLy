@@ -138,7 +138,6 @@ D:\Document\cong nghe PM\doanmoi\DoAnQuanLyDaiLy\DoAnQuanLyDaiLy\QuanLyDaiLy\QLD
 D:\Document\cong nghe PM\doanmoi\DoAnQuanLyDaiLy\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmQLDaiLy.resources
 D:\Document\cong nghe PM\doanmoi\DoAnQuanLyDaiLy\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmQLDonViTinh.resources
 D:\Document\cong nghe PM\doanmoi\DoAnQuanLyDaiLy\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmQLLoaiDLvb.resources
-D:\Document\cong nghe PM\doanmoi\DoAnQuanLyDaiLy\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmQLMatHang.resources
 D:\Document\cong nghe PM\doanmoi\DoAnQuanLyDaiLy\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmQLPhieuThuTien.resources
 D:\Document\cong nghe PM\doanmoi\DoAnQuanLyDaiLy\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmQLPhieuXuat.resources
 D:\Document\cong nghe PM\doanmoi\DoAnQuanLyDaiLy\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmQLQuan.resources
@@ -148,7 +147,6 @@ D:\Document\cong nghe PM\doanmoi\DoAnQuanLyDaiLy\DoAnQuanLyDaiLy\QuanLyDaiLy\QLD
 D:\Document\cong nghe PM\doanmoi\DoAnQuanLyDaiLy\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmThemDaiLy.resources
 D:\Document\cong nghe PM\doanmoi\DoAnQuanLyDaiLy\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmThemDonViTinh.resources
 D:\Document\cong nghe PM\doanmoi\DoAnQuanLyDaiLy\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmThemLoaiDL.resources
-D:\Document\cong nghe PM\doanmoi\DoAnQuanLyDaiLy\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmThemMatHang.resources
 D:\Document\cong nghe PM\doanmoi\DoAnQuanLyDaiLy\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmThemPhieuThuTien.resources
 D:\Document\cong nghe PM\doanmoi\DoAnQuanLyDaiLy\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmThemQuan.resources
 D:\Document\cong nghe PM\doanmoi\DoAnQuanLyDaiLy\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.Resources.resources
@@ -159,3 +157,53 @@ D:\Document\cong nghe PM\doanmoi\DoAnQuanLyDaiLy\DoAnQuanLyDaiLy\QuanLyDaiLy\QLD
 D:\Document\cong nghe PM\doanmoi\DoAnQuanLyDaiLy\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.exe
 D:\Document\cong nghe PM\doanmoi\DoAnQuanLyDaiLy\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.xml
 D:\Document\cong nghe PM\doanmoi\DoAnQuanLyDaiLy\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.pdb
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\bin\Debug\QLDaiLyGUI.exe.config
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.exe
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.xml
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.pdb
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\bin\Debug\QLDaiLyGUI.exe
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\bin\Debug\QLDaiLyGUI.pdb
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\bin\Debug\QLDaiLyGUI.xml
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\bin\Debug\QLDaiLyBUS.dll
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\bin\Debug\QLDaiLyDTO.dll
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\bin\Debug\Utility.dll
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\bin\Debug\QLDaiLyDAL.dll
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\bin\Debug\QLDaiLyDTO.pdb
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\bin\Debug\QLDaiLyDTO.xml
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\bin\Debug\QLDaiLyBUS.pdb
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\bin\Debug\QLDaiLyBUS.xml
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\bin\Debug\Utility.pdb
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\bin\Debug\Utility.xml
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\bin\Debug\QLDaiLyDAL.pdb
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\bin\Debug\QLDaiLyDAL.xml
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.vbprojResolveAssemblyReference.cache
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.Form1.resources
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmPhieuXuat.resources
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmQLBCCongNo.resources
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmQLBCDoanhSo.resources
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmQLChiTietPhieuXuat.resources
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmQLDaiLy.resources
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmQLDonViTinh.resources
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmQLLoaiDLvb.resources
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmQLMatHang.resources
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmQLPhieuThuTien.resources
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmQLPhieuXuat.resources
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmQLQuan.resources
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmThamSo.resources
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmThemBCCongNo.resources
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmThemChiTietPhieuXuat.resources
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmThemDaiLy.resources
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmThemDonViTinh.resources
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmThemLoaiDL.resources
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmThemPhieuThuTien.resources
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmThemQuan.resources
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.Resources.resources
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.TraCuu.resources
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.vbproj.GenerateResource.Cache
+C:\Users\USER\Source\Repos\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmThemLoaiXe.resources
+D:\Document\cong nghe PM\doanmoi\DoAnQuanLyDaiLy\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmQLLoaiXe.resources
+D:\Document\cong nghe PM\doanmoi\DoAnQuanLyDaiLy\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmThemLoaiXe.resources
+D:\Document\cong nghe PM\doanmoi\DoAnQuanLyDaiLy\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmThemNDD.resources
+D:\Document\cong nghe PM\doanmoi\DoAnQuanLyDaiLy\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmQLNguoiDaiDien.resources
+D:\Document\cong nghe PM\doanmoi\DoAnQuanLyDaiLy\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmThemNhanVien.resources
+D:\Document\cong nghe PM\doanmoi\DoAnQuanLyDaiLy\DoAnQuanLyDaiLy\QuanLyDaiLy\QLDaiLyGUI\obj\Debug\QLDaiLyGUI.frmQLNhanVien.resources

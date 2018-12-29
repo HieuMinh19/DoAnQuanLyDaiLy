@@ -31,15 +31,16 @@ Partial Class Form1
         Me.QuảnLýĐạiLýToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ThêmLoạiĐạiLýToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.QuảnLýLoạiĐạiLýToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.TraCứuĐạiLýToolStripMenuItem1 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NgườiĐạiDiệnToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ThêmNgườiĐạiDiệnToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.QuảnLýNgườiĐạiDiệnToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.QuanToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ThêmQuậnToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.QuảnLýQuậnToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MặtHàngToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ThêmMặtHàngToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.QuảnLíMặtHàngToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ĐơnVịTínhToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ThêmĐơnVịTínhToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.QuảnLíĐơnVịTínhToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.PhiếuXuấtToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ThêmPhiếuXuấtToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.QuảnLýPhiếuXuấtToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -53,7 +54,9 @@ Partial Class Form1
         Me.QuảnLýBáoCáoDoanhSốToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.BáoCáoCôngNợToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.QuảnLýBáoCáoCôngNợToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.TraCứuĐạiLýToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.NhânViênToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ThêmNhânViênToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.QuảnLýNhânViênToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MenuStrip2.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -70,7 +73,7 @@ Partial Class Form1
         'MenuStrip2
         '
         Me.MenuStrip2.ImageScalingSize = New System.Drawing.Size(20, 20)
-        Me.MenuStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.HồSơĐạiLýToolStripMenuItem, Me.QuanToolStripMenuItem, Me.MặtHàngToolStripMenuItem, Me.ĐơnVịTínhToolStripMenuItem, Me.PhiếuXuấtToolStripMenuItem, Me.ChiToolStripMenuItem, Me.PToolStripMenuItem, Me.BáoCáoToolStripMenuItem, Me.TraCứuĐạiLýToolStripMenuItem})
+        Me.MenuStrip2.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.FileToolStripMenuItem, Me.HồSơĐạiLýToolStripMenuItem, Me.NgườiĐạiDiệnToolStripMenuItem, Me.QuanToolStripMenuItem, Me.MặtHàngToolStripMenuItem, Me.PhiếuXuấtToolStripMenuItem, Me.ChiToolStripMenuItem, Me.PToolStripMenuItem, Me.BáoCáoToolStripMenuItem, Me.NhânViênToolStripMenuItem})
         Me.MenuStrip2.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip2.Name = "MenuStrip2"
         Me.MenuStrip2.Padding = New System.Windows.Forms.Padding(4, 2, 0, 2)
@@ -93,7 +96,7 @@ Partial Class Form1
         '
         'HồSơĐạiLýToolStripMenuItem
         '
-        Me.HồSơĐạiLýToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ThemDaiLyToolStripMenuItem, Me.QuảnLýĐạiLýToolStripMenuItem, Me.ThêmLoạiĐạiLýToolStripMenuItem, Me.QuảnLýLoạiĐạiLýToolStripMenuItem})
+        Me.HồSơĐạiLýToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ThemDaiLyToolStripMenuItem, Me.QuảnLýĐạiLýToolStripMenuItem, Me.ThêmLoạiĐạiLýToolStripMenuItem, Me.QuảnLýLoạiĐạiLýToolStripMenuItem, Me.TraCứuĐạiLýToolStripMenuItem1})
         Me.HồSơĐạiLýToolStripMenuItem.Name = "HồSơĐạiLýToolStripMenuItem"
         Me.HồSơĐạiLýToolStripMenuItem.Size = New System.Drawing.Size(85, 20)
         Me.HồSơĐạiLýToolStripMenuItem.Text = "Hồ Sơ Đại Lý"
@@ -122,6 +125,31 @@ Partial Class Form1
         Me.QuảnLýLoạiĐạiLýToolStripMenuItem.Size = New System.Drawing.Size(176, 22)
         Me.QuảnLýLoạiĐạiLýToolStripMenuItem.Text = "Quản Lý Loại Đại Lý"
         '
+        'TraCứuĐạiLýToolStripMenuItem1
+        '
+        Me.TraCứuĐạiLýToolStripMenuItem1.Name = "TraCứuĐạiLýToolStripMenuItem1"
+        Me.TraCứuĐạiLýToolStripMenuItem1.Size = New System.Drawing.Size(176, 22)
+        Me.TraCứuĐạiLýToolStripMenuItem1.Text = "Tra cứu đại lý"
+        '
+        'NgườiĐạiDiệnToolStripMenuItem
+        '
+        Me.NgườiĐạiDiệnToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ThêmNgườiĐạiDiệnToolStripMenuItem, Me.QuảnLýNgườiĐạiDiệnToolStripMenuItem})
+        Me.NgườiĐạiDiệnToolStripMenuItem.Name = "NgườiĐạiDiệnToolStripMenuItem"
+        Me.NgườiĐạiDiệnToolStripMenuItem.Size = New System.Drawing.Size(97, 20)
+        Me.NgườiĐạiDiệnToolStripMenuItem.Text = "Người đại diện"
+        '
+        'ThêmNgườiĐạiDiệnToolStripMenuItem
+        '
+        Me.ThêmNgườiĐạiDiệnToolStripMenuItem.Name = "ThêmNgườiĐạiDiệnToolStripMenuItem"
+        Me.ThêmNgườiĐạiDiệnToolStripMenuItem.Size = New System.Drawing.Size(194, 22)
+        Me.ThêmNgườiĐạiDiệnToolStripMenuItem.Text = "Thêm người đại diện"
+        '
+        'QuảnLýNgườiĐạiDiệnToolStripMenuItem
+        '
+        Me.QuảnLýNgườiĐạiDiệnToolStripMenuItem.Name = "QuảnLýNgườiĐạiDiệnToolStripMenuItem"
+        Me.QuảnLýNgườiĐạiDiệnToolStripMenuItem.Size = New System.Drawing.Size(194, 22)
+        Me.QuảnLýNgườiĐạiDiệnToolStripMenuItem.Text = "Quản lý người đại diện"
+        '
         'QuanToolStripMenuItem
         '
         Me.QuanToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ThêmQuậnToolStripMenuItem, Me.QuảnLýQuậnToolStripMenuItem})
@@ -145,39 +173,20 @@ Partial Class Form1
         '
         Me.MặtHàngToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ThêmMặtHàngToolStripMenuItem, Me.QuảnLíMặtHàngToolStripMenuItem})
         Me.MặtHàngToolStripMenuItem.Name = "MặtHàngToolStripMenuItem"
-        Me.MặtHàngToolStripMenuItem.Size = New System.Drawing.Size(72, 20)
-        Me.MặtHàngToolStripMenuItem.Text = "Mặt Hàng"
+        Me.MặtHàngToolStripMenuItem.Size = New System.Drawing.Size(57, 20)
+        Me.MặtHàngToolStripMenuItem.Text = "Loại Xe"
         '
         'ThêmMặtHàngToolStripMenuItem
         '
         Me.ThêmMặtHàngToolStripMenuItem.Name = "ThêmMặtHàngToolStripMenuItem"
-        Me.ThêmMặtHàngToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
-        Me.ThêmMặtHàngToolStripMenuItem.Text = "Thêm Mặt Hàng"
+        Me.ThêmMặtHàngToolStripMenuItem.Size = New System.Drawing.Size(156, 22)
+        Me.ThêmMặtHàngToolStripMenuItem.Text = "Thêm Loại Xe"
         '
         'QuảnLíMặtHàngToolStripMenuItem
         '
         Me.QuảnLíMặtHàngToolStripMenuItem.Name = "QuảnLíMặtHàngToolStripMenuItem"
-        Me.QuảnLíMặtHàngToolStripMenuItem.Size = New System.Drawing.Size(171, 22)
-        Me.QuảnLíMặtHàngToolStripMenuItem.Text = "Quản Lí Mặt Hàng"
-        '
-        'ĐơnVịTínhToolStripMenuItem
-        '
-        Me.ĐơnVịTínhToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ThêmĐơnVịTínhToolStripMenuItem, Me.QuảnLíĐơnVịTínhToolStripMenuItem})
-        Me.ĐơnVịTínhToolStripMenuItem.Name = "ĐơnVịTínhToolStripMenuItem"
-        Me.ĐơnVịTínhToolStripMenuItem.Size = New System.Drawing.Size(81, 20)
-        Me.ĐơnVịTínhToolStripMenuItem.Text = "Đơn Vị Tính"
-        '
-        'ThêmĐơnVịTínhToolStripMenuItem
-        '
-        Me.ThêmĐơnVịTínhToolStripMenuItem.Name = "ThêmĐơnVịTínhToolStripMenuItem"
-        Me.ThêmĐơnVịTínhToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.ThêmĐơnVịTínhToolStripMenuItem.Text = "Thêm Đơn Vị Tính"
-        '
-        'QuảnLíĐơnVịTínhToolStripMenuItem
-        '
-        Me.QuảnLíĐơnVịTínhToolStripMenuItem.Name = "QuảnLíĐơnVịTínhToolStripMenuItem"
-        Me.QuảnLíĐơnVịTínhToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
-        Me.QuảnLíĐơnVịTínhToolStripMenuItem.Text = "Quản Lí Đơn Vị Tính"
+        Me.QuảnLíMặtHàngToolStripMenuItem.Size = New System.Drawing.Size(156, 22)
+        Me.QuảnLíMặtHàngToolStripMenuItem.Text = "Quản Lí Loại Xe"
         '
         'PhiếuXuấtToolStripMenuItem
         '
@@ -261,17 +270,30 @@ Partial Class Form1
         Me.QuảnLýBáoCáoCôngNợToolStripMenuItem.Size = New System.Drawing.Size(218, 22)
         Me.QuảnLýBáoCáoCôngNợToolStripMenuItem.Text = "Quản Lý Báo Cáo Công Nợ"
         '
-        'TraCứuĐạiLýToolStripMenuItem
+        'NhânViênToolStripMenuItem
         '
-        Me.TraCứuĐạiLýToolStripMenuItem.Name = "TraCứuĐạiLýToolStripMenuItem"
-        Me.TraCứuĐạiLýToolStripMenuItem.Size = New System.Drawing.Size(94, 20)
-        Me.TraCứuĐạiLýToolStripMenuItem.Text = "Tra Cứu Đại Lý"
+        Me.NhânViênToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ThêmNhânViênToolStripMenuItem, Me.QuảnLýNhânViênToolStripMenuItem})
+        Me.NhânViênToolStripMenuItem.Name = "NhânViênToolStripMenuItem"
+        Me.NhânViênToolStripMenuItem.Size = New System.Drawing.Size(74, 20)
+        Me.NhânViênToolStripMenuItem.Text = "Nhân Viên"
+        '
+        'ThêmNhânViênToolStripMenuItem
+        '
+        Me.ThêmNhânViênToolStripMenuItem.Name = "ThêmNhânViênToolStripMenuItem"
+        Me.ThêmNhânViênToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.ThêmNhânViênToolStripMenuItem.Text = "Thêm Nhân Viên"
+        '
+        'QuảnLýNhânViênToolStripMenuItem
+        '
+        Me.QuảnLýNhânViênToolStripMenuItem.Name = "QuảnLýNhânViênToolStripMenuItem"
+        Me.QuảnLýNhânViênToolStripMenuItem.Size = New System.Drawing.Size(180, 22)
+        Me.QuảnLýNhânViênToolStripMenuItem.Text = "quản lý nhân viên"
         '
         'Form1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.SystemColors.ButtonShadow
+        Me.BackColor = System.Drawing.Color.CadetBlue
         Me.ClientSize = New System.Drawing.Size(879, 327)
         Me.Controls.Add(Me.MenuStrip1)
         Me.Controls.Add(Me.MenuStrip2)
@@ -303,9 +325,6 @@ Partial Class Form1
     Friend WithEvents MặtHàngToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ThêmMặtHàngToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents QuảnLíMặtHàngToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ĐơnVịTínhToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents ThêmĐơnVịTínhToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents QuảnLíĐơnVịTínhToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PhiếuXuấtToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ThêmPhiếuXuấtToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents QuảnLýPhiếuXuấtToolStripMenuItem As ToolStripMenuItem
@@ -319,5 +338,11 @@ Partial Class Form1
     Friend WithEvents QuảnLýBáoCáoDoanhSốToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents BáoCáoCôngNợToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents QuảnLýBáoCáoCôngNợToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents TraCứuĐạiLýToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents NgườiĐạiDiệnToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ThêmNgườiĐạiDiệnToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents QuảnLýNgườiĐạiDiệnToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TraCứuĐạiLýToolStripMenuItem1 As ToolStripMenuItem
+    Friend WithEvents NhânViênToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ThêmNhânViênToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents QuảnLýNhânViênToolStripMenuItem As ToolStripMenuItem
 End Class

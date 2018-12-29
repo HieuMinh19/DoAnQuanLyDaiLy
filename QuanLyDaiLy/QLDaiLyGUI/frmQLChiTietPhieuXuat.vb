@@ -7,14 +7,14 @@ Imports Utility
 Public Class frmQLChiTietPhieuXuat
     Private ctphieuxuatBus As ChiTietPhieuXuatBUS
     Private pxuatBus As PhieuXuatBUS
-    Private mathangBus As MatHangBUS
+    Private mathangBus As LoaiXeBUS
     Private donvitinhBus As DonViTinhBUS
     'Private quanBus As QuanBUS
     Private Sub frmQLChiTietPhieuXuat_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'quanBus = New QuanBUS()
         ctphieuxuatBus = New ChiTietPhieuXuatBUS()
         pxuatBus = New PhieuXuatBUS()
-        mathangBus = New MatHangBUS()
+        mathangBus = New LoaiXeBUS()
         donvitinhBus = New DonViTinhBUS()
 
         ' Load phieu xuat list
@@ -37,7 +37,7 @@ Public Class frmQLChiTietPhieuXuat
 
         'load  mat hagn
         Dim resultMatHang As Result
-        Dim listMatHang = New List(Of MatHangDTO)
+        Dim listMatHang = New List(Of LoaiXeDTO)
         resultMatHang = mathangBus.selectAll(listMatHang)
         If (result.FlagResult = False) Then
             MessageBox.Show("Lấy danh sách mặt hàng không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)

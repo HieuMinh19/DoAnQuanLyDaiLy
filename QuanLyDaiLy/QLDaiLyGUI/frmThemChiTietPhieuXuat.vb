@@ -6,14 +6,14 @@ Imports Utility
 Public Class frmThemChiTietPhieuXuat
     Private ctPhieuXuatBus As ChiTietPhieuXuatBUS
     Private phieuxuat As PhieuXuatBUS
-    Private mathang As MatHangBUS
+    Private mathang As LoaiXeBUS
     Private donvitinh As DonViTinhBUS
     Dim sotien As Integer
 
     Private Sub frmThemChiTietPhieuXuat_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         ctPhieuXuatBus = New ChiTietPhieuXuatBUS()
         phieuxuat = New PhieuXuatBUS()
-        mathang = New MatHangBUS()
+        mathang = New LoaiXeBUS()
         donvitinh = New DonViTinhBUS()
         'lay ma dai ly
         Dim resultPhieuXuat As Result
@@ -48,7 +48,7 @@ Public Class frmThemChiTietPhieuXuat
 
 
         'load combobox mat hang
-        Dim listMatHang = New List(Of MatHangDTO)
+        Dim listMatHang = New List(Of LoaiXeDTO)
         resultMatHang = mathang.selectAll(listMatHang)
         If (resultMatHang.FlagResult = False) Then
             MessageBox.Show("Lấy danh sách mặt hàng không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -56,21 +56,21 @@ Public Class frmThemChiTietPhieuXuat
             Return
         End If
 
-        cbMaMatHang.DataSource = New BindingSource(listMatHang, String.Empty)
-        cbMaMatHang.DisplayMember = "TenMatHang"
-        cbMaMatHang.ValueMember = "MaMatHang"
+        'cbMaMatHang.DataSource = New BindingSource(listMatHang, String.Empty)
+        'cbMaMatHang.DisplayMember = "TenMatHang"
+        'cbMaMatHang.ValueMember = "MaMatHang"
         'load combobox don vi tinh
-        Dim listDonViTinh = New List(Of DonViTinhDTO)
-        resultDonViTinh = donvitinh.selectAll(listDonViTinh)
-        If (resultDonViTinh.FlagResult = False) Then
-            MessageBox.Show("Lấy danh sách đơn vị tính không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            System.Console.WriteLine(resultDonViTinh.SystemMessage)
-            Return
-        End If
+        'Dim listDonViTinh = New List(Of DonViTinhDTO)
+        'resultDonViTinh = donvitinh.selectAll(listDonViTinh)
+        'If (resultDonViTinh.FlagResult = False) Then
+        '    MessageBox.Show("Lấy danh sách đơn vị tính không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+        '    System.Console.WriteLine(resultDonViTinh.SystemMessage)
+        '    Return
+        'End If
 
-        cbMaDonViTinh.DataSource = New BindingSource(listDonViTinh, String.Empty)
-        cbMaDonViTinh.DisplayMember = "TenDonViTinh"
-        cbMaDonViTinh.ValueMember = "MaDonViTinh"
+        'cbMaDonViTinh.DataSource = New BindingSource(listDonViTinh, String.Empty)
+        'cbMaDonViTinh.DisplayMember = "TenDonViTinh"
+        'cbMaDonViTinh.ValueMember = "MaDonViTinh"
 
 
     End Sub

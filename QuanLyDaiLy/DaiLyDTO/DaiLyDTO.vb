@@ -13,7 +13,7 @@
     Public Sub New()
     End Sub
 
-    Public Sub New(iMaNguoiDaiDien As Integer, iMaDL As Integer, strTenDL As String, strDiaChi As String, strEmail As String, strDienThoai As String, dateNgTiepNhan As Date, iNoCuaDaiLy As Integer, iMaQuan As Integer, iMaLoaiDL As Integer)
+    Public Sub New(iMaDL As Integer, strTenDL As String, strDiaChi As String, strEmail As String, strDienThoai As String, dateNgTiepNhan As Date, iNoCuaDaiLy As Integer, iMaQuan As Integer, iMaLoaiDL As Integer, iMaNguoiDaiDien As Integer)
         Me.iMaDL = iMaDL
         Me.strTenDL = strTenDL
         Me.strDiaChi = strDiaChi

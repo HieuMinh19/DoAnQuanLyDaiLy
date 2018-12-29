@@ -5,7 +5,7 @@ Imports Utility
 
 
 
-Public Class MatHangDAL
+Public Class LoaiXeDAL
     Private connectionString As String
     Public Sub New()
         ' Read ConnectionString value from App.config file
@@ -16,12 +16,12 @@ Public Class MatHangDAL
         Me.connectionString = ConnectionString
     End Sub
 
-    Public Function builMaMatHang(ByRef nextID As Integer) As Result
+    Public Function buildMaXe(ByRef nextID As Integer) As Result
 
         Dim query As String = String.Empty
-        query &= "SELECT TOP 1 [MaMatHang] "
-        query &= "FROM [MATHANG] "
-        query &= "ORDER BY [MaMatHang] DESC "
+        query &= "SELECT TOP 1 [MaXe] "
+        query &= "FROM [LOAIXE] "
+        query &= "ORDER BY [MaXe] DESC "
 
         Using conn As New SqlConnection(connectionString)
             Using comm As New SqlCommand()
@@ -38,7 +38,7 @@ Public Class MatHangDAL
                     idOnDB = Nothing
                     If reader.HasRows = True Then
                         While reader.Read()
-                            idOnDB = reader("MaMatHang")
+                            idOnDB = reader("MaXe")
                         End While
                     End If
                     ' new ID = current ID + 1
@@ -47,7 +47,7 @@ Public Class MatHangDAL
                     conn.Close()
                     ' them that bai!!!
                     nextID = 1
-                    Return New Result(False, "Lấy ID kế tiếp của Mat Hang không thành công", ex.StackTrace)
+                    Return New Result(False, "Lấy ID kế tiếp của lOAI XE không thành công", ex.StackTrace)
                 End Try
             End Using
         End Using
@@ -55,28 +55,29 @@ Public Class MatHangDAL
     End Function
 
 
-    Public Function insert(mathang As MatHangDTO) As Result
+    Public Function insert(loaixe As LoaiXeDTO) As Result
 
         Dim query As String = String.Empty
-        query &= "INSERT INTO [MATHANG] ([MaMatHang], [TenMatHang],[SoLuongTon])"
-        query &= "VALUES (@MaMatHang,@TenMatHang,@SoLuongTon)"
+        query &= "INSERT INTO [LOAIXE] ([MaXe], [TenXe],[SoLuongTon],[DonGia])"
+        query &= "VALUES (@MaXe,@TenXe,@SoLuongTon,@DonGia)"
 
         Dim nextID = 0
         Dim result As Result
-        result = builMaMatHang(nextID)
+        result = buildMaXe(nextID)
         If (result.FlagResult = False) Then
             Return result
         End If
-        mathang.MaMatHang = nextID
+        loaixe.MaXe = nextID
         Using conn As New SqlConnection(connectionString)
             Using comm As New SqlCommand()
                 With comm
                     .Connection = conn
                     .CommandType = CommandType.Text
                     .CommandText = query
-                    .Parameters.AddWithValue("@MaMatHang", mathang.MaMatHang)
-                    .Parameters.AddWithValue("@TenMatHang", mathang.TenMatHang)
-                    .Parameters.AddWithValue("@SoLuongTon", mathang.SoLuongTon)
+                    .Parameters.AddWithValue("@MaXe", loaixe.MaXe)
+                    .Parameters.AddWithValue("@TenXe", loaixe.TenXe)
+                    .Parameters.AddWithValue("@SoLuongTon", loaixe.SoLuongTon)
+                    .Parameters.AddWithValue("@DonGia", loaixe.IDonGia1)
                 End With
                 Try
                     conn.Open()
@@ -84,18 +85,18 @@ Public Class MatHangDAL
                 Catch ex As Exception
                     conn.Close()
                     ' them that bai!!!
-                    Return New Result(False, "Thêm mat hang không thành công", ex.StackTrace)
+                    Return New Result(False, "Thêm loaixe không thành công", ex.StackTrace)
                 End Try
             End Using
         End Using
         Return New Result(True) ' thanh cong
     End Function
 
-    Public Function selectALL(ByRef listmathang As List(Of MatHangDTO)) As Result
+    Public Function selectALL(ByRef listloaixe As List(Of LoaiXeDTO)) As Result
 
         Dim query As String = String.Empty
-        query &= "SELECT [MaMatHang], [TenMatHang],[SoLuongTon]"
-        query &= "FROM [MATHANG]"
+        query &= "SELECT [MaXe], [TenXe],[SoLuongTon],[DonGia]"
+        query &= "FROM [LOAIXE]"
         Using conn As New SqlConnection(connectionString)
             Using comm As New SqlCommand()
                 With comm
@@ -108,27 +109,27 @@ Public Class MatHangDAL
                     Dim reader As SqlDataReader
                     reader = comm.ExecuteReader()
                     If reader.HasRows = True Then
-                        listmathang.Clear()
+                        listloaixe.Clear()
                         While reader.Read()
-                            listmathang.Add(New MatHangDTO(reader("MaMatHang"), reader("TenMatHang"), reader("SoLuongTon")))
+                            listloaixe.Add(New LoaiXeDTO(reader("MaXe"), reader("TenXe"), reader("SoLuongTon"), reader("DonGia")))
                         End While
                     End If
                 Catch ex As Exception
                     conn.Close()
                     System.Console.WriteLine(ex.StackTrace)
-                    Return New Result(False, "Lấy tất cả ma mat hang không thành công", ex.StackTrace)
+                    Return New Result(False, "Lấy tất cả loai xe không thành công", ex.StackTrace)
                 End Try
             End Using
         End Using
         Return New Result(True) ' thanh cong
     End Function
 
-    Public Function delete(maMatHang As Integer) As Result
+    Public Function delete(maXe As Integer) As Result
 
         Dim query As String = String.Empty
-        query &= " DELETE FROM [MATHANG] "
+        query &= " DELETE FROM [LOAIXE] "
         query &= " WHERE "
-        query &= " [MaMatHang] = @MaMatHang "
+        query &= " [MaXe] = @MaXe "
 
         Using conn As New SqlConnection(connectionString)
             Using comm As New SqlCommand()
@@ -136,7 +137,7 @@ Public Class MatHangDAL
                     .Connection = conn
                     .CommandType = CommandType.Text
                     .CommandText = query
-                    .Parameters.AddWithValue("@MaMatHang", maMatHang)
+                    .Parameters.AddWithValue("@MaXe", maXe)
                 End With
                 Try
                     conn.Open()
@@ -145,20 +146,21 @@ Public Class MatHangDAL
                     Console.WriteLine(ex.StackTrace)
                     conn.Close()
                     ' them that bai!!!
-                    Return New Result(False, "Xóa mat hang không thành công", ex.StackTrace)
+                    Return New Result(False, "Xóa loai xe không thành công", ex.StackTrace)
                 End Try
             End Using
         End Using
         Return New Result(True) ' thanh cong
     End Function
-    Public Function update(mathang As MatHangDTO) As Result
+    Public Function update(loaixe As LoaiXeDTO) As Result
 
         Dim query As String = String.Empty
-        query &= " UPDATE [MATHANG] SET"
-        query &= " [TenMatHang] = @TenMatHang "
+        query &= " UPDATE [LOAIXE] SET"
+        query &= " [TenXe] = @TenXe "
         query &= ", [SoLuongTon] = @SoLuongTon "
+        query &= ", [DonGia] = @DonGia "
         query &= "WHERE "
-        query &= " [MaMatHang]= @MaMatHang "
+        query &= " [MaXe]= @MaXe "
 
         Using conn As New SqlConnection(connectionString)
             Using comm As New SqlCommand()
@@ -166,9 +168,10 @@ Public Class MatHangDAL
                     .Connection = conn
                     .CommandType = CommandType.Text
                     .CommandText = query
-                    .Parameters.AddWithValue("@MaMatHang", mathang.MaMatHang)
-                    .Parameters.AddWithValue("@TenMatHang", mathang.TenMatHang)
-                    .Parameters.AddWithValue("@SoLuongTon", mathang.SoLuongTon)
+                    .Parameters.AddWithValue("@MaXe", loaixe.MaXe)
+                    .Parameters.AddWithValue("@TenXe", loaixe.TenXe)
+                    .Parameters.AddWithValue("@SoLuongTon", loaixe.SoLuongTon)
+                    .Parameters.AddWithValue("@DonGia", loaixe.IDonGia1)
                 End With
                 Try
                     conn.Open()
@@ -177,18 +180,18 @@ Public Class MatHangDAL
                     Console.WriteLine(ex.StackTrace)
                     conn.Close()
                     ' them that bai!!!
-                    Return New Result(False, "Cập nhật mat hang không thành công", ex.StackTrace)
+                    Return New Result(False, "Cập nhật loai xe không thành công", ex.StackTrace)
                 End Try
             End Using
         End Using
         Return New Result(True) ' thanh cong
     End Function
-    Public Function countsomathang(ByRef soluongmathang As Integer) As Result
+    Public Function countsoloaixe(ByRef soloaixe As Integer) As Result
 
         Dim query As String = String.Empty
-        query &= "SELECT COUNT ([MaMatHang])"
+        query &= "SELECT COUNT ([MaXe])"
         query &= "As [SoLuong] "
-        query &= "FROM [MATHANG] "
+        query &= "FROM [LOAIXE] "
 
 
         Using conn As New SqlConnection(connectionString)
@@ -202,22 +205,22 @@ Public Class MatHangDAL
                     conn.Open()
                     Dim sqlReader As SqlDataReader = comm.ExecuteReader()
                     While sqlReader.Read()
-                        soluongmathang = sqlReader("SoLuong")
+                        soloaixe = sqlReader("SoLuong")
                     End While
                 Catch ex As Exception
                     Console.WriteLine(ex.StackTrace)
                     conn.Close()
                     ' them that bai!!!
-                    Return New Result(False, "lay so luong loai dai ly", ex.StackTrace)
+                    Return New Result(False, "", ex.StackTrace)
                 End Try
             End Using
         End Using
         Return New Result(True) ' thanh cong
     End Function
-    Public Function selectSomathang_thamso(ByRef somathangtoida As Integer) As Result
+    Public Function selectSoloaixe_thamso(ByRef somathangtoida As Integer) As Result
 
         Dim query As String = String.Empty
-        query &= "SELECT [SoMatHang]"
+        query &= "SELECT [SoLoaiXe]"
         query &= "FROM [THAMSO] "
         ' query &= "WHERE [MaDL] = @MaDaiLy "
 
@@ -236,7 +239,7 @@ Public Class MatHangDAL
                     If reader.HasRows = True Then
                         'NoCuaDaiLy.Clear()
                         While reader.Read()
-                            somathangtoida = reader("SoMatHang")
+                            somathangtoida = reader("SoLoaiXe")
                             'listPhieuThuTien.Add(New PhieuThuTienDTO(reader("MaPhieuThu"), reader("MaDaiLy"), reader("NgayThuTien"), reader("SoTienThu")))
                         End While
                     End If

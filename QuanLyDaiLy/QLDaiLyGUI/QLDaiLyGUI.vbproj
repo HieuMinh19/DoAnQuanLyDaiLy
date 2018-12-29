@@ -73,6 +73,18 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmQLNhanVien.Designer.vb">
+      <DependentUpon>frmQLNhanVien.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmQLNhanVien.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThemNhanVien.Designer.vb">
+      <DependentUpon>frmThemNhanVien.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmThemNhanVien.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form1.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -122,10 +134,16 @@
     <Compile Include="frmQLLoaiDLvb.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmQLMatHang.Designer.vb">
-      <DependentUpon>frmQLMatHang.vb</DependentUpon>
+    <Compile Include="frmQLLoaiXe.Designer.vb">
+      <DependentUpon>frmQLLoaiXe.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmQLMatHang.vb">
+    <Compile Include="frmQLLoaiXe.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmQLNguoiDaiDien.Designer.vb">
+      <DependentUpon>frmQLNguoiDaiDien.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmQLNguoiDaiDien.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmQLPhieuThuTien.Designer.vb">
@@ -182,10 +200,16 @@
     <Compile Include="frmThemLoaiDL.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmThemMatHang.Designer.vb">
-      <DependentUpon>frmThemMatHang.vb</DependentUpon>
+    <Compile Include="frmThemLoaiXe.Designer.vb">
+      <DependentUpon>frmThemLoaiXe.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmThemMatHang.vb">
+    <Compile Include="frmThemLoaiXe.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThemNDD.Designer.vb">
+      <DependentUpon>frmThemNDD.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmThemNDD.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmThemPhieuThuTien.Designer.vb">
@@ -223,6 +247,12 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="frmQLNhanVien.resx">
+      <DependentUpon>frmQLNhanVien.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThemNhanVien.resx">
+      <DependentUpon>frmThemNhanVien.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
@@ -247,8 +277,11 @@
     <EmbeddedResource Include="frmQLLoaiDLvb.resx">
       <DependentUpon>frmQLLoaiDLvb.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmQLMatHang.resx">
-      <DependentUpon>frmQLMatHang.vb</DependentUpon>
+    <EmbeddedResource Include="frmQLLoaiXe.resx">
+      <DependentUpon>frmQLLoaiXe.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmQLNguoiDaiDien.resx">
+      <DependentUpon>frmQLNguoiDaiDien.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmQLPhieuThuTien.resx">
       <DependentUpon>frmQLPhieuThuTien.vb</DependentUpon>
@@ -277,8 +310,11 @@
     <EmbeddedResource Include="frmThemLoaiDL.resx">
       <DependentUpon>frmThemLoaiDL.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmThemMatHang.resx">
-      <DependentUpon>frmThemMatHang.vb</DependentUpon>
+    <EmbeddedResource Include="frmThemLoaiXe.resx">
+      <DependentUpon>frmThemLoaiXe.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThemNDD.resx">
+      <DependentUpon>frmThemNDD.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmThemPhieuThuTien.resx">
       <DependentUpon>frmThemPhieuThuTien.vb</DependentUpon>

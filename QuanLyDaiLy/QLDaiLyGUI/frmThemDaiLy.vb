@@ -6,6 +6,7 @@ Public Class frmThemDaiLy
     Private dlBus As DaiLyBUS
     Private LoaiDLBus As LoaiDLBUS
     Private QuanBus As QuanBUS
+    Private NguoiDDBus As NguoiDaiDienBUS
     Private dung = 0
 
     'Private lhsBus As LoaiHocSinhBUS
@@ -73,6 +74,7 @@ Public Class frmThemDaiLy
         dlBus = New DaiLyBUS()
         LoaiDLBus = New LoaiDLBUS()
         QuanBus = New QuanBUS()
+        NguoiDDBus = New NguoiDaiDienBUS()
 
         'lay ma dai ly
         Dim result As Result
@@ -90,7 +92,6 @@ Public Class frmThemDaiLy
         txtMaDL.Text = nextMaDL
 
         'load combobox LoaiDL
-
         Dim listLoaiDl = New List(Of LoaiDLDTO)
         result = LoaiDLBus.selectAll(listLoaiDl)
         If (result.FlagResult = False) Then
@@ -101,9 +102,7 @@ Public Class frmThemDaiLy
 
         cbxMaLoaiDL.DataSource = New BindingSource(listLoaiDl, String.Empty)
         cbxMaLoaiDL.DisplayMember = "TenLoaiDL"
-        'cbxMaLoaiDL.ValueMember = "NoDaiLy"
         cbxMaLoaiDL.ValueMember = "MaLoaiDL"
-
 
         'load combobox ma quan
         Dim listQuan = New List(Of QuanDTO)
@@ -117,6 +116,20 @@ Public Class frmThemDaiLy
         cbxMaQuan.DataSource = New BindingSource(listQuan, String.Empty)
         cbxMaQuan.DisplayMember = "TenQuan"
         cbxMaQuan.ValueMember = "MaQuan"
+
+
+        'load combobox nguoidaidien
+        Dim listNguoiDaiDien = New List(Of NguoiDaiDienDTO)
+        result = NguoiDDBus.selectAll(listNguoiDaiDien)
+        If (result.FlagResult = False) Then
+            MessageBox.Show("Lấy danh sách người đại diện không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            System.Console.WriteLine(result.SystemMessage)
+            Return
+        End If
+
+        cbxChuDaiLy.DataSource = New BindingSource(listNguoiDaiDien, String.Empty)
+        cbxChuDaiLy.DisplayMember = "TenNguoiDaiDien"
+        cbxChuDaiLy.ValueMember = "MaNguoiDaiDien"
 
     End Sub
 
@@ -132,4 +145,11 @@ Public Class frmThemDaiLy
         End If
     End Sub
 
+    Private Sub Label8_Click(sender As Object, e As EventArgs) Handles Label8.Click
+
+    End Sub
+
+    Private Sub ComboBox1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cbxMaLoaiDL.SelectedIndexChanged
+
+    End Sub
 End Class

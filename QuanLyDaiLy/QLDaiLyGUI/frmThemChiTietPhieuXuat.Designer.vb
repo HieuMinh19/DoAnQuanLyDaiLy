@@ -38,6 +38,8 @@ Partial Class frmThemChiTietPhieuXuat
         Me.txtDonGia = New System.Windows.Forms.TextBox()
         Me.txtThanhTien = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
+        Me.cbxMaLoaiDL = New System.Windows.Forms.ComboBox()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'Label1
@@ -112,8 +114,8 @@ Partial Class frmThemChiTietPhieuXuat
         '
         'btnThem
         '
-        Me.btnThem.Location = New System.Drawing.Point(390, 191)
-        Me.btnThem.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.btnThem.Location = New System.Drawing.Point(251, 255)
+        Me.btnThem.Margin = New System.Windows.Forms.Padding(2)
         Me.btnThem.Name = "btnThem"
         Me.btnThem.Size = New System.Drawing.Size(105, 40)
         Me.btnThem.TabIndex = 7
@@ -123,7 +125,7 @@ Partial Class frmThemChiTietPhieuXuat
         'txtMaChiTietPhieuXuat
         '
         Me.txtMaChiTietPhieuXuat.Location = New System.Drawing.Point(139, 67)
-        Me.txtMaChiTietPhieuXuat.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtMaChiTietPhieuXuat.Margin = New System.Windows.Forms.Padding(2)
         Me.txtMaChiTietPhieuXuat.Name = "txtMaChiTietPhieuXuat"
         Me.txtMaChiTietPhieuXuat.Size = New System.Drawing.Size(133, 20)
         Me.txtMaChiTietPhieuXuat.TabIndex = 8
@@ -132,7 +134,7 @@ Partial Class frmThemChiTietPhieuXuat
         '
         Me.cbMaPhieuXuat.FormattingEnabled = True
         Me.cbMaPhieuXuat.Location = New System.Drawing.Point(139, 111)
-        Me.cbMaPhieuXuat.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cbMaPhieuXuat.Margin = New System.Windows.Forms.Padding(2)
         Me.cbMaPhieuXuat.Name = "cbMaPhieuXuat"
         Me.cbMaPhieuXuat.Size = New System.Drawing.Size(133, 21)
         Me.cbMaPhieuXuat.TabIndex = 9
@@ -141,7 +143,7 @@ Partial Class frmThemChiTietPhieuXuat
         '
         Me.cbMaMatHang.FormattingEnabled = True
         Me.cbMaMatHang.Location = New System.Drawing.Point(139, 155)
-        Me.cbMaMatHang.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cbMaMatHang.Margin = New System.Windows.Forms.Padding(2)
         Me.cbMaMatHang.Name = "cbMaMatHang"
         Me.cbMaMatHang.Size = New System.Drawing.Size(133, 21)
         Me.cbMaMatHang.TabIndex = 10
@@ -150,7 +152,7 @@ Partial Class frmThemChiTietPhieuXuat
         '
         Me.cbMaDonViTinh.FormattingEnabled = True
         Me.cbMaDonViTinh.Location = New System.Drawing.Point(139, 202)
-        Me.cbMaDonViTinh.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.cbMaDonViTinh.Margin = New System.Windows.Forms.Padding(2)
         Me.cbMaDonViTinh.Name = "cbMaDonViTinh"
         Me.cbMaDonViTinh.Size = New System.Drawing.Size(133, 21)
         Me.cbMaDonViTinh.TabIndex = 11
@@ -158,7 +160,7 @@ Partial Class frmThemChiTietPhieuXuat
         'txtSoLuongXuat
         '
         Me.txtSoLuongXuat.Location = New System.Drawing.Point(390, 65)
-        Me.txtSoLuongXuat.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtSoLuongXuat.Margin = New System.Windows.Forms.Padding(2)
         Me.txtSoLuongXuat.Name = "txtSoLuongXuat"
         Me.txtSoLuongXuat.Size = New System.Drawing.Size(133, 20)
         Me.txtSoLuongXuat.TabIndex = 12
@@ -166,7 +168,7 @@ Partial Class frmThemChiTietPhieuXuat
         'txtDonGia
         '
         Me.txtDonGia.Location = New System.Drawing.Point(390, 111)
-        Me.txtDonGia.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtDonGia.Margin = New System.Windows.Forms.Padding(2)
         Me.txtDonGia.Name = "txtDonGia"
         Me.txtDonGia.Size = New System.Drawing.Size(133, 20)
         Me.txtDonGia.TabIndex = 13
@@ -175,7 +177,7 @@ Partial Class frmThemChiTietPhieuXuat
         '
         Me.txtThanhTien.Enabled = False
         Me.txtThanhTien.Location = New System.Drawing.Point(390, 157)
-        Me.txtThanhTien.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtThanhTien.Margin = New System.Windows.Forms.Padding(2)
         Me.txtThanhTien.Name = "txtThanhTien"
         Me.txtThanhTien.Size = New System.Drawing.Size(133, 20)
         Me.txtThanhTien.TabIndex = 14
@@ -191,11 +193,32 @@ Partial Class frmThemChiTietPhieuXuat
         Me.Label8.TabIndex = 15
         Me.Label8.Text = "Thêm Chi Tiết Phiếu Xuất"
         '
+        'cbxMaLoaiDL
+        '
+        Me.cbxMaLoaiDL.FormattingEnabled = True
+        Me.cbxMaLoaiDL.Location = New System.Drawing.Point(390, 201)
+        Me.cbxMaLoaiDL.Margin = New System.Windows.Forms.Padding(2)
+        Me.cbxMaLoaiDL.Name = "cbxMaLoaiDL"
+        Me.cbxMaLoaiDL.Size = New System.Drawing.Size(179, 21)
+        Me.cbxMaLoaiDL.TabIndex = 17
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(298, 208)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(78, 13)
+        Me.Label9.TabIndex = 16
+        Me.Label9.Text = "Mã Loại Đại Lý"
+        '
         'frmThemChiTietPhieuXuat
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(615, 254)
+        Me.ClientSize = New System.Drawing.Size(615, 329)
+        Me.Controls.Add(Me.cbxMaLoaiDL)
+        Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.txtThanhTien)
         Me.Controls.Add(Me.txtDonGia)
@@ -212,7 +235,7 @@ Partial Class frmThemChiTietPhieuXuat
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.Name = "frmThemChiTietPhieuXuat"
         Me.Text = "frmThemChiTietPhieuXuat"
         Me.ResumeLayout(False)
@@ -236,4 +259,6 @@ Partial Class frmThemChiTietPhieuXuat
     Friend WithEvents txtDonGia As TextBox
     Friend WithEvents txtThanhTien As TextBox
     Friend WithEvents Label8 As Label
+    Friend WithEvents cbxMaLoaiDL As ComboBox
+    Friend WithEvents Label9 As Label
 End Class

@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class frmQLMatHang
+Partial Class frmQLLoaiXe
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -31,8 +31,10 @@ Partial Class frmQLMatHang
         Me.txtSoLuongTon = New System.Windows.Forms.TextBox()
         Me.btnCapNhat = New System.Windows.Forms.Button()
         Me.btnXoa = New System.Windows.Forms.Button()
-        Me.cbTenMatHang = New System.Windows.Forms.ComboBox()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.txtTenXe = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.txtDonGia = New System.Windows.Forms.TextBox()
         CType(Me.dgvDanhSachMatHang, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -42,9 +44,9 @@ Partial Class frmQLMatHang
         Me.Label1.Location = New System.Drawing.Point(102, 50)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(111, 13)
+        Me.Label1.Size = New System.Drawing.Size(100, 13)
         Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Danh Sách Mặt Hàng"
+        Me.Label1.Text = "Danh Sách Loại Xe"
         '
         'dgvDanhSachMatHang
         '
@@ -59,27 +61,27 @@ Partial Class frmQLMatHang
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(335, 115)
+        Me.Label2.Location = New System.Drawing.Point(335, 69)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(72, 13)
+        Me.Label2.Size = New System.Drawing.Size(38, 13)
         Me.Label2.TabIndex = 2
-        Me.Label2.Text = "Mã Mặt Hàng"
+        Me.Label2.Text = "Mã Xe"
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(331, 153)
+        Me.Label3.Location = New System.Drawing.Point(331, 106)
         Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(76, 13)
+        Me.Label3.Size = New System.Drawing.Size(42, 13)
         Me.Label3.TabIndex = 3
-        Me.Label3.Text = "Tên Mặt Hàng"
+        Me.Label3.Text = "Tên Xe"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(331, 186)
+        Me.Label4.Location = New System.Drawing.Point(331, 140)
         Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(75, 13)
@@ -89,7 +91,7 @@ Partial Class frmQLMatHang
         'txtMaMatHang
         '
         Me.txtMaMatHang.Enabled = False
-        Me.txtMaMatHang.Location = New System.Drawing.Point(434, 111)
+        Me.txtMaMatHang.Location = New System.Drawing.Point(434, 65)
         Me.txtMaMatHang.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtMaMatHang.Name = "txtMaMatHang"
         Me.txtMaMatHang.Size = New System.Drawing.Size(179, 20)
@@ -97,7 +99,7 @@ Partial Class frmQLMatHang
         '
         'txtSoLuongTon
         '
-        Me.txtSoLuongTon.Location = New System.Drawing.Point(434, 186)
+        Me.txtSoLuongTon.Location = New System.Drawing.Point(434, 140)
         Me.txtSoLuongTon.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.txtSoLuongTon.Name = "txtSoLuongTon"
         Me.txtSoLuongTon.Size = New System.Drawing.Size(179, 20)
@@ -123,15 +125,6 @@ Partial Class frmQLMatHang
         Me.btnXoa.Text = "Xóa"
         Me.btnXoa.UseVisualStyleBackColor = True
         '
-        'cbTenMatHang
-        '
-        Me.cbTenMatHang.FormattingEnabled = True
-        Me.cbTenMatHang.Location = New System.Drawing.Point(434, 147)
-        Me.cbTenMatHang.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.cbTenMatHang.Name = "cbTenMatHang"
-        Me.cbTenMatHang.Size = New System.Drawing.Size(179, 21)
-        Me.cbTenMatHang.TabIndex = 10
-        '
         'Label5
         '
         Me.Label5.AutoSize = True
@@ -141,15 +134,44 @@ Partial Class frmQLMatHang
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(188, 26)
         Me.Label5.TabIndex = 11
-        Me.Label5.Text = "Quản Lí Mặt Hàng"
+        Me.Label5.Text = "Quản Lí nhân viên"
         '
-        'frmQLMatHang
+        'txtTenXe
+        '
+        Me.txtTenXe.Enabled = False
+        Me.txtTenXe.Location = New System.Drawing.Point(434, 102)
+        Me.txtTenXe.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtTenXe.Name = "txtTenXe"
+        Me.txtTenXe.Size = New System.Drawing.Size(179, 20)
+        Me.txtTenXe.TabIndex = 12
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(335, 181)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(46, 13)
+        Me.Label6.TabIndex = 13
+        Me.Label6.Text = "Đơn Giá"
+        '
+        'txtDonGia
+        '
+        Me.txtDonGia.Location = New System.Drawing.Point(434, 177)
+        Me.txtDonGia.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.txtDonGia.Name = "txtDonGia"
+        Me.txtDonGia.Size = New System.Drawing.Size(179, 20)
+        Me.txtDonGia.TabIndex = 14
+        '
+        'frmQLLoaiXe
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(664, 283)
+        Me.Controls.Add(Me.txtDonGia)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.txtTenXe)
         Me.Controls.Add(Me.Label5)
-        Me.Controls.Add(Me.cbTenMatHang)
         Me.Controls.Add(Me.btnXoa)
         Me.Controls.Add(Me.btnCapNhat)
         Me.Controls.Add(Me.txtSoLuongTon)
@@ -160,7 +182,7 @@ Partial Class frmQLMatHang
         Me.Controls.Add(Me.dgvDanhSachMatHang)
         Me.Controls.Add(Me.Label1)
         Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.Name = "frmQLMatHang"
+        Me.Name = "frmQLLoaiXe"
         Me.Text = "frmQLMatHang"
         CType(Me.dgvDanhSachMatHang, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -177,6 +199,8 @@ Partial Class frmQLMatHang
     Friend WithEvents txtSoLuongTon As TextBox
     Friend WithEvents btnCapNhat As Button
     Friend WithEvents btnXoa As Button
-    Friend WithEvents cbTenMatHang As ComboBox
     Friend WithEvents Label5 As Label
+    Friend WithEvents txtTenXe As TextBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents txtDonGia As TextBox
 End Class

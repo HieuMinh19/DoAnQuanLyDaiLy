@@ -67,11 +67,12 @@
     <Compile Include="BaoCaoCongNoDAL.vb" />
     <Compile Include="BaoCaoDoanhSoDAL.vb" />
     <Compile Include="ChiTietPhieuXuatDAL.vb" />
+    <Compile Include="ChucVuDAL.vb" />
     <Compile Include="Class1.vb" />
     <Compile Include="DaiLyDAL.vb" />
     <Compile Include="DonViTinhDAL.vb" />
     <Compile Include="LoaiDLDAL.vb" />
-    <Compile Include="MatHangDAL.vb" />
+    <Compile Include="LoaiXeDAL.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -87,6 +88,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="NguoiDaiDienDAL.vb" />
+    <Compile Include="NhanVienDAL.vb" />
     <Compile Include="PhieuThuTienDAL.vb" />
     <Compile Include="PhieuXuatDAL.vb" />
     <Compile Include="QuanDAL.vb" />

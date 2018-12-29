@@ -112,7 +112,7 @@ Public Class DaiLyDAL
     Public Function insert(dl As DaiLyDTO) As Result
 
         Dim query As String = String.Empty
-        query &= "INSERT INTO [DAILY] ([TenDL],[DiaChi],[Email],[DienThoai],[NgTiepNhan],[NoCuaDaiLy],[MaQuan],[MaLoaiDL])[MaNguoiDaiDien],"
+        query &= "INSERT INTO [DAILY] ([TenDL],[DiaChi],[Email],[DienThoai],[NgTiepNhan],[NoCuaDaiLy],[MaQuan],[MaLoaiDL],[MaNguoiDaiDien])"
         query &= "VALUES (@TenDL,@DiaChi,@Email,@DienThoai,@NgTiepNhan,@NoCuaDaiLy,@MaQuan,@MaLoaiDL,@MaNguoiDaiDien)"
         'get MSDG
         Dim nextMaDL = "1"
@@ -198,8 +198,6 @@ Public Class DaiLyDAL
         End Using
         Return New Result(True) ' thanh cong
     End Function
-
-
     Public Function delete(maDaiLy As Integer) As Result
 
         Dim query As String = String.Empty
@@ -228,9 +226,6 @@ Public Class DaiLyDAL
         End Using
         Return New Result(True)  ' thanh cong
     End Function
-
-
-
     Public Function selectALL(ByRef listDaiLy As List(Of DaiLyDTO)) As Result
 
         Dim query As String = String.Empty
@@ -269,7 +264,7 @@ Public Class DaiLyDAL
     Public Function selectALL_ByMaLoaiDL(maLoaidl As Integer, ByRef listDaiLy As List(Of DaiLyDTO)) As Result
 
         Dim query As String = String.Empty
-        query &= "SELECT [MaDL], [TenDL], [DiaChi], [Email],[DienThoai],[NgTiepNhan],[NoCuaDaiLy],[MaQuan],[MaLoaiDL]"
+        query &= "SELECT [MaDL], [TenDL], [DiaChi], [Email],[DienThoai],[NgTiepNhan],[NoCuaDaiLy],[MaQuan],[MaLoaiDL], [MaNguoiDaiDien]"
         query &= "FROM [DAILY] "
         query &= "WHERE [MaLoaiDL] = @MaLoaiDL "
 

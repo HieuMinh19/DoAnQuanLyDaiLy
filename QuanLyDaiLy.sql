@@ -41,9 +41,11 @@ create table PHIEUXUAT
 	TongGiaTri int
 )
 go
+
 create table NGUOIDAIDIEN
 (
-	MaNguoiDaiDien int identity(1,1) primary key,
+	MaNguoiDaiDien int primary key,
+	TenNguoiDaiDien varchar(20),
 	SoDT int,
 	CMND varchar(15),
 	DiaChi varchar(20),
@@ -53,30 +55,42 @@ go
 create table CHITIETPHIEUXUAT
 (
 	MaChiTietPhieu int identity(1,1) primary key,
-	MaPhieuXuat int, 
-	MaMatHang int, 
-	MaDonViTinh int, 
+	MaPhieuXuat int,
+	MaXe int, 
 	SoLuongXuat int,
-	DonGia int, 
-	ThanhTien int
+	ThanhTien int,
+	MaPhieuXuat int,
+	MaXe int, 
 )
-go 
+go
+
+create table NHANVIEN
+(
+	MaNV int primary key,
+	HoTen varchar(30),
+	SoDT int,
+	CMND varchar(15),
+	DiaChi varchar(50),
+	MaCV int,
+	MaDL int,
+)
+go
+create table CHUCVU
+(
+	MaCV int identity(1,1) primary key,
+	TenCV varchar(20),
+)
+go
+ 
 create table LOAIXE
 (
 	MaXe int primary key, 
 	TenXe varchar(40),
-	SoLuongTon int
+	SoLuongTon int,
+	DonGia int,
 )
 
 go 
-create table DONGIA
-(
-	MaDonGia int primary key,
-	MaXe  int,		
-	SoTien varchar(40),
-)
-
-go
 create table PHIEUTHUTIEN
 (
 	MaPhieuThu int identity(1,1) primary key,
@@ -110,7 +124,7 @@ Create table THAMSO
 	Id int,
 	SoDaiLyToiDa int,
 	SoLoaiDaiLy int,
-	SoMatHang int, 
+	SoLoaiXe int, 
 	SoDonViTinh int
 )
 drop table THAMSO
@@ -141,11 +155,21 @@ go
 insert LOAIDL VALUES ('1','Loai 1', '100000')
 insert LOAIDL VALUES ('2','Loai 2', '200000')
 
-insert into NGUOIDAIDIEN values('1','0123456789', '301673604', 'tp Ho Chi minh')
+insert into NGUOIDAIDIEN values('hieu','0123456789', '301673604', 'tp Ho Chi minh')
 
 go
-insert THAMSO VALUES('1','3','4','3','4');
+insert THAMSO VALUES('1','3','4','10','4');
+go
+
+insert LOAIXE VALUES('1','honda','15');
 go
 
 insert into DAILY VALUES(2,'dai ly 3', '123 so 7', 'DL3@gmail.com','01584389','2018-05-10',1000,2,1,1)
+
+go
+insert CHUCVU values('giam doc'),
+insert CHUCVU values('truong phong')
+insert CHUCVU values('Nhan vien')
+insert CHUCVU values('tro ly')
+
 

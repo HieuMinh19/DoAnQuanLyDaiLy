@@ -3,29 +3,29 @@ Imports QLDaiLyBUS
 Imports QLDaiLyDTO
 Imports Utility
 
-Public Class frmQLMatHang
-    Private mathangBus As MatHangBUS
+Public Class frmQLLoaiXe
+    Private loaixeBus As LoaiXeBUS
 
     Private Sub frmQLMatHang_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        mathangBus = New MatHangBUS()
+        loaixeBus = New LoaiXeBUS()
         ' Load LoaiHocSinh list
         loadlistMatHang()
 
 
         Dim result As Result
         'load list loai DLư
-        Dim listMatHang = New List(Of MatHangDTO)
-        result = mathangBus.selectAll(listMatHang)
+        Dim listMatHang = New List(Of LoaiXeDTO)
+        result = loaixeBus.selectAll(listMatHang)
         If (result.FlagResult = False) Then
             MessageBox.Show("Lấy danh sách mặt hàng không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
             Return
         End If
 
-        cbTenMatHang.DataSource = New BindingSource(listMatHang, String.Empty)
-        cbTenMatHang.DisplayMember = "TenMatHang"
-        'cbxMaLoaiDL.ValueMember = "NoDaiLy"
-        cbTenMatHang.ValueMember = "MaMathang"
+        'cbTenMatHang.DataSource = New BindingSource(listMatHang, String.Empty)
+        'cbTenMatHang.DisplayMember = "TenXe"
+        ''cbxMaLoaiDL.ValueMember = "NoDaiLy"
+        'cbTenMatHang.ValueMember = "MaXe"
     End Sub
 
 
@@ -41,12 +41,12 @@ Public Class frmQLMatHang
         'Verify that indexing OK
         If (-1 < currentRowIndex And currentRowIndex < dgvDanhSachMatHang.RowCount) Then
             Try
-                Dim ldl = CType(dgvDanhSachMatHang.Rows(currentRowIndex).DataBoundItem, MatHangDTO)
-                txtMaMatHang.Text = ldl.MaMatHang
-                cbTenMatHang.SelectedValue = ldl.TenMatHang
-
-
+                Dim ldl = CType(dgvDanhSachMatHang.Rows(currentRowIndex).DataBoundItem, LoaiXeDTO)
+                txtMaMatHang.Text = ldl.MaXe
+                txtTenXe.Text = ldl.TenXe
                 txtSoLuongTon.Text = ldl.SoLuongTon
+                txtDonGia.Text = ldl.IDonGia1
+
             Catch ex As Exception
                 Console.WriteLine(ex.StackTrace)
             End Try
@@ -56,9 +56,9 @@ Public Class frmQLMatHang
     End Sub
     Private Sub loadlistMatHang()
         ' Load LoaiHocSinh list
-        Dim listMatHang = New List(Of MatHangDTO)
+        Dim listMatHang = New List(Of LoaiXeDTO)
         Dim result As Result
-        result = mathangBus.selectAll(listMatHang)
+        result = loaixeBus.selectAll(listMatHang)
         If (result.FlagResult = False) Then
             MessageBox.Show("Lấy danh sách mặt hàng không thành công.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
             System.Console.WriteLine(result.SystemMessage)
@@ -72,15 +72,15 @@ Public Class frmQLMatHang
         dgvDanhSachMatHang.DataSource = listMatHang
 
         Dim clMaMatHang = New DataGridViewTextBoxColumn()
-        clMaMatHang.Name = "MaMatHang"
-        clMaMatHang.HeaderText = "Mã Mặt Hàng"
-        clMaMatHang.DataPropertyName = "MaMatHang"
+        clMaMatHang.Name = "MaXe"
+        clMaMatHang.HeaderText = "Mã Xe"
+        clMaMatHang.DataPropertyName = "MaXe"
         dgvDanhSachMatHang.Columns.Add(clMaMatHang)
 
         Dim clTenMatHang = New DataGridViewTextBoxColumn()
-        clTenMatHang.Name = "TenMatHang"
-        clTenMatHang.HeaderText = "Tên Mặt Hàng"
-        clTenMatHang.DataPropertyName = "TenMatHang"
+        clTenMatHang.Name = "TenXe"
+        clTenMatHang.HeaderText = "Tên Xe"
+        clTenMatHang.DataPropertyName = "TenXe"
         dgvDanhSachMatHang.Columns.Add(clTenMatHang)
 
         Dim clSoLuongTon = New DataGridViewTextBoxColumn()
@@ -88,6 +88,12 @@ Public Class frmQLMatHang
         clSoLuongTon.HeaderText = "Số Lượng Tồn"
         clSoLuongTon.DataPropertyName = "SoLuongTon"
         dgvDanhSachMatHang.Columns.Add(clSoLuongTon)
+
+        Dim clDonGia = New DataGridViewTextBoxColumn()
+        clDonGia.Name = "DonGia"
+        clDonGia.HeaderText = "Đơn Giá"
+        clDonGia.DataPropertyName = "DonGia"
+        dgvDanhSachMatHang.Columns.Add(clDonGia)
     End Sub
 
     Private Sub dgvDanhSachMatHang_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles dgvDanhSachMatHang.CellContentClick
@@ -100,13 +106,13 @@ Public Class frmQLMatHang
 
         'Verify that indexing OK
         If (-1 < currentRowIndex And currentRowIndex < dgvDanhSachMatHang.RowCount) Then
-            Select Case MsgBox("Bạn có thực sự muốn xóa mặt hàng có mã: " + txtMaMatHang.Text, MsgBoxStyle.YesNo, "Information")
+            Select Case MsgBox("Bạn có thực sự muốn xóa loại xe có mã: " + txtMaMatHang.Text, MsgBoxStyle.YesNo, "Information")
                 Case MsgBoxResult.Yes
                     Try
 
                         '1. Delete from DB
                         Dim result As Result
-                        result = mathangBus.delete(txtMaMatHang.Text)
+                        result = loaixeBus.delete(txtMaMatHang.Text)
                         If (result.FlagResult = True) Then
 
                             ' Re-Load LoaiHocSinh list
@@ -119,11 +125,12 @@ Public Class frmQLMatHang
                             If (currentRowIndex >= 0) Then
                                 dgvDanhSachMatHang.Rows(currentRowIndex).Selected = True
                                 Try
-                                    Dim ldl = CType(dgvDanhSachMatHang.Rows(currentRowIndex).DataBoundItem, MatHangDTO)
-                                    txtMaMatHang.Text = ldl.MaMatHang
-                                    ''thieu ten quan
-                                    cbTenMatHang.SelectedValue = ldl.TenMatHang
+                                    Dim ldl = CType(dgvDanhSachMatHang.Rows(currentRowIndex).DataBoundItem, LoaiXeDTO)
+                                    txtMaMatHang.Text = ldl.MaXe
+
+                                    txtTenXe.Text = ldl.TenXe
                                     txtSoLuongTon.Text = ldl.SoLuongTon
+                                    txtDonGia.Text = ldl.IDonGia1
                                 Catch ex As Exception
                                     Console.WriteLine(ex.StackTrace)
                                 End Try
@@ -150,13 +157,14 @@ Public Class frmQLMatHang
         'Verify that indexing OK
         If (-1 < currentRowIndex And currentRowIndex < dgvDanhSachMatHang.RowCount) Then
             Try
-                Dim ldl As MatHangDTO
-                ldl = New MatHangDTO()
+                Dim ldl As LoaiXeDTO
+                ldl = New LoaiXeDTO()
 
                 '1. Mapping data from GUI control
-                ldl.MaMatHang = Convert.ToInt32(txtMaMatHang.Text)
-                ldl.TenMatHang = cbTenMatHang.Text
+                ldl.MaXe = Convert.ToInt32(txtMaMatHang.Text)
+                ldl.TenXe = txtTenXe.Text
                 ldl.SoLuongTon = txtSoLuongTon.Text
+                ldl.IDonGia1 = Convert.ToInt32(txtDonGia.Text)
                 '2. Business .....
                 'If (lhsBus.isValidName(lhs) = False) Then
                 '    MessageBox.Show("Tên Loại học sinh không đúng. Vui lòng kiểm tra lại", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
@@ -167,16 +175,16 @@ Public Class frmQLMatHang
                 '3. Insert to DB
 
                 Dim result As Result
-                result = mathangBus.Update(ldl)
+                result = loaixeBus.Update(ldl)
                 If (result.FlagResult = True) Then
                     ' Re-Load LoaiHocSinh list
                     loadlistMatHang()
                     ' Hightlight the row has been updated on table
                     dgvDanhSachMatHang.Rows(currentRowIndex).Selected = True
                     Try
-                        ldl = CType(dgvDanhSachMatHang.Rows(currentRowIndex).DataBoundItem, MatHangDTO)
-                        txtMaMatHang.Text = ldl.MaMatHang
-                        cbTenMatHang.Text = ldl.TenMatHang
+                        ldl = CType(dgvDanhSachMatHang.Rows(currentRowIndex).DataBoundItem, LoaiXeDTO)
+                        txtMaMatHang.Text = ldl.MaXe
+                        txtTenXe.Text = ldl.TenXe
                         txtSoLuongTon.Text = ldl.SoLuongTon
                     Catch ex As Exception
                         Console.WriteLine(ex.StackTrace)

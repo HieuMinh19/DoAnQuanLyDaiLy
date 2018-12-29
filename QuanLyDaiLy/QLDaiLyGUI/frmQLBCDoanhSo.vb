@@ -43,7 +43,7 @@ Public Class frmQLBCDoanhSo
 
         Dim clTenDaiLy = New DataGridViewTextBoxColumn()
         clTenDaiLy.Name = "daiLy"
-        clTenDaiLy.HeaderText = "Ð?i Lý"
+        clTenDaiLy.HeaderText = "Ðại Lý"
         clTenDaiLy.DataPropertyName = "TenDaiLy"
         dgvBaoCao.Columns.Add(clTenDaiLy)
 

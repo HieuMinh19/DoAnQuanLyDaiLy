@@ -58,25 +58,25 @@ Public Class Form1
     End Sub
 
     Private Sub ThêmMặtHàngToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ThêmMặtHàngToolStripMenuItem.Click
-        Dim frmthemmathang As frmThemMatHang = New frmThemMatHang()
+        Dim frmthemmathang As frmThemLoaiXe = New frmThemLoaiXe()
         frmthemmathang.MdiParent = Me
         frmthemmathang.Show()
 
     End Sub
 
     Private Sub QuảnLíMặtHàngToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles QuảnLíMặtHàngToolStripMenuItem.Click
-        Dim frmQLmathang As frmQLMatHang = New frmQLMatHang()
+        Dim frmQLmathang As frmQLLoaiXe = New frmQLLoaiXe()
         frmQLmathang.MdiParent = Me
         frmQLmathang.Show()
     End Sub
 
-    Private Sub ThêmĐơnVịTínhToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ThêmĐơnVịTínhToolStripMenuItem.Click
+    Private Sub ThêmĐơnVịTínhToolStripMenuItem_Click(sender As Object, e As EventArgs) 
         Dim frmthemdonvitinh As frmThemDonViTinh = New frmThemDonViTinh()
         frmthemdonvitinh.MdiParent = Me
         frmthemdonvitinh.Show()
     End Sub
 
-    Private Sub QuảnLíĐơnVịTínhToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles QuảnLíĐơnVịTínhToolStripMenuItem.Click
+    Private Sub QuảnLíĐơnVịTínhToolStripMenuItem_Click(sender As Object, e As EventArgs) 
         Dim frmQLdonvitinh As frmQLDonViTinh = New frmQLDonViTinh()
         frmQLdonvitinh.MdiParent = Me
         frmQLdonvitinh.Show()
@@ -152,7 +152,7 @@ Public Class Form1
         frmthamso.Show()
     End Sub
 
-    Private Sub TraCứuĐạiLýToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TraCứuĐạiLýToolStripMenuItem.Click
+    Private Sub TraCứuĐạiLýToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles TraCứuĐạiLýToolStripMenuItem1.Click
         Dim frmtracuu As TraCuu = New TraCuu()
         frmtracuu.MdiParent = Me
         frmtracuu.Show()
@@ -164,5 +164,29 @@ Public Class Form1
 
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
         Me.Close()
+    End Sub
+
+    Private Sub ThêmNgườiĐạiDiệnToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ThêmNgườiĐạiDiệnToolStripMenuItem.Click
+        Dim frmThemNguoi As frmThemNDD = New frmThemNDD()
+        frmThemNguoi.MdiParent = Me
+        frmThemNguoi.Show()
+    End Sub
+
+    Private Sub QuảnLýNgườiĐạiDiệnToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles QuảnLýNgườiĐạiDiệnToolStripMenuItem.Click
+        Dim frmQLChu As frmQLNguoiDaiDien = New frmQLNguoiDaiDien()
+        frmQLChu.MdiParent = Me
+        frmQLChu.Show()
+    End Sub
+
+    Private Sub ThêmNhânViênToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ThêmNhânViênToolStripMenuItem.Click
+        Dim frmThemNhanVien As frmThemNhanVien = New frmThemNhanVien()
+        frmThemNhanVien.MdiParent = Me
+        frmThemNhanVien.Show()
+    End Sub
+
+    Private Sub QuảnLýNhânViênToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles QuảnLýNhânViênToolStripMenuItem.Click
+        Dim frmQLNV As frmQLNhanVien = New frmQLNhanVien()
+        frmQLNV.MdiParent = Me
+        frmQLNV.Show()
     End Sub
 End Class
